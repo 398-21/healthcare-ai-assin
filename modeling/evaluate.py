@@ -67,6 +67,44 @@ def classification_report_ci(y_true, y_prob, n_boot: int = 1000) -> dict:
                              ("brier", brier_score_loss))}
 
 
+def classification_comparison(df: pd.DataFrame, y_col: str, prob_cols: dict,
+                              group_col: str | None = None, n_boot: int = 1000) -> pd.DataFrame:
+    """Tidy multi-model classifier comparison, mirroring `regression_report`'s shape --
+    one row per (group, series). `prob_cols`: {label: column_name}, e.g.
+    {"no-skill": "prevalence_col", "histgb": "deteriorate_proba",
+     "linear": "deteriorate_proba_linear"}. Used to compare every trained family (D19-D22)
+    against each other and the no-skill reference (D18) in one table."""
+    rows = []
+    groups = df.groupby(group_col) if group_col else [(None, df)]
+    for g, d in groups:
+        for label, col in prob_cols.items():
+            dd = d.dropna(subset=[y_col, col])
+            if dd.empty or dd[y_col].nunique() < 2:
+                continue
+            m = classification_report_ci(dd[y_col], dd[col], n_boot)
+            row = {"series": label, "n": len(dd),
+                  "auroc": m["auroc"]["point"], "auroc_lo": m["auroc"]["ci_lo"], "auroc_hi": m["auroc"]["ci_hi"],
+                  "auprc": m["auprc"]["point"], "auprc_lo": m["auprc"]["ci_lo"], "auprc_hi": m["auprc"]["ci_hi"],
+                  "brier": m["brier"]["point"]}
+            if group_col:
+                row[group_col] = g
+            rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def no_skill_reference(y_true) -> dict:
+    """Theoretical no-skill baseline for a binary outcome -- fits nothing, computes nothing
+    but the class prevalence. Standard practice for reporting classifier performance
+    honestly (D18): AUROC of any non-informative classifier is always 0.5; AUPRC of a
+    non-informative classifier equals the prevalence, NOT 0.5 (Saito & Rehmsmeier, PLOS ONE
+    2015) -- for a rare outcome a model can post a "good-looking" AUPRC that is actually
+    worse than guessing; Brier score of the best constant predictor (= prevalence) is
+    p*(1-p). Every classifier result in this project should be read against these numbers,
+    not against 0.5/0/1."""
+    p = float(np.mean(np.asarray(y_true)))
+    return {"prevalence": p, "auroc": 0.5, "auprc": p, "brier": p * (1 - p)}
+
+
 def calibration_table(y_true, y_prob, n_bins: int = 10) -> pd.DataFrame:
     """Observed vs mean-predicted event rate per decile of predicted probability."""
     df = pd.DataFrame({"y": np.asarray(y_true), "p": np.asarray(y_prob)})
