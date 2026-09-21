@@ -129,6 +129,44 @@ def subgroup_report(df: pd.DataFrame, y_col: str, pred_col: str, group_col: str,
     return pd.DataFrame(rows)
 
 
+def capture_rate_report(y_true, y_prob, fractions=(0.05, 0.10, 0.20),
+                        n_boot: int = 1000, seed: int = config.SEED) -> pd.DataFrame:
+    """Risk-stratification value, in plain terms: if the top `fraction` of rows by predicted
+    probability were flagged for closer attention, what fraction of the TRUE positives would
+    that catch (capture rate = recall within the flagged slice), and how much better is that
+    than flagging the same number of rows at random (lift = capture rate / prevalence)? A
+    direct, intuitive complement to AUROC/AUPRC (item 12e) -- answers "how does this help"
+    rather than only "how well does it discriminate." Bootstrap CI on capture rate, same
+    percentile-bootstrap convention as every other metric in this module."""
+    y_true = np.asarray(y_true); y_prob = np.asarray(y_prob)
+    n = len(y_true)
+    prevalence = float(np.mean(y_true))
+    order = np.argsort(-y_prob)
+    rng = np.random.default_rng(seed)
+
+    def _capture(y_t, y_p, k):
+        idx = np.argsort(-y_p)[:k]
+        pos = float(np.sum(y_t))
+        return float(np.sum(y_t[idx])) / pos if pos > 0 else float("nan")
+
+    rows = []
+    for frac in fractions:
+        k = max(1, int(round(n * frac)))
+        point = _capture(y_true, y_prob, k)
+        boots = np.empty(n_boot)
+        for i in range(n_boot):
+            idx = rng.integers(0, n, n)
+            boots[i] = _capture(y_true[idx], y_prob[idx], max(1, int(round(n * frac))))
+        lo, hi = np.percentile(boots, [2.5, 97.5])
+        n_flagged = k
+        n_true_positives_in_slice = int(np.sum(y_true[order[:k]]))
+        rows.append({"fraction_flagged": frac, "n_flagged": n_flagged,
+                    "true_positives_captured": n_true_positives_in_slice,
+                    "capture_rate": point, "capture_rate_lo": lo, "capture_rate_hi": hi,
+                    "lift": point / prevalence if prevalence > 0 else float("nan")})
+    return pd.DataFrame(rows)
+
+
 def permutation_report(model, X: pd.DataFrame, y, n_repeats: int = 3, n_sample: int = 2000,
                        seed: int = config.SEED, scoring=None, top_k: int = 20) -> pd.DataFrame:
     """D16: permutation importance on a fixed random subsample (not the full validation set)
