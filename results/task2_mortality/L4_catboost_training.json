@@ -1,0 +1,23 @@
+{
+  "model": "catboost",
+  "gpu_used": true,
+  "n_features": 1474,
+  "best_hyperparameters": {
+    "depth": 8,
+    "learning_rate": 0.03,
+    "iterations": 500,
+    "l2_leaf_reg": 9,
+    "border_count": 128,
+    "random_strength": 0.5,
+    "bagging_temperature": 1.0
+  },
+  "cv_best_auroc": 0.8674118231633898,
+  "cv_best_auroc_std": 0.005465133857318048,
+  "validation_auroc": 0.859717021889401,
+  "validation_auprc": 0.5052381541442376,
+  "training_time_seconds": 5360.257738351822,
+  "auto_class_weights": "Balanced",
+  "train_samples": 8283,
+  "val_samples": 1775,
+  "test_samples": 1775
+}

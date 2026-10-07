@@ -1,0 +1,76 @@
+{
+  "dataset": "test",
+  "model": "L4 XGBoost (frozen predictions)",
+  "overall_auroc": 0.8849,
+  "subgroups": [
+    {
+      "code": 1,
+      "icutype": "Coronary",
+      "n": 262,
+      "deaths": 37,
+      "prevalence": 0.14122137404580154,
+      "auroc": 0.854054054054054,
+      "auroc_ci": [
+        0.7891711711711711,
+        0.9084924924924925
+      ],
+      "auprc": 0.5843212004133707,
+      "auprc_ci": [
+        0.4386337885949173,
+        0.7435694674508645
+      ]
+    },
+    {
+      "code": 2,
+      "icutype": "Cardiac surgery recovery",
+      "n": 370,
+      "deaths": 19,
+      "prevalence": 0.051351351351351354,
+      "auroc": 0.9548657969710601,
+      "auroc_ci": [
+        0.9128804918278602,
+        0.9860623781676413
+      ],
+      "auprc": 0.6474699750352045,
+      "auprc_ci": [
+        0.4582270740790717,
+        0.8502343281839376
+      ]
+    },
+    {
+      "code": 3,
+      "icutype": "Medical",
+      "n": 646,
+      "deaths": 120,
+      "prevalence": 0.18575851393188855,
+      "auroc": 0.8365177439797212,
+      "auroc_ci": [
+        0.7992965779467681,
+        0.8709002693282636
+      ],
+      "auprc": 0.5679711688062405,
+      "auprc_ci": [
+        0.49311344530723544,
+        0.648547747830833
+      ]
+    },
+    {
+      "code": 4,
+      "icutype": "Surgical",
+      "n": 497,
+      "deaths": 80,
+      "prevalence": 0.16096579476861167,
+      "auroc": 0.8965827338129496,
+      "auroc_ci": [
+        0.8601311450839328,
+        0.928995803357314
+      ],
+      "auprc": 0.6430845092571641,
+      "auprc_ci": [
+        0.5483858304677278,
+        0.7491299367337294
+      ]
+    }
+  ],
+  "_note": "All four ICUType one-hot columns declared and scored in one pass on the frozen test vector. Supersedes the single-column subgroup in L4_calibration_and_subgroup.json."
+}

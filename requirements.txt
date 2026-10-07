@@ -1,0 +1,15 @@
+# Python 3.13 -- the versions the submitted notebook was executed with.
+numpy==2.3.4
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.7.2      # task 1 .joblib models are pickled with this version
+joblib==1.5.2
+matplotlib==3.10.7
+xgboost==3.4.1
+catboost==1.2.10
+lightgbm==4.7.0
+shap==0.52.0
+
+# running the notebook
+jupyter
+ipykernel

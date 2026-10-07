@@ -1,0 +1,23 @@
+{
+  "model": "xgboost",
+  "gpu_used": true,
+  "n_features": 1474,
+  "best_hyperparameters": {
+    "subsample": 0.9,
+    "n_estimators": 300,
+    "min_child_weight": 3,
+    "max_depth": 7,
+    "max_bin": 127,
+    "learning_rate": 0.05,
+    "gamma": 0,
+    "colsample_bytree": 0.9
+  },
+  "cv_best_auroc": 0.8709245125110684,
+  "validation_auroc": 0.8663645901909152,
+  "validation_auprc": 0.5379533228948855,
+  "training_time_seconds": 803.1659004688263,
+  "scale_pos_weight": 5.931380753138075,
+  "train_samples": 8283,
+  "val_samples": 1775,
+  "test_samples": 1775
+}

@@ -1,0 +1,67 @@
+{
+  "calibration": {
+    "model": "L4_xgboost",
+    "dataset": "test",
+    "n": 1775,
+    "brier_score": 0.08626776029039518,
+    "reliability_curve": {
+      "n_bins": 10,
+      "mean_predicted_prob": [
+        0.021135367788185484,
+        0.1474414352352256,
+        0.24742583390325307,
+        0.3488392567456658,
+        0.45046154724227055,
+        0.554014432689418,
+        0.6526081989973019,
+        0.7536608397960662,
+        0.8447446707756289,
+        0.9514404634634653
+      ],
+      "fraction_of_positives": [
+        0.041935483870967745,
+        0.15894039735099338,
+        0.225,
+        0.34328358208955223,
+        0.4222222222222222,
+        0.4782608695652174,
+        0.5384615384615384,
+        0.625,
+        0.7096774193548387,
+        0.8333333333333334
+      ]
+    }
+  },
+  "subgroup_analysis": {
+    "stratification_variable": "static_icutype_2",
+    "overall_test_auroc": 0.8849,
+    "subgroups": [
+      {
+        "icutype": "Coronary",
+        "code": 1,
+        "n": 370,
+        "deaths": 19,
+        "auroc": 0.9548657969710601
+      }
+    ]
+  },
+  "min_se_ppv_gap_fills": {
+    "L0_random": {
+      "threshold": 0.16704190790094986,
+      "test_min_se_ppv": 0.14673913043478262
+    },
+    "L1_static_age_years": {
+      "threshold": 57.0,
+      "test_min_se_ppv": 0.16428571428571428
+    },
+    "L1_gcs__0_48h__min": {
+      "threshold": 3.0,
+      "test_min_se_ppv": 0.14422535211267606
+    },
+    "L1_bun__0_48h__max": {
+      "threshold": 18.0,
+      "test_min_se_ppv": 0.18544809228039041
+    }
+  },
+  "_note": "Computed on frozen L4 test predictions. No model retraining or hyperparameter choices. Per \u5b9e\u9a8c\u65b9\u6848 \u00a75.7, additional metrics on the same prediction vector do not constitute a second look."
+}

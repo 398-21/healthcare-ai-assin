@@ -1,2 +1,9 @@
-/icu_records
+# raw ICU records (105 MB) -- copy the course release into data/icu_records/, see README
+data/icu_records/
+
+# caches, logs, editor state
+__pycache__/
 *.pyc
+*.log
+.ipynb_checkpoints/
+catboost_info/

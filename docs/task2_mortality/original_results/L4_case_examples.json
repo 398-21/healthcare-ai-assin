@@ -1,0 +1,181 @@
+{
+  "model": "L4_xgboost",
+  "dataset": "test",
+  "cases": [
+    {
+      "label": "TP_high_risk_died",
+      "record_id": 103032,
+      "predicted_probability": 0.9965552091598511,
+      "actual_outcome": 1,
+      "top_10_shap_contributors": [
+        {
+          "feature": "gcs__0_48h__last",
+          "value": 7.0,
+          "shap_value": 0.9059054851531982
+        },
+        {
+          "feature": "lactate__0_48h__last",
+          "value": 11.6,
+          "shap_value": 0.3276594281196594
+        },
+        {
+          "feature": "urine__24_48h__total",
+          "value": 414.0,
+          "shap_value": 0.3240376114845276
+        },
+        {
+          "feature": "platelets__0_24h__min",
+          "value": 25.0,
+          "shap_value": 0.23445264995098114
+        },
+        {
+          "feature": "urine__0_48h__total",
+          "value": 1901.0,
+          "shap_value": 0.22378641366958618
+        },
+        {
+          "feature": "bp_sys__0_48h__mean",
+          "value": 97.364868,
+          "shap_value": 0.20681056380271912
+        },
+        {
+          "feature": "gcs__24_48h__last",
+          "value": 7.0,
+          "shap_value": 0.16796450316905975
+        },
+        {
+          "feature": "platelets__0_48h__mean",
+          "value": 61.5,
+          "shap_value": 0.13141115009784698
+        },
+        {
+          "feature": "temp__0_48h__time_span_hours",
+          "value": 38.0,
+          "shap_value": 0.11912095546722412
+        },
+        {
+          "feature": "bp_sys__24_48h__last",
+          "value": 79.0,
+          "shap_value": 0.11117140203714371
+        }
+      ]
+    },
+    {
+      "label": "FP_high_risk_survived",
+      "record_id": 100571,
+      "predicted_probability": 0.9761173725128174,
+      "actual_outcome": 0,
+      "top_10_shap_contributors": [
+        {
+          "feature": "gcs__0_48h__last",
+          "value": 6.0,
+          "shap_value": 1.7359868288040161
+        },
+        {
+          "feature": "gcs__24_48h__last",
+          "value": 6.0,
+          "shap_value": 0.32602593302726746
+        },
+        {
+          "feature": "static_age_years",
+          "value": 80.0,
+          "shap_value": 0.22869235277175903
+        },
+        {
+          "feature": "lactate__0_48h__last",
+          "value": 3.0,
+          "shap_value": 0.22781600058078766
+        },
+        {
+          "feature": "gcs__24_48h__max",
+          "value": 8.0,
+          "shap_value": 0.18998824059963226
+        },
+        {
+          "feature": "urine__0_48h__total",
+          "value": 5519.0,
+          "shap_value": -0.16609908640384674
+        },
+        {
+          "feature": "gcs__0_48h__count",
+          "value": 39.0,
+          "shap_value": 0.15753042697906494
+        },
+        {
+          "feature": "gcs__24_48h__mean",
+          "value": 6.681818,
+          "shap_value": 0.11762788146734238
+        },
+        {
+          "feature": "weight__0_24h__max",
+          "value": 55.0,
+          "shap_value": 0.09175513684749603
+        },
+        {
+          "feature": "na__0_48h__slope_per_hour",
+          "value": 0.15797511,
+          "shap_value": 0.0865996852517128
+        }
+      ]
+    },
+    {
+      "label": "FN_low_risk_died",
+      "record_id": 102169,
+      "predicted_probability": 0.0038077000062912703,
+      "actual_outcome": 1,
+      "top_10_shap_contributors": [
+        {
+          "feature": "gcs__0_48h__last",
+          "value": 8.0,
+          "shap_value": 0.4771309196949005
+        },
+        {
+          "feature": "urine__0_48h__total",
+          "value": 7240.0,
+          "shap_value": -0.2651136815547943
+        },
+        {
+          "feature": "static_age_years",
+          "value": 53.0,
+          "shap_value": -0.23445118963718414
+        },
+        {
+          "feature": "wbc__0_48h__slope_per_hour",
+          "value": -0.4513894,
+          "shap_value": -0.20098976790905
+        },
+        {
+          "feature": "lactate__0_48h__median",
+          "value": 0.60000002,
+          "shap_value": -0.1616382747888565
+        },
+        {
+          "feature": "mechvent__0_48h__time_span_hours",
+          "value": 29.333334,
+          "shap_value": -0.15375825762748718
+        },
+        {
+          "feature": "lactate__0_48h__last",
+          "value": 0.60000002,
+          "shap_value": -0.13768146932125092
+        },
+        {
+          "feature": "urine__0_48h__delta",
+          "value": 250.0,
+          "shap_value": -0.13757403194904327
+        },
+        {
+          "feature": "gcs__24_48h__max",
+          "value": 10.0,
+          "shap_value": -0.12974296510219574
+        },
+        {
+          "feature": "bun__24_48h__last",
+          "value": 7.0,
+          "shap_value": -0.12664365768432617
+        }
+      ]
+    }
+  ],
+  "_note": "Individual case explanations using SHAP waterfall. Cases selected from frozen test predictions: one true positive (high risk, died), one false positive (high risk, survived), one false negative (low risk, died)."
+}

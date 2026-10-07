@@ -1,0 +1,754 @@
+{
+  "results": [
+    {
+      "iteration": 1,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.1,
+        "iterations": 200,
+        "l2_leaf_reg": 5,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8543646488204193,
+      "std_cv_auroc": 0.007859323003035138,
+      "time_seconds": 26.139018535614014
+    },
+    {
+      "iteration": 2,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 500,
+        "l2_leaf_reg": 5,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8656809984481122,
+      "std_cv_auroc": 0.007754351476984246,
+      "time_seconds": 546.4594688415527
+    },
+    {
+      "iteration": 3,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 3,
+        "border_count": 64,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8596080708430203,
+      "std_cv_auroc": 0.008369996083535862,
+      "time_seconds": 24.239487886428833
+    },
+    {
+      "iteration": 4,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.01,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8506545158348914,
+      "std_cv_auroc": 0.011753046477978561,
+      "time_seconds": 15.123247146606445
+    },
+    {
+      "iteration": 5,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 3,
+        "border_count": 128,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8562605793568883,
+      "std_cv_auroc": 0.01051305504012348,
+      "time_seconds": 601.0173649787903
+    },
+    {
+      "iteration": 6,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 500,
+        "l2_leaf_reg": 9,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8674118231633898,
+      "std_cv_auroc": 0.005465133857318048,
+      "time_seconds": 624.4338455200195
+    },
+    {
+      "iteration": 7,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 32,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.859800965771537,
+      "std_cv_auroc": 0.010199526566411304,
+      "time_seconds": 77.14332461357117
+    },
+    {
+      "iteration": 8,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 64,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8605433020573681,
+      "std_cv_auroc": 0.009008382613568703,
+      "time_seconds": 14.015629291534424
+    },
+    {
+      "iteration": 9,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.03,
+        "iterations": 500,
+        "l2_leaf_reg": 9,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8658061874916101,
+      "std_cv_auroc": 0.007191260818741857,
+      "time_seconds": 116.93945789337158
+    },
+    {
+      "iteration": 10,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 64,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8610559343525205,
+      "std_cv_auroc": 0.008699361993722652,
+      "time_seconds": 22.89376926422119
+    },
+    {
+      "iteration": 11,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 9,
+        "border_count": 64,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8649013154345132,
+      "std_cv_auroc": 0.007310960135813882,
+      "time_seconds": 18.878350019454956
+    },
+    {
+      "iteration": 12,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 64,
+        "random_strength": 1.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8647635743354789,
+      "std_cv_auroc": 0.007216115902980875,
+      "time_seconds": 20.57775592803955
+    },
+    {
+      "iteration": 13,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.1,
+        "iterations": 300,
+        "l2_leaf_reg": 5,
+        "border_count": 32,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8600374986568251,
+      "std_cv_auroc": 0.01007966384253778,
+      "time_seconds": 30.56762433052063
+    },
+    {
+      "iteration": 14,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.03,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 64,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8526018198827133,
+      "std_cv_auroc": 0.008989606213399818,
+      "time_seconds": 85.0043740272522
+    },
+    {
+      "iteration": 15,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.01,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8518867654410721,
+      "std_cv_auroc": 0.008986770118779424,
+      "time_seconds": 79.5566987991333
+    },
+    {
+      "iteration": 16,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8650118275813268,
+      "std_cv_auroc": 0.007912806168062553,
+      "time_seconds": 11.353761672973633
+    },
+    {
+      "iteration": 17,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 500,
+        "l2_leaf_reg": 5,
+        "border_count": 32,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8597642899804783,
+      "std_cv_auroc": 0.007719393110913882,
+      "time_seconds": 94.18479776382446
+    },
+    {
+      "iteration": 18,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.05,
+        "iterations": 300,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8620353261962466,
+      "std_cv_auroc": 0.004569304248609499,
+      "time_seconds": 22.364415407180786
+    },
+    {
+      "iteration": 19,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 500,
+        "l2_leaf_reg": 5,
+        "border_count": 64,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.862290546189001,
+      "std_cv_auroc": 0.007478259711230949,
+      "time_seconds": 106.03632378578186
+    },
+    {
+      "iteration": 20,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8579122472840984,
+      "std_cv_auroc": 0.007935370154917916,
+      "time_seconds": 183.95157861709595
+    },
+    {
+      "iteration": 21,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.05,
+        "iterations": 200,
+        "l2_leaf_reg": 1,
+        "border_count": 64,
+        "random_strength": 3.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8582350807050443,
+      "std_cv_auroc": 0.007436650014898105,
+      "time_seconds": 13.998139142990112
+    },
+    {
+      "iteration": 22,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8585564914569662,
+      "std_cv_auroc": 0.008081741744116818,
+      "time_seconds": 180.72300553321838
+    },
+    {
+      "iteration": 23,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.1,
+        "iterations": 200,
+        "l2_leaf_reg": 5,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.859940700522977,
+      "std_cv_auroc": 0.008062799337850837,
+      "time_seconds": 14.80675196647644
+    },
+    {
+      "iteration": 24,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 300,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8566643254126831,
+      "std_cv_auroc": 0.004342792817058368,
+      "time_seconds": 16.21469020843506
+    },
+    {
+      "iteration": 25,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 32,
+        "random_strength": 3.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8599146939166534,
+      "std_cv_auroc": 0.007936059560065406,
+      "time_seconds": 18.42011785507202
+    },
+    {
+      "iteration": 26,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 32,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8617860188592686,
+      "std_cv_auroc": 0.007448858195655524,
+      "time_seconds": 30.704769611358643
+    },
+    {
+      "iteration": 27,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 128,
+        "random_strength": 1.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8624979443452961,
+      "std_cv_auroc": 0.009236938990337992,
+      "time_seconds": 16.46529483795166
+    },
+    {
+      "iteration": 28,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.05,
+        "iterations": 300,
+        "l2_leaf_reg": 1,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8656473949724484,
+      "std_cv_auroc": 0.007667033221424024,
+      "time_seconds": 13.558926582336426
+    },
+    {
+      "iteration": 29,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.01,
+        "iterations": 200,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8452460916926761,
+      "std_cv_auroc": 0.012030094120688966,
+      "time_seconds": 16.13430166244507
+    },
+    {
+      "iteration": 30,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.01,
+        "iterations": 300,
+        "l2_leaf_reg": 1,
+        "border_count": 32,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8521375312636827,
+      "std_cv_auroc": 0.011031979292794446,
+      "time_seconds": 30.841613054275513
+    },
+    {
+      "iteration": 31,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 300,
+        "l2_leaf_reg": 9,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8660169628209482,
+      "std_cv_auroc": 0.008243111121517566,
+      "time_seconds": 30.113404512405396
+    },
+    {
+      "iteration": 32,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 5,
+        "border_count": 64,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8617329232353825,
+      "std_cv_auroc": 0.009389806335204899,
+      "time_seconds": 13.571852445602417
+    },
+    {
+      "iteration": 33,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.01,
+        "iterations": 200,
+        "l2_leaf_reg": 5,
+        "border_count": 32,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8407048655326431,
+      "std_cv_auroc": 0.012170734547634086,
+      "time_seconds": 11.278358459472656
+    },
+    {
+      "iteration": 34,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.05,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.863006364440651,
+      "std_cv_auroc": 0.007374103413805178,
+      "time_seconds": 11.537267446517944
+    },
+    {
+      "iteration": 35,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 64,
+        "random_strength": 1.0,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8613749187374244,
+      "std_cv_auroc": 0.009108821855735897,
+      "time_seconds": 14.213813543319702
+    },
+    {
+      "iteration": 36,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 1,
+        "border_count": 128,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.844737088952718,
+      "std_cv_auroc": 0.006524489931129646,
+      "time_seconds": 532.265677690506
+    },
+    {
+      "iteration": 37,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 5,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8633698555433285,
+      "std_cv_auroc": 0.007796462155607816,
+      "time_seconds": 22.59922456741333
+    },
+    {
+      "iteration": 38,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 5,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8574073801130536,
+      "std_cv_auroc": 0.011281211558308754,
+      "time_seconds": 31.327929735183716
+    },
+    {
+      "iteration": 39,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 500,
+        "l2_leaf_reg": 9,
+        "border_count": 128,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8604899590489969,
+      "std_cv_auroc": 0.011806578693072806,
+      "time_seconds": 603.952378988266
+    },
+    {
+      "iteration": 40,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 5,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8641925518054034,
+      "std_cv_auroc": 0.006864248852753244,
+      "time_seconds": 18.51388907432556
+    },
+    {
+      "iteration": 41,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.05,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8583345159408419,
+      "std_cv_auroc": 0.010117780848577609,
+      "time_seconds": 46.1092483997345
+    },
+    {
+      "iteration": 42,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 200,
+        "l2_leaf_reg": 3,
+        "border_count": 32,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8599425750643344,
+      "std_cv_auroc": 0.00956908797608268,
+      "time_seconds": 8.683085441589355
+    },
+    {
+      "iteration": 43,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 500,
+        "l2_leaf_reg": 5,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8637580251224941,
+      "std_cv_auroc": 0.007120148920601405,
+      "time_seconds": 96.65546560287476
+    },
+    {
+      "iteration": 44,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.1,
+        "iterations": 500,
+        "l2_leaf_reg": 9,
+        "border_count": 64,
+        "random_strength": 0.5,
+        "bagging_temperature": 1.0
+      },
+      "mean_cv_auroc": 0.8637620611545526,
+      "std_cv_auroc": 0.008881826087911198,
+      "time_seconds": 479.80217123031616
+    },
+    {
+      "iteration": 45,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 300,
+        "l2_leaf_reg": 9,
+        "border_count": 64,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.862843980265265,
+      "std_cv_auroc": 0.008447254884238828,
+      "time_seconds": 13.024693250656128
+    },
+    {
+      "iteration": 46,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.05,
+        "iterations": 200,
+        "l2_leaf_reg": 1,
+        "border_count": 64,
+        "random_strength": 1.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8626458694389566,
+      "std_cv_auroc": 0.00898970709909158,
+      "time_seconds": 11.58444356918335
+    },
+    {
+      "iteration": 47,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 500,
+        "l2_leaf_reg": 9,
+        "border_count": 32,
+        "random_strength": 0.5,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8625218594282478,
+      "std_cv_auroc": 0.007628283882602817,
+      "time_seconds": 145.37092852592468
+    },
+    {
+      "iteration": 48,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.03,
+        "iterations": 200,
+        "l2_leaf_reg": 9,
+        "border_count": 128,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.0
+      },
+      "mean_cv_auroc": 0.8559771621140557,
+      "std_cv_auroc": 0.012094185081501795,
+      "time_seconds": 12.520761013031006
+    },
+    {
+      "iteration": 49,
+      "params": {
+        "depth": 4,
+        "learning_rate": 0.1,
+        "iterations": 500,
+        "l2_leaf_reg": 5,
+        "border_count": 64,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8616871346161872,
+      "std_cv_auroc": 0.006547693536308487,
+      "time_seconds": 93.15424084663391
+    },
+    {
+      "iteration": 50,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.03,
+        "iterations": 300,
+        "l2_leaf_reg": 3,
+        "border_count": 32,
+        "random_strength": 3.0,
+        "bagging_temperature": 0.5
+      },
+      "mean_cv_auroc": 0.8632606677781004,
+      "std_cv_auroc": 0.009205109874520336,
+      "time_seconds": 15.303176641464233
+    }
+  ]
+}

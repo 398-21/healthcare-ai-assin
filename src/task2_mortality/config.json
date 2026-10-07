@@ -1,0 +1,42 @@
+{
+  "task": "Predict final In-hospital_death at the 48-hour landmark",
+  "time_rule_primary": "0 <= elapsed_minutes < 2880",
+  "time_rule_sensitivity": "0 <= elapsed_minutes <= 2880 for affected stays only",
+  "random_seed": 20260907,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "windows": [
+    {"name": "0_24h", "start_minute": 0, "end_minute": 1440},
+    {"name": "24_48h", "start_minute": 1440, "end_minute": 2880},
+    {"name": "0_48h", "start_minute": 0, "end_minute": 2880}
+  ],
+  "static_parameters": ["Age", "Gender", "Height", "ICUType", "Weight"],
+  "dynamic_parameters": [
+    "Albumin", "ALP", "ALT", "AST", "Bilirubin", "BUN", "Cholesterol",
+    "Creatinine", "DiasABP", "FiO2", "GCS", "Glucose", "HCO3", "HCT",
+    "HR", "K", "Lactate", "MAP", "MechVent", "Mg", "Na", "NIDiasABP",
+    "NIMAP", "NISysABP", "PaCO2", "PaO2", "pH", "Platelets", "RespRate",
+    "SaO2", "SysABP", "Temp", "TroponinI", "TroponinT", "Urine", "WBC",
+    "Weight"
+  ],
+  "bp_merge_groups": [
+    {"name": "BP_Sys", "invasive": "SysABP", "noninvasive": "NISysABP", "unit": "mmHg"},
+    {"name": "BP_Dias", "invasive": "DiasABP", "noninvasive": "NIDiasABP", "unit": "mmHg"},
+    {"name": "BP_Mean", "invasive": "MAP", "noninvasive": "NIMAP", "unit": "mmHg"}
+  ],
+  "bp_merge_policy": "Per window, prefer the invasive arterial stream when that window has at least one invasive reading; otherwise use the non-invasive cuff stream. Derived streams are additive: the six source parameters keep their own unchanged columns, and merged streams do not count toward record-level distinct/total observation counters.",
+  "derived_static_policy": "static_bmi = static_admission_weight_kg / (static_height_cm / 100)^2, missing when either input is missing or height is non-positive.",
+  "summary_statistics": [
+    "measured", "count", "first", "last", "min", "max", "mean", "median",
+    "std", "slope_per_hour", "delta", "time_span_hours"
+  ],
+  "missing_sentinel": -1,
+  "imputation": "Training-split median; all-missing-in-train columns use 0 and are flagged",
+  "scaling": "None; model-specific scaling must be fit inside training data later",
+  "duplicate_policy": "Audit exact duplicates/conflicts; collapse same-time dynamic continuous values by median, MechVent by maximum, and Urine by sum before longitudinal summaries",
+  "outlier_policy": "Values outside preprocess.PHYSIOLOGICAL_RANGES are set to missing (not clipped); pH > 14 is divided by 100 and Height < 100 cm is multiplied by 100 before the range check",
+  "gzip_compresslevel": 6
+}

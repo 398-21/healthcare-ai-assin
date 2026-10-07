@@ -1,0 +1,92 @@
+{
+  "reason": "Fills gaps in the L4 GPU run: subset head-to-head, overfitting check, SHAP re-categorisation",
+  "performance_by_split": {
+    "train": {
+      "auroc": 1.0,
+      "auprc": 1.0
+    },
+    "validation": {
+      "auroc": 0.8663645901909152,
+      "auprc": 0.5379533228948855
+    },
+    "test": {
+      "auroc": 0.884880060895326,
+      "auprc": 0.5911575114623904
+    }
+  },
+  "overfitting": {
+    "train_val_auroc_gap": 0.13363540980908484,
+    "test_val_auroc_gap": 0.01851547070441084
+  },
+  "fair_subset_comparison": {
+    "saps_i": {
+      "score": "SAPS-I",
+      "n": 1728,
+      "baseline_auroc": 0.6399149242770643,
+      "baseline_auroc_ci": [
+        0.6014868853140457,
+        0.6758908702941625
+      ],
+      "baseline_auprc": 0.2125552272347355,
+      "l4_auroc": 0.8858350306909978,
+      "l4_auroc_ci": [
+        0.8644072411356363,
+        0.905309611893974
+      ],
+      "l4_auprc": 0.5855903222298834,
+      "l4_auprc_ci": [
+        0.5323334479707368,
+        0.6437210288244248
+      ],
+      "improvement_auroc": 0.24592010641393347,
+      "ci_overlap": false,
+      "statistically_significant": true
+    },
+    "sofa": {
+      "score": "SOFA",
+      "n": 1733,
+      "baseline_auroc": 0.6230634189159535,
+      "baseline_auroc_ci": [
+        0.5858187266842221,
+        0.6595043682795699
+      ],
+      "baseline_auprc": 0.25269390194970265,
+      "l4_auroc": 0.8899714724599518,
+      "l4_auroc_ci": [
+        0.8695110544217687,
+        0.9088737793504499
+      ],
+      "l4_auprc": 0.5960601266519687,
+      "l4_auprc_ci": [
+        0.5389454108122047,
+        0.6597117211778231
+      ],
+      "improvement_auroc": 0.26690805354399827,
+      "ci_overlap": false,
+      "statistically_significant": true
+    }
+  },
+  "shap_recategorised": {
+    "statistic_type_counts": {
+      "point-in-time": 4,
+      "static": 2,
+      "cumulative": 2,
+      "temporal-trend": 2,
+      "extremum": 3,
+      "measurement-behaviour": 2,
+      "central": 2,
+      "variability": 3
+    },
+    "organ_domain_counts": {
+      "CNS": 7,
+      "Demographic/Context": 2,
+      "Renal": 4,
+      "Haematology": 3,
+      "Respiratory": 1,
+      "Cardiovascular": 2,
+      "Other-lab": 1
+    },
+    "exact_l3_features_in_top20": 1,
+    "top20_sharing_l3_parameter": 13
+  }
+}

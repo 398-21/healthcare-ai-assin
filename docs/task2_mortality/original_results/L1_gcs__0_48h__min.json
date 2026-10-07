@@ -1,0 +1,20 @@
+{
+  "model": "L1_gcs_0_48h_min",
+  "description": "Single feature: GCS (Glasgow Coma Scale) minimum over 0-48h",
+  "feature": "gcs__0_48h__min",
+  "test_samples": 1775,
+  "prevalence": 0.14422535211267606,
+  "missing_fraction": 0.0,
+  "imputation_method": "median",
+  "train_median": 7.0,
+  "auprc": 0.15491022653405898,
+  "auprc_ci": [
+    0.14326156899200182,
+    0.16819363742016213
+  ],
+  "auroc": 0.5528243807603686,
+  "auroc_ci": [
+    0.5173405097926268,
+    0.5858417724448651
+  ]
+}

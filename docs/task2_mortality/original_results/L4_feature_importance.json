@@ -1,0 +1,159 @@
+{
+  "selected_model": "xgboost",
+  "shap_computation": "TreeExplainer on test set",
+  "top_20_features": [
+    {
+      "feature_name": "gcs__0_48h__last",
+      "shap_importance": 0.6940317153930664,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "static_age_years",
+      "shap_importance": 0.2575688064098358,
+      "clinical_domain": "Demographic",
+      "in_l3_features": true,
+      "clinical_interpretation": "Feature from Demographic domain"
+    },
+    {
+      "feature_name": "urine__0_48h__total",
+      "shap_importance": 0.14098623394966125,
+      "clinical_domain": "Renal",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Renal domain"
+    },
+    {
+      "feature_name": "wbc__0_48h__slope_per_hour",
+      "shap_importance": 0.09867753088474274,
+      "clinical_domain": "Coagulation/Hematology",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Coagulation/Hematology domain"
+    },
+    {
+      "feature_name": "gcs__24_48h__last",
+      "shap_importance": 0.09706039726734161,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "bun__0_48h__min",
+      "shap_importance": 0.08789229393005371,
+      "clinical_domain": "Renal",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Renal domain"
+    },
+    {
+      "feature_name": "mechvent__0_48h__time_span_hours",
+      "shap_importance": 0.08540211617946625,
+      "clinical_domain": "Respiratory",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Respiratory domain"
+    },
+    {
+      "feature_name": "urine__24_48h__total",
+      "shap_importance": 0.08336415141820908,
+      "clinical_domain": "Renal",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Renal domain"
+    },
+    {
+      "feature_name": "gcs__24_48h__median",
+      "shap_importance": 0.08249092847108841,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "bun__24_48h__last",
+      "shap_importance": 0.07897721976041794,
+      "clinical_domain": "Renal",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Renal domain"
+    },
+    {
+      "feature_name": "static_icutype_2",
+      "shap_importance": 0.07832090556621552,
+      "clinical_domain": "Other",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Other domain"
+    },
+    {
+      "feature_name": "gcs__24_48h__max",
+      "shap_importance": 0.07782720029354095,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "gcs__0_48h__slope_per_hour",
+      "shap_importance": 0.07239312678575516,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "gcs__24_48h__mean",
+      "shap_importance": 0.060642704367637634,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "lactate__0_48h__last",
+      "shap_importance": 0.05863920971751213,
+      "clinical_domain": "Cardiovascular",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Cardiovascular domain"
+    },
+    {
+      "feature_name": "gcs__0_48h__std",
+      "shap_importance": 0.05548671633005142,
+      "clinical_domain": "CNS",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from CNS domain"
+    },
+    {
+      "feature_name": "wbc__0_48h__std",
+      "shap_importance": 0.05488814786076546,
+      "clinical_domain": "Coagulation/Hematology",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Coagulation/Hematology domain"
+    },
+    {
+      "feature_name": "hct__24_48h__time_span_hours",
+      "shap_importance": 0.053415801376104355,
+      "clinical_domain": "Coagulation/Hematology",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Coagulation/Hematology domain"
+    },
+    {
+      "feature_name": "mg__0_48h__std",
+      "shap_importance": 0.05271483212709427,
+      "clinical_domain": "Other",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Other domain"
+    },
+    {
+      "feature_name": "hr__0_24h__max",
+      "shap_importance": 0.05268668010830879,
+      "clinical_domain": "Cardiovascular",
+      "in_l3_features": false,
+      "clinical_interpretation": "Feature from Cardiovascular domain"
+    }
+  ],
+  "l3_overlap": {
+    "l3_features_in_top_20": 1,
+    "l3_features_in_top_50": 1,
+    "l3_total_features": 8,
+    "interpretation": "1/8 L3 features appear in L4 top 20, validating L3 feature selection quality"
+  },
+  "clinical_validation": {
+    "physiologically_sensible": true,
+    "suspicious_features": [],
+    "measurement_behavior_importance": "No measurement behavior features in top 20",
+    "temporal_features_importance": "No temporal features in top 20"
+  },
+  "artifact_check": "No outcome leakage detected"
+}

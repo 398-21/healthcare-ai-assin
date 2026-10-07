@@ -1,0 +1,21 @@
+{
+  "model": "L1_static_age_years",
+  "description": "Single-feature baseline using static_age_years with median imputation",
+  "variable": "static_age_years",
+  "test_n": 1775,
+  "missing_fraction": 0.0005633802816901409,
+  "prevalence": 0.14422535211267606,
+  "auprc": 0.22429069089834955,
+  "auprc_ci": [
+    0.19628654346753746,
+    0.2646690101793183
+  ],
+  "auroc": 0.626788543038183,
+  "auroc_ci": [
+    0.5897741562602864,
+    0.6665481697971528
+  ],
+  "train_median": 67.0,
+  "train_min": 18.0,
+  "train_max": 90.0
+}

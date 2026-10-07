@@ -1,0 +1,8 @@
+{
+  "selected_model": "xgboost",
+  "selection_rationale": "XGBOOST has highest validation AUROC (primary metric)",
+  "xgboost_validation_auroc": 0.8663645901909152,
+  "xgboost_validation_auprc": 0.5379533228948855,
+  "catboost_validation_auroc": 0.859717021889401,
+  "catboost_validation_auprc": 0.5052381541442376
+}

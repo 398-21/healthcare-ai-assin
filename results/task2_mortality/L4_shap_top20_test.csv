@@ -1,0 +1,21 @@
+,mean |SHAP|,organ,statistic type,in L3 / L3-revised
+gcs__0_48h__last,0.6940317,CNS,point in time,L3r
+static_age_years,0.2575688,demographic / context,static,L3 L3r
+urine__0_48h__total,0.14098623,renal,cumulative,L3r
+wbc__0_48h__slope_per_hour,0.09867753,haematology,trend,
+gcs__24_48h__last,0.0970604,CNS,point in time,
+bun__0_48h__min,0.08789229,renal,extreme,
+mechvent__0_48h__time_span_hours,0.08540212,respiratory,measurement behaviour,
+urine__24_48h__total,0.08336417,renal,cumulative,
+gcs__24_48h__median,0.08249093,CNS,central,
+bun__24_48h__last,0.07897721,renal,point in time,
+static_icutype_2,0.078320906,demographic / context,static,
+gcs__24_48h__max,0.07782719,CNS,extreme,
+gcs__0_48h__slope_per_hour,0.072393134,CNS,trend,
+gcs__24_48h__mean,0.060642704,CNS,central,
+lactate__0_48h__last,0.05863921,cardiovascular,point in time,
+gcs__0_48h__std,0.055486716,CNS,variability,
+wbc__0_48h__std,0.054888137,haematology,variability,
+hct__24_48h__time_span_hours,0.053415798,haematology,measurement behaviour,
+mg__0_48h__std,0.052714832,other lab,variability,
+hr__0_24h__max,0.052686673,cardiovascular,extreme,

@@ -1,0 +1,48 @@
+{
+  "selected_model": "xgboost",
+  "n_features": 1474,
+  "test_samples": 1775,
+  "prevalence": 0.14422535211267606,
+  "threshold": {
+    "value": 0.10822707414627075,
+    "selection_method": "recall_0.80_on_validation",
+    "validation_recall_achieved": 0.80078125
+  },
+  "test_performance": {
+    "auroc": 0.884880060895326,
+    "auroc_ci": [
+      0.865260090931534,
+      0.9030726037894996
+    ],
+    "auprc": 0.5911575114623904,
+    "auprc_ci": [
+      0.535134779298683,
+      0.6493469847615474
+    ],
+    "sensitivity": 0.78515625,
+    "ppv": 0.3872832369942196,
+    "specificity": 0.7906517445687953,
+    "min_se_ppv": 0.3872832369942196
+  },
+  "vs_l3_comparison": {
+    "l3_auroc": 0.741673181369322,
+    "l3_auroc_ci": [
+      0.7075301390717577,
+      0.741673181369322
+    ],
+    "l4_auroc": 0.884880060895326,
+    "l4_auroc_ci": [
+      0.865260090931534,
+      0.9030726037894996
+    ],
+    "improvement_absolute": 0.14320687952600397,
+    "improvement_relative_pct": 19.30862314066779,
+    "ci_overlap": false,
+    "statistically_significant": true
+  },
+  "literature_target_achieved": true,
+  "literature_target_range": [
+    0.83,
+    0.86
+  ]
+}

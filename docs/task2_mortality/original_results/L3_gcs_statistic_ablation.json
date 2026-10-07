@@ -1,0 +1,33 @@
+{
+  "A_original_gcs_min": {
+    "n_features": 8,
+    "train_auroc": 0.7334195575998564,
+    "val_auroc": 0.7217099037195523,
+    "val_auprc": 0.30627925608242174
+  },
+  "B_swap_gcs_min_to_last": {
+    "n_features": 8,
+    "train_auroc": 0.8132544131397753,
+    "val_auroc": 0.7984513866030284,
+    "val_auprc": 0.4225228311377599
+  },
+  "C_add_gcs_last_keep_min": {
+    "n_features": 9,
+    "train_auroc": 0.8219065519423482,
+    "val_auroc": 0.7989708484200132,
+    "val_auprc": 0.41593430828766503
+  },
+  "D_swap_urine_min_to_total": {
+    "n_features": 8,
+    "train_auroc": 0.7472466871936304,
+    "val_auroc": 0.7430129814022383,
+    "val_auprc": 0.3368996556556669
+  },
+  "E_both_swaps": {
+    "n_features": 8,
+    "train_auroc": 0.8191877131010512,
+    "val_auroc": 0.8081488643844634,
+    "val_auprc": 0.4373543572554923
+  },
+  "_note": "Validation-set metrics only; L3 test number in L3_logistic_regression_8features.json is unchanged."
+}

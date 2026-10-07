@@ -1,0 +1,2226 @@
+{
+  "seed": 42,
+  "horizons": [
+    24,
+    30,
+    36,
+    42
+  ],
+  "feature_columns": [
+    "origin_h",
+    "v_GCS_last",
+    "v_GCS_first",
+    "v_GCS_min",
+    "v_GCS_max",
+    "v_GCS_mean",
+    "v_GCS_std",
+    "v_GCS_count",
+    "v_GCS_hrs_since_last",
+    "v_GCS_hrs_coverage",
+    "v_GCS_slope12h",
+    "v_HR_last",
+    "v_HR_first",
+    "v_HR_min",
+    "v_HR_max",
+    "v_HR_mean",
+    "v_HR_std",
+    "v_HR_count",
+    "v_HR_hrs_since_last",
+    "v_HR_hrs_coverage",
+    "v_HR_slope12h",
+    "v_RespRate_last",
+    "v_RespRate_first",
+    "v_RespRate_min",
+    "v_RespRate_max",
+    "v_RespRate_mean",
+    "v_RespRate_std",
+    "v_RespRate_count",
+    "v_RespRate_hrs_since_last",
+    "v_RespRate_hrs_coverage",
+    "v_RespRate_slope12h",
+    "v_Temp_last",
+    "v_Temp_first",
+    "v_Temp_min",
+    "v_Temp_max",
+    "v_Temp_mean",
+    "v_Temp_std",
+    "v_Temp_count",
+    "v_Temp_hrs_since_last",
+    "v_Temp_hrs_coverage",
+    "v_Temp_slope12h",
+    "v_Urine_last",
+    "v_Urine_first",
+    "v_Urine_min",
+    "v_Urine_max",
+    "v_Urine_mean",
+    "v_Urine_std",
+    "v_Urine_count",
+    "v_Urine_hrs_since_last",
+    "v_Urine_hrs_coverage",
+    "v_Urine_slope12h",
+    "v_MAP_last",
+    "v_MAP_first",
+    "v_MAP_min",
+    "v_MAP_max",
+    "v_MAP_mean",
+    "v_MAP_std",
+    "v_MAP_count",
+    "v_MAP_hrs_since_last",
+    "v_MAP_hrs_coverage",
+    "v_MAP_slope12h",
+    "v_NIMAP_last",
+    "v_NIMAP_first",
+    "v_NIMAP_min",
+    "v_NIMAP_max",
+    "v_NIMAP_mean",
+    "v_NIMAP_std",
+    "v_NIMAP_count",
+    "v_NIMAP_hrs_since_last",
+    "v_NIMAP_hrs_coverage",
+    "v_NIMAP_slope12h",
+    "v_SysABP_last",
+    "v_SysABP_first",
+    "v_SysABP_min",
+    "v_SysABP_max",
+    "v_SysABP_mean",
+    "v_SysABP_std",
+    "v_SysABP_count",
+    "v_SysABP_hrs_since_last",
+    "v_SysABP_hrs_coverage",
+    "v_SysABP_slope12h",
+    "v_NISysABP_last",
+    "v_NISysABP_first",
+    "v_NISysABP_min",
+    "v_NISysABP_max",
+    "v_NISysABP_mean",
+    "v_NISysABP_std",
+    "v_NISysABP_count",
+    "v_NISysABP_hrs_since_last",
+    "v_NISysABP_hrs_coverage",
+    "v_NISysABP_slope12h",
+    "v_DiasABP_last",
+    "v_DiasABP_first",
+    "v_DiasABP_min",
+    "v_DiasABP_max",
+    "v_DiasABP_mean",
+    "v_DiasABP_std",
+    "v_DiasABP_count",
+    "v_DiasABP_hrs_since_last",
+    "v_DiasABP_hrs_coverage",
+    "v_DiasABP_slope12h",
+    "v_NIDiasABP_last",
+    "v_NIDiasABP_first",
+    "v_NIDiasABP_min",
+    "v_NIDiasABP_max",
+    "v_NIDiasABP_mean",
+    "v_NIDiasABP_std",
+    "v_NIDiasABP_count",
+    "v_NIDiasABP_hrs_since_last",
+    "v_NIDiasABP_hrs_coverage",
+    "v_NIDiasABP_slope12h",
+    "v_Creatinine_last",
+    "v_Creatinine_first",
+    "v_Creatinine_min",
+    "v_Creatinine_max",
+    "v_Creatinine_mean",
+    "v_Creatinine_std",
+    "v_Creatinine_count",
+    "v_Creatinine_hrs_since_last",
+    "v_Creatinine_hrs_coverage",
+    "v_Creatinine_slope12h",
+    "v_BUN_last",
+    "v_BUN_first",
+    "v_BUN_min",
+    "v_BUN_max",
+    "v_BUN_mean",
+    "v_BUN_std",
+    "v_BUN_count",
+    "v_BUN_hrs_since_last",
+    "v_BUN_hrs_coverage",
+    "v_BUN_slope12h",
+    "v_Platelets_last",
+    "v_Platelets_first",
+    "v_Platelets_min",
+    "v_Platelets_max",
+    "v_Platelets_mean",
+    "v_Platelets_std",
+    "v_Platelets_count",
+    "v_Platelets_hrs_since_last",
+    "v_Platelets_hrs_coverage",
+    "v_Platelets_slope12h",
+    "v_WBC_last",
+    "v_WBC_first",
+    "v_WBC_min",
+    "v_WBC_max",
+    "v_WBC_mean",
+    "v_WBC_std",
+    "v_WBC_count",
+    "v_WBC_hrs_since_last",
+    "v_WBC_hrs_coverage",
+    "v_WBC_slope12h",
+    "v_HCT_last",
+    "v_HCT_first",
+    "v_HCT_min",
+    "v_HCT_max",
+    "v_HCT_mean",
+    "v_HCT_std",
+    "v_HCT_count",
+    "v_HCT_hrs_since_last",
+    "v_HCT_hrs_coverage",
+    "v_HCT_slope12h",
+    "v_K_last",
+    "v_K_first",
+    "v_K_min",
+    "v_K_max",
+    "v_K_mean",
+    "v_K_std",
+    "v_K_count",
+    "v_K_hrs_since_last",
+    "v_K_hrs_coverage",
+    "v_K_slope12h",
+    "v_Na_last",
+    "v_Na_first",
+    "v_Na_min",
+    "v_Na_max",
+    "v_Na_mean",
+    "v_Na_std",
+    "v_Na_count",
+    "v_Na_hrs_since_last",
+    "v_Na_hrs_coverage",
+    "v_Na_slope12h",
+    "v_HCO3_last",
+    "v_HCO3_first",
+    "v_HCO3_min",
+    "v_HCO3_max",
+    "v_HCO3_mean",
+    "v_HCO3_std",
+    "v_HCO3_count",
+    "v_HCO3_hrs_since_last",
+    "v_HCO3_hrs_coverage",
+    "v_HCO3_slope12h",
+    "v_Glucose_last",
+    "v_Glucose_first",
+    "v_Glucose_min",
+    "v_Glucose_max",
+    "v_Glucose_mean",
+    "v_Glucose_std",
+    "v_Glucose_count",
+    "v_Glucose_hrs_since_last",
+    "v_Glucose_hrs_coverage",
+    "v_Glucose_slope12h",
+    "v_Mg_last",
+    "v_Mg_first",
+    "v_Mg_min",
+    "v_Mg_max",
+    "v_Mg_mean",
+    "v_Mg_std",
+    "v_Mg_count",
+    "v_Mg_hrs_since_last",
+    "v_Mg_hrs_coverage",
+    "v_Mg_slope12h",
+    "v_PaO2_last",
+    "v_PaO2_first",
+    "v_PaO2_min",
+    "v_PaO2_max",
+    "v_PaO2_mean",
+    "v_PaO2_std",
+    "v_PaO2_count",
+    "v_PaO2_hrs_since_last",
+    "v_PaO2_hrs_coverage",
+    "v_PaO2_slope12h",
+    "v_FiO2_last",
+    "v_FiO2_first",
+    "v_FiO2_min",
+    "v_FiO2_max",
+    "v_FiO2_mean",
+    "v_FiO2_std",
+    "v_FiO2_count",
+    "v_FiO2_hrs_since_last",
+    "v_FiO2_hrs_coverage",
+    "v_FiO2_slope12h",
+    "v_PaCO2_last",
+    "v_PaCO2_first",
+    "v_PaCO2_min",
+    "v_PaCO2_max",
+    "v_PaCO2_mean",
+    "v_PaCO2_std",
+    "v_PaCO2_count",
+    "v_PaCO2_hrs_since_last",
+    "v_PaCO2_hrs_coverage",
+    "v_PaCO2_slope12h",
+    "v_pH_last",
+    "v_pH_first",
+    "v_pH_min",
+    "v_pH_max",
+    "v_pH_mean",
+    "v_pH_std",
+    "v_pH_count",
+    "v_pH_hrs_since_last",
+    "v_pH_hrs_coverage",
+    "v_pH_slope12h",
+    "v_SaO2_last",
+    "v_SaO2_first",
+    "v_SaO2_min",
+    "v_SaO2_max",
+    "v_SaO2_mean",
+    "v_SaO2_std",
+    "v_SaO2_count",
+    "v_SaO2_hrs_since_last",
+    "v_SaO2_hrs_coverage",
+    "v_SaO2_slope12h",
+    "v_MechVent_last",
+    "v_MechVent_first",
+    "v_MechVent_min",
+    "v_MechVent_max",
+    "v_MechVent_mean",
+    "v_MechVent_std",
+    "v_MechVent_count",
+    "v_MechVent_hrs_since_last",
+    "v_MechVent_hrs_coverage",
+    "v_MechVent_slope12h",
+    "v_Lactate_last",
+    "v_Lactate_first",
+    "v_Lactate_min",
+    "v_Lactate_max",
+    "v_Lactate_mean",
+    "v_Lactate_std",
+    "v_Lactate_count",
+    "v_Lactate_hrs_since_last",
+    "v_Lactate_hrs_coverage",
+    "v_Lactate_slope12h",
+    "v_Bilirubin_last",
+    "v_Bilirubin_first",
+    "v_Bilirubin_min",
+    "v_Bilirubin_max",
+    "v_Bilirubin_mean",
+    "v_Bilirubin_std",
+    "v_Bilirubin_count",
+    "v_Bilirubin_hrs_since_last",
+    "v_Bilirubin_hrs_coverage",
+    "v_Bilirubin_slope12h",
+    "v_Albumin_last",
+    "v_Albumin_first",
+    "v_Albumin_min",
+    "v_Albumin_max",
+    "v_Albumin_mean",
+    "v_Albumin_std",
+    "v_Albumin_count",
+    "v_Albumin_hrs_since_last",
+    "v_Albumin_hrs_coverage",
+    "v_Albumin_slope12h",
+    "v_ALP_last",
+    "v_ALP_first",
+    "v_ALP_min",
+    "v_ALP_max",
+    "v_ALP_mean",
+    "v_ALP_std",
+    "v_ALP_count",
+    "v_ALP_hrs_since_last",
+    "v_ALP_hrs_coverage",
+    "v_ALP_slope12h",
+    "v_ALT_last",
+    "v_ALT_first",
+    "v_ALT_min",
+    "v_ALT_max",
+    "v_ALT_mean",
+    "v_ALT_std",
+    "v_ALT_count",
+    "v_ALT_hrs_since_last",
+    "v_ALT_hrs_coverage",
+    "v_ALT_slope12h",
+    "v_AST_last",
+    "v_AST_first",
+    "v_AST_min",
+    "v_AST_max",
+    "v_AST_mean",
+    "v_AST_std",
+    "v_AST_count",
+    "v_AST_hrs_since_last",
+    "v_AST_hrs_coverage",
+    "v_AST_slope12h",
+    "v_Cholesterol_last",
+    "v_Cholesterol_first",
+    "v_Cholesterol_min",
+    "v_Cholesterol_max",
+    "v_Cholesterol_mean",
+    "v_Cholesterol_std",
+    "v_Cholesterol_count",
+    "v_Cholesterol_hrs_since_last",
+    "v_Cholesterol_hrs_coverage",
+    "v_Cholesterol_slope12h",
+    "v_TroponinI_last",
+    "v_TroponinI_first",
+    "v_TroponinI_min",
+    "v_TroponinI_max",
+    "v_TroponinI_mean",
+    "v_TroponinI_std",
+    "v_TroponinI_count",
+    "v_TroponinI_hrs_since_last",
+    "v_TroponinI_hrs_coverage",
+    "v_TroponinI_slope12h",
+    "v_TroponinT_last",
+    "v_TroponinT_first",
+    "v_TroponinT_min",
+    "v_TroponinT_max",
+    "v_TroponinT_mean",
+    "v_TroponinT_std",
+    "v_TroponinT_count",
+    "v_TroponinT_hrs_since_last",
+    "v_TroponinT_hrs_coverage",
+    "v_TroponinT_slope12h",
+    "e_map_min",
+    "e_map_n",
+    "e_map_frac_lt70",
+    "e_map_frac_lt65",
+    "e_gcs_min",
+    "e_sedation_suspected",
+    "e_mechvent_any",
+    "e_mechvent_hrs_since",
+    "e_weight_imputed",
+    "e_weight_used",
+    "e_urine_rate_24h",
+    "e_urine_sum_24h",
+    "e_pf_min",
+    "e_pf_n",
+    "sofa0_24_resp",
+    "sofa0_24_resp_present",
+    "sofa0_24_coag",
+    "sofa0_24_coag_present",
+    "sofa0_24_liver",
+    "sofa0_24_liver_present",
+    "sofa0_24_cardio",
+    "sofa0_24_cardio_present",
+    "sofa0_24_neuro",
+    "sofa0_24_neuro_present",
+    "sofa0_24_renal",
+    "sofa0_24_renal_present",
+    "sofa0_24_total",
+    "sofa0_24_n_present",
+    "sofa_now_resp",
+    "sofa_now_resp_present",
+    "sofa_now_coag",
+    "sofa_now_coag_present",
+    "sofa_now_liver",
+    "sofa_now_liver_present",
+    "sofa_now_cardio",
+    "sofa_now_cardio_present",
+    "sofa_now_neuro",
+    "sofa_now_neuro_present",
+    "sofa_now_renal",
+    "sofa_now_renal_present",
+    "sofa_now_total",
+    "sofa_now_n_present",
+    "d_age",
+    "d_gender",
+    "d_icutype",
+    "d_weight_adm",
+    "d_height"
+  ],
+  "families": {
+    "ordinal": {
+      "axis_params": {
+        "resp": {
+          "0": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        },
+        "coag": {
+          "0": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        },
+        "liver": {
+          "0": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        },
+        "cardio": {
+          "0": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        },
+        "neuro": {
+          "0": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        },
+        "renal": {
+          "0": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "1": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "2": {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          },
+          "3": {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42
+          }
+        }
+      },
+      "validation_grids": {
+        "resp": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9703572911336186
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9706010852458699
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9697864267024554
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9687913363779437
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9772352894590955
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9775426665082758
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9776664092816979
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.976396808426388
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.964546985223677
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.964801344232064
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9644097834215987
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9644616228934167
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9603198681573872
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9586540442346948
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9582645092420923
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9579377118564714
+            }
+          ]
+        },
+        "coag": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9930865359030088
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9931674126101367
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9929358317141387
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9927485382871056
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9933304819812889
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9934399045141656
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9934910676520361
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9934384151762482
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9960720148378706
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.996240788510599
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9965516873814142
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9865278636450849
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9976301589616451
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9979218317048272
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9870084098974283
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9184288561567253
+            }
+          ]
+        },
+        "liver": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9952647806822631
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9947266063280724
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9955373053552337
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9951638558033731
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9938140720696229
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9936699163484943
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9942514817148764
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9925726853739605
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9956253764965435
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9957648375956132
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9955905112217761
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9958665279803516
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9920376365843789
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.985871104815864
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9921160461351679
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9858609874544719
+            }
+          ]
+        },
+        "cardio": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9638305209270248
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.963237444450243
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9625585171860178
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9633957414325722
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": NaN
+            }
+          ]
+        },
+        "neuro": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.985998143160372
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9860568617284892
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9859986835152932
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9856841969510834
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9960374550390582
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9960027670124896
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9958934836695275
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9959561148286094
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9914571577335167
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9915238478417425
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9913208191472456
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9912785567212472
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9853440147884996
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9848725166544943
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9847086091725706
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9855018096985839
+            }
+          ]
+        },
+        "renal": {
+          "0": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9948904401133358
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9951638515952071
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9946922210906073
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9950988970109362
+            }
+          ],
+          "1": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9953807662678191
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.995028022983794
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9953982232085433
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9952698051466171
+            }
+          ],
+          "2": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9951539624824091
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9948792761727931
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9952948744870065
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9947993799871798
+            }
+          ],
+          "3": [
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9983397717295873
+            },
+            {
+              "learning_rate": 0.05,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.9983046532045654
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 31,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.998163301141352
+            },
+            {
+              "learning_rate": 0.1,
+              "max_leaf_nodes": 63,
+              "max_iter": 300,
+              "l2_regularization": 0.0,
+              "random_state": 42,
+              "val_auroc": 0.998297629499561
+            }
+          ]
+        }
+      }
+    },
+    "linear": {
+      "axis_params": {
+        "resp": {
+          "alpha": 10.0
+        },
+        "coag": {
+          "alpha": 10.0
+        },
+        "liver": {
+          "alpha": 10.0
+        },
+        "cardio": {
+          "alpha": 10.0
+        },
+        "neuro": {
+          "alpha": 10.0
+        },
+        "renal": {
+          "alpha": 10.0
+        }
+      },
+      "validation_grids": {
+        "resp": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.34327499984092635
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.3426023295237458
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.34077246244276127
+          }
+        ],
+        "coag": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.14296419305343153
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.14283381462188866
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.14221426256120467
+          }
+        ],
+        "liver": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.07032026488305175
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.06949017916777886
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.06814222849176414
+          }
+        ],
+        "cardio": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.1572277057691504
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.15709333735623096
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.1568611544747237
+          }
+        ],
+        "neuro": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.3783946640369889
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.378197854116513
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.3778509263758565
+          }
+        ],
+        "renal": [
+          {
+            "alpha": 0.1,
+            "val_mae": 0.14892579214928645
+          },
+          {
+            "alpha": 1.0,
+            "val_mae": 0.1487557182320598
+          },
+          {
+            "alpha": 10.0,
+            "val_mae": 0.1481676783339093
+          }
+        ]
+      },
+      "deterioration_params": {
+        "C": 0.1,
+        "class_weight": "balanced",
+        "max_iter": 2000
+      },
+      "deterioration_grid": [
+        {
+          "C": 0.1,
+          "class_weight": "balanced",
+          "max_iter": 2000,
+          "val_auprc": 0.19318259767616888
+        },
+        {
+          "C": 1.0,
+          "class_weight": "balanced",
+          "max_iter": 2000,
+          "val_auprc": 0.18644599368001163
+        },
+        {
+          "C": 10.0,
+          "class_weight": "balanced",
+          "max_iter": 2000,
+          "val_auprc": 0.18124541187724916
+        }
+      ]
+    },
+    "histgb": {
+      "axis_params": {
+        "resp": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "coag": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "liver": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "cardio": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "neuro": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "renal": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        }
+      },
+      "validation_grids": {
+        "resp": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.26538592893737106
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.27144807940972393
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.27048502354069254
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.2742801469809685
+          }
+        ],
+        "coag": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.08801773112156427
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.08704001239217644
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.0892940292107006
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.08873107712095425
+          }
+        ],
+        "liver": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.04741377133250908
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.05111559893422601
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.04957619176466858
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.05295399232581386
+          }
+        ],
+        "cardio": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.1237539637098315
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12310202805073442
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12438372141765283
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.1238078663779275
+          }
+        ],
+        "neuro": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.23591109435184765
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.23155558804612586
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.24044427935196197
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.23543568665456427
+          }
+        ],
+        "renal": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09895889660603957
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09662506316726682
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.10086251498401237
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09777042260780482
+          }
+        ]
+      },
+      "deterioration_params": {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "max_iter": 300,
+        "l2_regularization": 0.0,
+        "class_weight": "balanced",
+        "random_state": 42
+      },
+      "deterioration_grid": [
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "class_weight": "balanced",
+          "random_state": 42,
+          "val_auprc": 0.2780378820645012
+        },
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "class_weight": "balanced",
+          "random_state": 42,
+          "val_auprc": 0.2695724478451483
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "class_weight": "balanced",
+          "random_state": 42,
+          "val_auprc": 0.27544159268897983
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "class_weight": "balanced",
+          "random_state": 42,
+          "val_auprc": 0.25078473113783667
+        }
+      ]
+    },
+    "catboost": {
+      "axis_params": {
+        "resp": {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        },
+        "coag": {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        },
+        "liver": {
+          "learning_rate": 0.05,
+          "depth": 4,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        },
+        "cardio": {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        },
+        "neuro": {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        },
+        "renal": {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false
+        }
+      },
+      "deterioration_params": {
+        "learning_rate": 0.05,
+        "depth": 4,
+        "iterations": 300,
+        "random_seed": 42,
+        "verbose": false,
+        "auto_class_weights": "Balanced"
+      }
+    },
+    "lightgbm": {
+      "axis_params": {
+        "resp": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        },
+        "coag": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        },
+        "liver": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        },
+        "cardio": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        },
+        "neuro": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        },
+        "renal": {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "verbosity": -1
+        }
+      },
+      "deterioration_params": {
+        "learning_rate": 0.05,
+        "num_leaves": 63,
+        "n_estimators": 300,
+        "random_state": 42,
+        "verbosity": -1,
+        "class_weight": "balanced"
+      }
+    },
+    "histgb_absolute": {
+      "axis_params": {
+        "resp": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "coag": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "liver": {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "cardio": {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "neuro": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        },
+        "renal": {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 63,
+          "max_iter": 300,
+          "l2_regularization": 0.0,
+          "random_state": 42
+        }
+      },
+      "validation_grids": {
+        "resp": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.2961145216166181
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.29605668284783476
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.2969731151494231
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.2985730836550708
+          }
+        ],
+        "coag": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09770421962602788
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09676610560714365
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.09857873330184992
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.0969142772232583
+          }
+        ],
+        "liver": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.07239713207971768
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.0745973594551846
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.07205575201795424
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.07457384065623542
+          }
+        ],
+        "cardio": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12632247276111308
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12691012751203007
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12659082094600074
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.12485892757440639
+          }
+        ],
+        "neuro": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.24861883125158568
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.24540357305248287
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.25085172808037903
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.2464206097717496
+          }
+        ],
+        "renal": [
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.11299943179730321
+          },
+          {
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.11021094059438007
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 31,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.1100880845860977
+          },
+          {
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
+            "max_iter": 300,
+            "l2_regularization": 0.0,
+            "random_state": 42,
+            "val_mae": 0.10948829616671517
+          }
+        ]
+      }
+    }
+  }
+}

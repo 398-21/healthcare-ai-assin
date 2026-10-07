@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "decision": "GO_TO_MODELING_AFTER_TEAM_ACCEPTS_TASK_DEFINITION",
+  "task_definition": "Predict final In-hospital_death at the 48-hour landmark",
+  "primary_time_rule": "0 <= elapsed_minutes < 2880",
+  "source": {
+    "record_files": 11833,
+    "outcome_rows": 11833,
+    "raw_record_rows": 5232974,
+    "death_count": 1707,
+    "death_prevalence": 0.14425758472069636
+  },
+  "output": {
+    "feature_rows": 11833,
+    "model_feature_columns": 1474,
+    "unimputed_missing_cells": 4436599,
+    "imputed_missing_cells": 0,
+    "all_missing_in_train_columns": 0,
+    "boundary_sensitivity_rows": 232,
+    "feature_schema_sha256": "4f8f9bee69f1a74e94415e724b6d71438ee0d352ffdfb97175b780b7196be514"
+  },
+  "audits": {
+    "after_48h_rows": 0,
+    "conflicting_time_parameter_extra_values": 11393,
+    "conflicting_time_parameter_keys": 11304,
+    "empty_parameter_rows": 2376,
+    "exact_48h_rows": 1399,
+    "exact_duplicate_rows": 0,
+    "filename_recordid_mismatch": 0,
+    "invalid_numeric_rows": 0,
+    "invalid_time_rows": 0,
+    "negative_time_rows": 0,
+    "primary_conflicting_time_parameter_extra_values": 11392,
+    "primary_conflicting_time_parameter_keys": 11303,
+    "raw_rows": 5232974,
+    "sentinel_rows": 15000,
+    "static_conflict_parameters": 2,
+    "unknown_parameter_rows": 0,
+    "valid_dynamic_rows_excluding_time0_weight": 5151245,
+    "valid_dynamic_rows_including_time0_weight": 5162110
+  },
+  "unknown_parameters": {},
+  "split_summary": [
+    {
+      "split": "train",
+      "rows": 8283,
+      "deaths": 1195,
+      "survivors": 7088,
+      "death_prevalence": 0.14427139925147894
+    },
+    {
+      "split": "validation",
+      "rows": 1775,
+      "deaths": 256,
+      "survivors": 1519,
+      "death_prevalence": 0.14422535211267606
+    },
+    {
+      "split": "test",
+      "rows": 1775,
+      "deaths": 256,
+      "survivors": 1519,
+      "death_prevalence": 0.14422535211267606
+    }
+  ],
+  "qa": {
+    "feature_row_count_matches_outcomes": true,
+    "record_id_unique": true,
+    "record_id_sets_match": true,
+    "split_disjoint": true,
+    "split_union_complete": true,
+    "label_binary_complete": true,
+    "leakage_feature_hits": [],
+    "imputed_no_missing": true,
+    "imputed_all_finite": true,
+    "primary_excludes_48h": true
+  },
+  "policies": {
+    "missing": "-1 -> missing; absent summaries stay missing before train-only imputation",
+    "duplicates": "Audit exact duplicates/conflicts; collapse same-time dynamic continuous values by median, MechVent by maximum, and Urine by sum before longitudinal summaries",
+    "outliers": "No clinical clipping or deletion; retain finite values and report ranges",
+    "scaling": "None; model-specific scaling must be fit inside training data later",
+    "leakage": "Only In-hospital_death is exported as y; all other outcome columns are excluded from X"
+  },
+  "runtime": {
+    "python": "3.11.7",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "pandas": "2.1.4",
+    "numpy": "1.26.4",
+    "elapsed_seconds": 686.0957650829987
+  },
+  "outputs": {
+    "preprocessing/outputs/patient_features_unimputed.csv.gz": {
+      "bytes": 18685907,
+      "sha256": "30576b9f43ec7cc88771e356a7243fee1cb4807a054eba07f616125ebdf9fdc4"
+    },
+    "preprocessing/outputs/patient_features_48h_inclusive_affected_rows.csv.gz": {
+      "bytes": 388124,
+      "sha256": "fb0ae011e135273ed3cff38dacd9096fb0c5fb704f6c5b21e9c29e6dd92f5909"
+    },
+    "preprocessing/outputs/labels_and_splits.csv": {
+      "bytes": 184628,
+      "sha256": "2e22faed417c52c0f15af6cbb5de772488ed5c5a878c112b2ee585fc67af3d70"
+    },
+    "preprocessing/outputs/X_train_imputed.csv.gz": {
+      "bytes": 14374718,
+      "sha256": "51987da6cc6d162c49343bf540e5d3b989af64ad5c639a5fbeec910324a5b62c"
+    },
+    "preprocessing/outputs/X_validation_imputed.csv.gz": {
+      "bytes": 3097470,
+      "sha256": "6e390b8f483d2ecf6807f826509281f163ee94c35eeb7e23253aa77039ad5b64"
+    },
+    "preprocessing/outputs/X_test_imputed.csv.gz": {
+      "bytes": 3089933,
+      "sha256": "bf7d718edf36363f17397835c046d6a82159d38136ecc3b2efa1766dbcd3d4f8"
+    },
+    "preprocessing/outputs/feature_dictionary.csv": {
+      "bytes": 583703,
+      "sha256": "e4c54255e0e71cdaecca7f6ffdcd78611ecff854f9e459f158210af1e8c3e239"
+    },
+    "preprocessing/outputs/quality_flags_by_stay.csv": {
+      "bytes": 580885,
+      "sha256": "c97c0af09ada89deab41fdb9a0b2ba7363cce419ca175d55835c9faba2f91507"
+    },
+    "preprocessing/outputs/feature_missingness.csv": {
+      "bytes": 86072,
+      "sha256": "536a3be5c4fa9bfe9e49702fa3b55e9bbd6a724135508e00ac73eb2d50913d49"
+    },
+    "preprocessing/outputs/parameter_distributions.csv": {
+      "bytes": 2633,
+      "sha256": "2a9e871a6865a00f0ac1215761ed464b7e95d5af24adefbb31d1d76def07bd9b"
+    },
+    "preprocessing/outputs/split_summary.csv": {
+      "bytes": 170,
+      "sha256": "da57928cf7c9cc73a4c5d4a8ecfadb368f588f4d3408183feee4895d0c1c6847"
+    },
+    "preprocessing/outputs/preprocessing_state.json": {
+      "bytes": 101416,
+      "sha256": "ddbcd7cad9650699cc666d4c02a371cf94106983fed59d238a6de3852d8aaaf5"
+    }
+  },
+  "remaining_team_decisions": [
+    "Confirm the landmark task: use first 48 hours to predict final in-hospital death.",
+    "Have a medical reviewer approve any future physiological range rules; none were applied here.",
+    "Choose model-specific scaling/selection inside training folds; this preprocessing does not train a model.",
+    "Patient-level repeat admissions cannot be checked because only stay-level RecordID is available."
+  ]
+}

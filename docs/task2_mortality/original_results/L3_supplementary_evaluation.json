@@ -1,0 +1,58 @@
+{
+  "supplementary_evaluation_date": "2026-09-24",
+  "reason": "Workflow phase 3 'Evaluate Performance' was skipped; this fills the gaps",
+  "performance_by_split": {
+    "train": {
+      "auroc": 0.7334195575998564,
+      "auprc": 0.33402709811459935
+    },
+    "validation": {
+      "auroc": 0.7217099037195523,
+      "auprc": 0.30627925608242174
+    },
+    "test": {
+      "auroc": 0.741673181369322,
+      "auprc": 0.3945133131862661
+    }
+  },
+  "overfitting_check": {
+    "train_val_auroc_gap": 0.011709653880304094,
+    "interpretation": "Gap < 0.05 suggests no severe overfitting"
+  },
+  "l3_vs_l2_comparison": {
+    "vs_saps_i": {
+      "n": 1728,
+      "saps_i_auroc": 0.6399149242770643,
+      "l3_auroc": 0.7427166036219535,
+      "improvement_absolute": 0.10280167934488915,
+      "improvement_relative_pct": 16.06489791764554,
+      "l3_ci": [
+        0.709882570561583,
+        0.7735905696193762
+      ],
+      "saps_i_ci": [
+        0.6014868853140457,
+        0.6758908702941625
+      ],
+      "ci_overlap": false,
+      "statistically_significant": true
+    },
+    "vs_sofa": {
+      "n": 1733,
+      "sofa_auroc": 0.6230634189159535,
+      "l3_auroc": 0.7483432082510424,
+      "improvement_absolute": 0.12527978933508888,
+      "improvement_relative_pct": 20.10706864367977,
+      "l3_ci": [
+        0.7180407203203862,
+        0.7817626042352426
+      ],
+      "sofa_ci": [
+        0.5858187266842221,
+        0.6595043682795699
+      ],
+      "ci_overlap": false,
+      "statistically_significant": true
+    }
+  }
+}

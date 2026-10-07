@@ -1,0 +1,18 @@
+{
+  "model": "L0_random_baseline",
+  "description": "Random uniform [0,1] scores - no-skill floor",
+  "test_samples": 1775,
+  "prevalence": 0.14422535211267606,
+  "auprc": 0.1350539251480393,
+  "auprc_ci": [
+    0.12446939755447557,
+    0.15146482470939163
+  ],
+  "auroc": 0.4744820811389072,
+  "auroc_ci": [
+    0.4362688497778143,
+    0.513131068959842
+  ],
+  "theoretical_auprc": 0.14422535211267606,
+  "theoretical_auroc": 0.5
+}

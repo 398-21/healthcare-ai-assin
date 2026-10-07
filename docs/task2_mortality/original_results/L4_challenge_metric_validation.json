@@ -1,0 +1,34 @@
+{
+  "dataset": "validation",
+  "recall_0.80_operating_point": {
+    "threshold": 0.10822707414627075,
+    "sensitivity": 0.80078125,
+    "ppv": 0.37822878228782286,
+    "specificity": 0.7781435154707044,
+    "min_se_ppv": 0.37822878228782286
+  },
+  "metric_optimal_operating_point": {
+    "threshold": 0.3448743718592965,
+    "sensitivity": 0.51953125,
+    "ppv": 0.5175097276264592,
+    "specificity": 0.9183673469387755,
+    "min_se_ppv": 0.5175097276264592
+  },
+  "gain_from_re_thresholding": {
+    "absolute": 0.13928094533863633,
+    "sensitivity_trade": 0.28125,
+    "ppv_gain": 0.13928094533863633
+  },
+  "test_frozen_at_recall_0.80": {
+    "threshold": 0.10822707414627075,
+    "min_se_ppv": 0.3872832369942196,
+    "note": "Test was not re-scored at metric-optimal threshold; that would be a second look."
+  },
+  "physionet_2012_reference": {
+    "random": 0.139,
+    "saps_i_baseline": 0.313,
+    "winner": 0.535,
+    "our_metric_optimal_validation": 0.5175097276264592,
+    "note": "Different test sets; comparison is approximate."
+  }
+}

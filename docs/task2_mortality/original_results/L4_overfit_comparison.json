@@ -1,0 +1,38 @@
+{
+  "xgboost": {
+    "trees_used": 300,
+    "trees_configured": 300,
+    "early_stopping_in_final_fit": false,
+    "train": {
+      "auprc": 1.0,
+      "auroc": 1.0
+    },
+    "validation": {
+      "auprc": 0.5379533228948855,
+      "auroc": 0.8663645901909152
+    },
+    "train_min_score_among_deaths": 0.8558816909790039,
+    "train_max_score_among_survivors": 0.3626498281955719,
+    "train_val_auroc_gap": 0.13363540980908484,
+    "train_perfectly_separated": true
+  },
+  "catboost": {
+    "trees_used": 224,
+    "trees_configured": 2000,
+    "early_stopping_in_final_fit": true,
+    "early_stopping_rounds": 50,
+    "train": {
+      "auprc": 0.8263819965126606,
+      "auroc": 0.9570006942017623
+    },
+    "validation": {
+      "auprc": 0.5052381541442376,
+      "auroc": 0.859717021889401
+    },
+    "train_min_score_among_deaths": 0.09252788639888479,
+    "train_max_score_among_survivors": 0.9146843659261356,
+    "train_val_auroc_gap": 0.09728367231236124,
+    "train_perfectly_separated": false
+  },
+  "_note": "Train/validation only. Test not scored for either model here. perfect-sep = every training death scored above every training survivor."
+}

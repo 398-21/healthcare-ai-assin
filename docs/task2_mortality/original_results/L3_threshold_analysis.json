@@ -1,0 +1,33 @@
+{
+  "model": "L3_logistic_regression_threshold_analysis",
+  "description": "Threshold analysis: find optimal threshold on validation, evaluate on test",
+  "target_recall": 0.8,
+  "rationale": "Missing a death (FN) costs far more than unnecessary review (FP), so we target high recall",
+  "validation_recall_achieved": 0.80078125,
+  "selected_threshold": 0.42035608650468786,
+  "test_metrics_at_threshold": {
+    "n_samples": 1775,
+    "sensitivity": 0.796875,
+    "ppv": 0.22006472491909385,
+    "specificity": 0.5240289664252797,
+    "min_se_ppv": 0.22006472491909385
+  },
+  "clinical_baselines": {
+    "saps_i": {
+      "threshold": 13.0,
+      "n_samples": 1728,
+      "sensitivity": 0.8189300411522634,
+      "ppv": 0.17052270779777207,
+      "specificity": 0.34814814814814815,
+      "min_se_ppv": 0.17052270779777207
+    },
+    "sofa": {
+      "threshold": 5.0,
+      "n_samples": 1733,
+      "sensitivity": 0.8204081632653061,
+      "ppv": 0.17106382978723406,
+      "specificity": 0.34543010752688175,
+      "min_se_ppv": 0.17106382978723406
+    }
+  }
+}

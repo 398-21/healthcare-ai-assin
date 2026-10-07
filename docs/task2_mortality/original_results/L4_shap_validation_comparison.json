@@ -1,0 +1,245 @@
+{
+  "dataset": "validation",
+  "top_k": 20,
+  "xgboost_top20": [
+    {
+      "feature": "gcs__0_48h__last",
+      "mean_abs_shap": 0.6928930878639221,
+      "rank": 1
+    },
+    {
+      "feature": "static_age_years",
+      "mean_abs_shap": 0.25227558612823486,
+      "rank": 2
+    },
+    {
+      "feature": "urine__0_48h__total",
+      "mean_abs_shap": 0.13991114497184753,
+      "rank": 3
+    },
+    {
+      "feature": "wbc__0_48h__slope_per_hour",
+      "mean_abs_shap": 0.10233694314956665,
+      "rank": 4
+    },
+    {
+      "feature": "gcs__24_48h__last",
+      "mean_abs_shap": 0.09754031896591187,
+      "rank": 5
+    },
+    {
+      "feature": "bun__0_48h__min",
+      "mean_abs_shap": 0.08633451908826828,
+      "rank": 6
+    },
+    {
+      "feature": "mechvent__0_48h__time_span_hours",
+      "mean_abs_shap": 0.08527885377407074,
+      "rank": 7
+    },
+    {
+      "feature": "urine__24_48h__total",
+      "mean_abs_shap": 0.08248689770698547,
+      "rank": 8
+    },
+    {
+      "feature": "static_icutype_2",
+      "mean_abs_shap": 0.08173209428787231,
+      "rank": 9
+    },
+    {
+      "feature": "gcs__24_48h__median",
+      "mean_abs_shap": 0.08143184334039688,
+      "rank": 10
+    },
+    {
+      "feature": "bun__24_48h__last",
+      "mean_abs_shap": 0.0785594955086708,
+      "rank": 11
+    },
+    {
+      "feature": "gcs__24_48h__max",
+      "mean_abs_shap": 0.07551765441894531,
+      "rank": 12
+    },
+    {
+      "feature": "gcs__0_48h__slope_per_hour",
+      "mean_abs_shap": 0.07058273255825043,
+      "rank": 13
+    },
+    {
+      "feature": "gcs__24_48h__mean",
+      "mean_abs_shap": 0.061628859490156174,
+      "rank": 14
+    },
+    {
+      "feature": "lactate__0_48h__last",
+      "mean_abs_shap": 0.05607127770781517,
+      "rank": 15
+    },
+    {
+      "feature": "gcs__0_48h__std",
+      "mean_abs_shap": 0.05432887002825737,
+      "rank": 16
+    },
+    {
+      "feature": "wbc__0_48h__std",
+      "mean_abs_shap": 0.053953178226947784,
+      "rank": 17
+    },
+    {
+      "feature": "hr__0_24h__max",
+      "mean_abs_shap": 0.05304977670311928,
+      "rank": 18
+    },
+    {
+      "feature": "hct__24_48h__time_span_hours",
+      "mean_abs_shap": 0.0526416152715683,
+      "rank": 19
+    },
+    {
+      "feature": "mg__0_48h__std",
+      "mean_abs_shap": 0.0519009567797184,
+      "rank": 20
+    }
+  ],
+  "catboost_top20": [
+    {
+      "feature": "gcs__0_48h__last",
+      "mean_abs_shap": 0.43932448126304185,
+      "rank": 1
+    },
+    {
+      "feature": "static_age_years",
+      "mean_abs_shap": 0.20901129088050077,
+      "rank": 2
+    },
+    {
+      "feature": "urine__0_48h__total",
+      "mean_abs_shap": 0.0995179415082818,
+      "rank": 3
+    },
+    {
+      "feature": "bun__0_48h__min",
+      "mean_abs_shap": 0.09587720156601455,
+      "rank": 4
+    },
+    {
+      "feature": "gcs__24_48h__max",
+      "mean_abs_shap": 0.08593561349730804,
+      "rank": 5
+    },
+    {
+      "feature": "static_icutype_2",
+      "mean_abs_shap": 0.08293445177752155,
+      "rank": 6
+    },
+    {
+      "feature": "gcs__0_48h__slope_per_hour",
+      "mean_abs_shap": 0.06980285678564681,
+      "rank": 7
+    },
+    {
+      "feature": "urine__0_48h__mean",
+      "mean_abs_shap": 0.06434038447154942,
+      "rank": 8
+    },
+    {
+      "feature": "bun__0_48h__last",
+      "mean_abs_shap": 0.06397170545274751,
+      "rank": 9
+    },
+    {
+      "feature": "gcs__0_48h__std",
+      "mean_abs_shap": 0.06076652529128001,
+      "rank": 10
+    },
+    {
+      "feature": "gcs__24_48h__mean",
+      "mean_abs_shap": 0.05941476140690931,
+      "rank": 11
+    },
+    {
+      "feature": "gcs__24_48h__median",
+      "mean_abs_shap": 0.05352241666790385,
+      "rank": 12
+    },
+    {
+      "feature": "urine__0_48h__median",
+      "mean_abs_shap": 0.046310790062927695,
+      "rank": 13
+    },
+    {
+      "feature": "temp__24_48h__median",
+      "mean_abs_shap": 0.04401871203519748,
+      "rank": 14
+    },
+    {
+      "feature": "lactate__0_48h__last",
+      "mean_abs_shap": 0.04300304933361268,
+      "rank": 15
+    },
+    {
+      "feature": "gcs__24_48h__last",
+      "mean_abs_shap": 0.04285850031157428,
+      "rank": 16
+    },
+    {
+      "feature": "urine__0_48h__last",
+      "mean_abs_shap": 0.040650583957976084,
+      "rank": 17
+    },
+    {
+      "feature": "gcs__0_48h__delta",
+      "mean_abs_shap": 0.03830357957235399,
+      "rank": 18
+    },
+    {
+      "feature": "bun__24_48h__max",
+      "mean_abs_shap": 0.034557224598071,
+      "rank": 19
+    },
+    {
+      "feature": "resprate__0_48h__slope_per_hour",
+      "mean_abs_shap": 0.034140958527162805,
+      "rank": 20
+    }
+  ],
+  "top20_overlap_count": 12,
+  "top20_overlap_features": [
+    "gcs__0_48h__last",
+    "static_age_years",
+    "urine__0_48h__total",
+    "gcs__24_48h__last",
+    "bun__0_48h__min",
+    "static_icutype_2",
+    "gcs__24_48h__median",
+    "gcs__24_48h__max",
+    "gcs__0_48h__slope_per_hour",
+    "gcs__24_48h__mean",
+    "lactate__0_48h__last",
+    "gcs__0_48h__std"
+  ],
+  "key_feature_ranks": {
+    "gcs__0_48h__last": {
+      "xgboost": 1,
+      "catboost": 1
+    },
+    "static_age_years": {
+      "xgboost": 2,
+      "catboost": 2
+    },
+    "urine__0_48h__total": {
+      "xgboost": 3,
+      "catboost": 3
+    },
+    "gcs__0_48h__min": {
+      "xgboost": 326,
+      "catboost": 170
+    }
+  },
+  "rank1_to_rank2_ratio": {
+    "xgboost": 2.746572105917993,
+    "catboost": 2.1019174582019082
+  }
+}

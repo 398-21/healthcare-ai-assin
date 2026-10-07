@@ -1,0 +1,84 @@
+{
+  "analysis_date": "2026-09-23",
+  "data_source": "/mnt/d/personal_Profiles/files/NTU\u5b66\u7cfb\u8d44\u6599/Trimester1/Machine Learning for Healthcare AI/Group_project/experiment/data/labels_and_baselines.csv",
+  "saps_i_results": {
+    "score_name": "SAPS-I",
+    "total_test_rows": 1775,
+    "minus_one_count": 47,
+    "minus_one_percentage": 2.647887323943662,
+    "available_count": 1728,
+    "overall_mortality_rate": 0.14422535211267606,
+    "minus_one_mortality_rate": 0.2765957446808511,
+    "available_mortality_rate": 0.140625,
+    "full_test_metrics": {
+      "scenario": "keep_-1_as_numeric",
+      "n": 1775,
+      "auroc": 0.6156381151250825,
+      "auprc": 0.2090853507636934
+    },
+    "available_only_metrics": {
+      "scenario": "exclude_-1_rows",
+      "n": 1728,
+      "auroc": 0.6399149242770643,
+      "auprc": 0.2125552272347355
+    },
+    "median_replacement_metrics": {
+      "scenario": "replace_-1_with_median",
+      "n": 1775,
+      "median_value": 15.0,
+      "auroc": 0.6342988808426596,
+      "auprc": 0.21257704870886773
+    },
+    "auroc_impact": 0.024276809151981826,
+    "auprc_impact": 0.003469876471042105
+  },
+  "sofa_results": {
+    "score_name": "SOFA",
+    "total_test_rows": 1775,
+    "minus_one_count": 42,
+    "minus_one_percentage": 2.3661971830985915,
+    "available_count": 1733,
+    "overall_mortality_rate": 0.14422535211267606,
+    "minus_one_mortality_rate": 0.2619047619047619,
+    "available_mortality_rate": 0.1413733410271206,
+    "full_test_metrics": {
+      "scenario": "keep_-1_as_numeric",
+      "n": 1775,
+      "auroc": 0.6040916618663594,
+      "auprc": 0.2480331439488929
+    },
+    "available_only_metrics": {
+      "scenario": "exclude_-1_rows",
+      "n": 1733,
+      "auroc": 0.6230634189159535,
+      "auprc": 0.25269390194970265
+    },
+    "median_replacement_metrics": {
+      "scenario": "replace_-1_with_median",
+      "n": 1775,
+      "median_value": 7.0,
+      "auroc": 0.6190956221198156,
+      "auprc": 0.2512031930740596
+    },
+    "auroc_impact": 0.018971757049594085,
+    "auprc_impact": 0.004660758000809756
+  },
+  "recommendation": {
+    "summary": "Report baseline on score-available subset, evaluate model on same subset for head-to-head comparison",
+    "rationale": [
+      "The -1 sentinel (not computable) indicates missing data, not a score of -1",
+      "SAPS-I: 47 rows (2.65%) have -1, with 27.7% mortality vs 14.1% for available",
+      "SOFA: 42 rows (2.37%) have -1, with 26.2% mortality vs 14.1% for available",
+      "Keeping -1 as numeric inverts risk (high-risk patients scored as lowest risk)",
+      "Excluding -1 rows recovers 0.0243 AUROC and 0.0035 AUPRC for SAPS-I",
+      "Excluding -1 rows recovers 0.0190 AUROC and 0.0047 AUPRC for SOFA",
+      "Median replacement is better than keeping -1 but still biases comparison toward the model"
+    ],
+    "reporting_protocol": {
+      "for_clinical_baselines": "Report AUROC/AUPRC on score-available subset only (SAPS-I n=1728, SOFA n=1733)",
+      "for_ml_model_comparison": "Evaluate model on same score-available subset for fair head-to-head comparison",
+      "for_ml_model_full_test": "Also report model performance on full test set (n=1775) with clear denominator",
+      "always_specify": "Always name the denominator (n=1728 for SAPS-I subset, n=1733 for SOFA subset, n=1775 for full test)"
+    }
+  }
+}

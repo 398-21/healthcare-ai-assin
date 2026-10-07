@@ -1,0 +1,113 @@
+{
+  "model": "L3_logistic_regression_8features",
+  "description": "Logistic regression with 8 hand-selected features (clinical rationale)",
+  "n_features": 8,
+  "features": [
+    "bun__0_48h__max",
+    "static_age_years",
+    "gcs__0_48h__min",
+    "urine__0_48h__min",
+    "lactate__0_48h__max",
+    "platelets__0_48h__min",
+    "creatinine__0_48h__max",
+    "lactate__0_48h__measured"
+  ],
+  "clinical_rationale": {
+    "bun__0_48h__max": {
+      "domain": "Renal",
+      "sofa_alignment": "SOFA renal component",
+      "rationale": "Blood urea nitrogen elevation indicates renal dysfunction and catabolic state. Best L1 single variable (AUROC=0.675)",
+      "direction": "Higher BUN \u2192 higher mortality risk"
+    },
+    "static_age_years": {
+      "domain": "Demographic",
+      "sofa_alignment": "Risk stratification baseline",
+      "rationale": "Age is strongest demographic predictor of ICU mortality, captures physiologic reserve. L1 AUROC=0.627",
+      "direction": "Older age \u2192 higher mortality risk"
+    },
+    "gcs__0_48h__min": {
+      "domain": "CNS",
+      "sofa_alignment": "SOFA neurological component",
+      "rationale": "Glasgow Coma Scale minimum captures worst neurological status. Core ICU assessment, directly used in SOFA",
+      "direction": "Lower GCS \u2192 higher mortality risk (worse consciousness)"
+    },
+    "urine__0_48h__min": {
+      "domain": "Renal",
+      "sofa_alignment": "SOFA renal component",
+      "rationale": "Minimum urine output captures worst oliguria episode. Oliguria/anuria is strong mortality signal (\u5b9e\u9a8c\u65b9\u6848 \u00a73: Urine=0 is real, not missing)",
+      "direction": "Lower urine output \u2192 higher mortality risk"
+    },
+    "lactate__0_48h__max": {
+      "domain": "Cardiovascular / Perfusion",
+      "sofa_alignment": "SOFA cardiovascular proxy",
+      "rationale": "Peak lactate indicates tissue hypoperfusion and anaerobic metabolism. Gold standard shock marker, predicts multiple organ failure",
+      "direction": "Higher lactate \u2192 higher mortality risk (shock/hypoperfusion)"
+    },
+    "platelets__0_48h__min": {
+      "domain": "Coagulation",
+      "sofa_alignment": "SOFA coagulation component",
+      "rationale": "Minimum platelet count captures worst coagulopathy. Thrombocytopenia indicates consumption, DIC, or bone marrow failure",
+      "direction": "Lower platelets \u2192 higher mortality risk"
+    },
+    "creatinine__0_48h__max": {
+      "domain": "Renal",
+      "sofa_alignment": "SOFA renal component",
+      "rationale": "Peak creatinine is standard AKI marker. Complements BUN with different kinetics (less affected by catabolic state)",
+      "direction": "Higher creatinine \u2192 higher mortality risk (AKI)"
+    },
+    "lactate__0_48h__measured": {
+      "domain": "Measurement behavior",
+      "sofa_alignment": "Physician decision signal",
+      "rationale": "Whether lactate was ordered reflects physician concern. Measurement behavior captures severity beyond values (\u5b9e\u9a8c\u65b9\u6848 \u00a73, \u00a78: \"\u7f3a\u5931\u5373\u4fe1\u606f\")",
+      "direction": "Lactate measured \u2192 physician suspected shock \u2192 higher risk"
+    }
+  },
+  "organ_systems_covered": [
+    "CNS",
+    "Cardiovascular / Perfusion",
+    "Coagulation",
+    "Demographic",
+    "Measurement behavior",
+    "Renal"
+  ],
+  "imputation": {
+    "method": "median",
+    "values": {}
+  },
+  "regularization": {
+    "penalty": "l2",
+    "C": 1.0,
+    "class_weight": "balanced"
+  },
+  "feature_coefficients": {
+    "bun__0_48h__max": 0.5621247532567277,
+    "static_age_years": 0.32362489976043984,
+    "gcs__0_48h__min": -0.25777167575965204,
+    "urine__0_48h__min": -0.31175015493393793,
+    "lactate__0_48h__max": 0.3023189196926395,
+    "platelets__0_48h__min": 0.06931690312190009,
+    "creatinine__0_48h__max": -0.17642427190182886,
+    "lactate__0_48h__measured": 0.20657928260647682
+  },
+  "threshold": {
+    "value": 0.42035608650468786,
+    "selection_method": "target_recall_0.80_on_validation"
+  },
+  "test_samples": 1775,
+  "prevalence": 0.14422535211267606,
+  "auroc": 0.741673181369322,
+  "auroc_ci": [
+    0.7075,
+    0.774
+  ],
+  "auprc": 0.3945133131862661,
+  "auprc_ci": [
+    0.343,
+    0.4546
+  ],
+  "sensitivity": 0.796875,
+  "ppv": 0.22006472491909385,
+  "specificity": 0.5240289664252797,
+  "min_se_ppv": 0.22006472491909385,
+  "_note_ci_fix": "CI corrected 2026-09-25. Original run_L3_logistic_regression.py unpacked bootstrap_ci as [point, low]. Values here reproduce via run_L3_supplementary_evaluation.py (same features/C/class_weight/median-impute/scaler, metrics.bootstrap_ci seed 42). An interim patch on 2026-09-24 wrote 0.7755/0.4598 copied from the stage-2 doc; superseded."
+}

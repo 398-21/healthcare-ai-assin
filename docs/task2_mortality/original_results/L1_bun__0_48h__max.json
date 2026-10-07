@@ -1,0 +1,21 @@
+{
+  "model": "L1_bun__0_48h__max",
+  "description": "Single feature baseline: bun__0_48h__max with median imputation",
+  "feature": "bun__0_48h__max",
+  "imputation": "median",
+  "imputation_value": 22.0,
+  "missing_fraction_train": 0.0025353132922854038,
+  "missing_fraction_test": 0.0022535211267605635,
+  "test_samples": 1775,
+  "prevalence": 0.14422535211267606,
+  "auprc": 0.26538659863764946,
+  "auprc_ci": [
+    0.23077217065394726,
+    0.3098108507330723
+  ],
+  "auroc": 0.6749699123601053,
+  "auroc_ci": [
+    0.635151171103522,
+    0.7095427643083443
+  ]
+}

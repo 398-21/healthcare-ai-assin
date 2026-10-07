@@ -1,0 +1,100 @@
+{
+  "model": "L3_revised_logistic_8features",
+  "declaration": "Feature set fixed before first execution; variant E of run_L3_gcs_statistic_ablation.py, selected on train+validation only. Test scored once in this run. Original L3 rung is retained, not replaced.",
+  "features": [
+    "bun__0_48h__max",
+    "static_age_years",
+    "gcs__0_48h__last",
+    "urine__0_48h__total",
+    "lactate__0_48h__max",
+    "platelets__0_48h__min",
+    "creatinine__0_48h__max",
+    "lactate__0_48h__measured"
+  ],
+  "features_original_l3": [
+    "bun__0_48h__max",
+    "static_age_years",
+    "gcs__0_48h__min",
+    "urine__0_48h__min",
+    "lactate__0_48h__max",
+    "platelets__0_48h__min",
+    "creatinine__0_48h__max",
+    "lactate__0_48h__measured"
+  ],
+  "statistic_swaps": {
+    "gcs__0_48h__min": "gcs__0_48h__last",
+    "urine__0_48h__min": "urine__0_48h__total"
+  },
+  "recipe": {
+    "penalty": "l2",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "scaler": "StandardScaler fit on train only",
+    "imputation": "train-median (pre-imputed matrices)"
+  },
+  "coefficients": {
+    "bun__0_48h__max": 0.5260580375237274,
+    "static_age_years": 0.33085271591594767,
+    "gcs__0_48h__last": -0.9160764471778484,
+    "urine__0_48h__total": -0.3698092736889761,
+    "lactate__0_48h__max": 0.1465039639175128,
+    "platelets__0_48h__min": 0.022863171429623456,
+    "creatinine__0_48h__max": -0.23781226065827885,
+    "lactate__0_48h__measured": 0.053305882440904694
+  },
+  "intercept": -0.5144304306226125,
+  "train": {
+    "auroc": 0.8191877131010512,
+    "auprc": 0.4697290542540245
+  },
+  "validation": {
+    "auroc": 0.8081488643844634,
+    "auprc": 0.4373543572554923
+  },
+  "threshold": {
+    "value": 0.3950957024424901,
+    "selection": "validation recall 0.80",
+    "validation_recall_achieved": 0.80078125
+  },
+  "test": {
+    "n": 1775,
+    "prevalence": 0.14422535211267606,
+    "auroc": 0.8207059537524688,
+    "auroc_ci": [
+      0.7932303453135287,
+      0.8459352755719222
+    ],
+    "auprc": 0.5002403983152315,
+    "auprc_ci": [
+      0.4446835816414736,
+      0.5559807606875902
+    ],
+    "sensitivity": 0.83984375,
+    "ppv": 0.29737206085753803,
+    "specificity": 0.6655694535878868,
+    "min_se_ppv": 0.29737206085753803
+  },
+  "comparisons": {
+    "vs_l3_original": {
+      "their_auroc": 0.7417,
+      "their_ci": [
+        0.7075,
+        0.774
+      ],
+      "delta": 0.07900595375246877,
+      "ci_overlap": false
+    },
+    "vs_l4_xgboost": {
+      "their_auroc": 0.8849,
+      "their_ci": [
+        0.8653,
+        0.9031
+      ],
+      "delta": -0.06419404624753122,
+      "ci_overlap": false
+    }
+  },
+  "overfitting": {
+    "train_val_auroc_gap": 0.011038848716587779
+  }
+}
