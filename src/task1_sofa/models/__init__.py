@@ -26,7 +26,8 @@ predict_axis_scores, predict_deterioration, REGRESSOR_GRID, CLASSIFIER_GRID).
 `histgb_absolute` is not a sixth headline family but a controlled ablation (HistGB predicting
 the absolute score instead of the delta) used to separate ordinal's two differences from HistGB.
 """
-from .common import AXES, axis_frame, deterioration_frame, feature_columns
+from .common import (AXES, IMBALANCE_STRATEGIES, PROTECTED, axis_frame, deterioration_frame,
+                     feature_columns, feature_filter)
 from .histgb import (
     CLASSIFIER_GRID,
     REGRESSOR_GRID,

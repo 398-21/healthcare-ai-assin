@@ -109,3 +109,21 @@ def _load_feature_names() -> list[str]:
         header = f.readline().strip()
         cols = header.split(",")
     return cols[1:]  # Exclude RecordID
+
+
+DERIVED_CSV = DATA_DIR / "derived_features.csv.gz"   # written by derived_features.py (v2)
+
+
+def load_model_matrix(include_derived: bool = True) -> pd.DataFrame:
+    """RecordID + the unimputed base features (+ the clinically derived v2 features).
+
+    NaN is kept: the tree models route it natively, and the linear models impute inside
+    their pipelines, fitted on the training rows only."""
+    _, X_unimputed, _ = load_data()
+    if not include_derived:
+        return X_unimputed.copy()
+    derived = pd.read_csv(DERIVED_CSV)
+    out = X_unimputed.merge(derived, on="RecordID", how="left", validate="one_to_one")
+    if len(out) != len(X_unimputed):
+        raise AssertionError("derived features changed the row count")
+    return out

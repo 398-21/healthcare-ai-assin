@@ -4,6 +4,14 @@ Every feature for (RecordID, T) is derived ONLY from measurements with t_min < T
 (`config.feature_cutoff_min`). Nothing from `outcomes.csv`. The rule-SOFA feature
 blocks are computed from `icu_records` and are therefore part of "our data".
 
+Pre-processing applied here (all statistics fitted on TRAINING stays only):
+  * physiological screening of model inputs (src/shared/physiology.py): implausible values
+    (e.g. arterial pressure 0, temperature -17.8 C, a single 19,990 mL urine entry) become
+    missing. The rule-SOFA blocks deliberately use the unscreened, methodology-cleaned series
+    so `sofa_now_*` is computed exactly like the forecast target.
+  * the sex-specific median weight used when admission weight is missing (urine-rate
+    feature only, flagged by `e_weight_imputed`) is computed from training stays only.
+
 Feature families (prefixes):
   v_<Param>_<stat>   per-variable summary over [0, T)
   e_<name>           engineered hemodynamic / respiratory / renal signals
@@ -16,6 +24,7 @@ import numpy as np
 import pandas as pd
 
 from .. import config
+from ...shared.physiology import screen_series, validate_physiological_value, MISSING
 from .scoring import score_window, w_vals, w_tv, _nearest, SYSTEMS
 
 FEATURE_VARS = [
@@ -66,22 +75,48 @@ def _clip(series, cutoff):
     return {p: [(t, v) for (t, v) in tv if t < cutoff] for p, tv in series.items()}
 
 
+def _valid_desc(param, v):
+    """Admission descriptor after the shared physiological screen (None if implausible)."""
+    if v is None or (isinstance(v, float) and np.isnan(v)):
+        return None
+    vv = validate_physiological_value(param, v)
+    return None if vv == MISSING else vv
+
+
 def _cohort_weight_medians(records):
     wl = {0: [], 1: []}
     for _rid, (_s, d) in records.items():
-        w, g = d.get("Weight"), d.get("Gender")
-        if w and w > 20 and g in (0, 1):
+        w, g = _valid_desc("Weight", d.get("Weight")), d.get("Gender")
+        if w is not None and g in (0, 1):
             wl[int(g)].append(w)
     return {g: (float(np.median(v)) if v else 78.0) for g, v in wl.items()}
 
 
-def build_features(records: dict[int, tuple[dict, dict]]) -> pd.DataFrame:
-    wmed = _cohort_weight_medians(records)
+def input_screening_audit(records) -> pd.DataFrame:
+    """How many methodology-cleaned values the physiological screen removes, per variable."""
+    removed, total = {}, {}
+    for _rid, (series, _d) in records.items():
+        _, rm = screen_series(series)
+        for p, tv in series.items():
+            total[p] = total.get(p, 0) + len(tv)
+        for p, n in rm.items():
+            removed[p] = removed.get(p, 0) + n
+    df = pd.DataFrame({"values": pd.Series(total), "set to missing": pd.Series(removed)}).fillna(0).astype(int)
+    df["%"] = 100 * df["set to missing"] / df["values"].where(df["values"] > 0)
+    return df[df["set to missing"] > 0].sort_values("set to missing", ascending=False)
+
+
+def build_features(records: dict[int, tuple[dict, dict]], train_ids) -> pd.DataFrame:
+    """`train_ids`: RecordIDs of the training split, the only stays used to fit statistics."""
+    train_ids = set(train_ids)
+    wmed = _cohort_weight_medians({r: v for r, v in records.items() if r in train_ids})
     rows = []
-    for rid, (series, desc) in records.items():
+    for rid, (series_raw, desc) in records.items():
+        series, _ = screen_series(series_raw)
         for T in config.HORIZONS_H:
             cutoff = config.feature_cutoff_min(T)
-            s = _clip(series, cutoff)
+            s = _clip(series, cutoff)              # screened: model inputs
+            s_raw = _clip(series_raw, cutoff)      # methodology-cleaned: rule-SOFA blocks
             out = {"RecordID": rid, "origin_h": T}
 
             for p in FEATURE_VARS:
@@ -105,8 +140,8 @@ def build_features(records: dict[int, tuple[dict, dict]]) -> pd.DataFrame:
 
             # ---- engineered: renal / urine rate over last 24 h (mL/kg/h) ----
             u24 = w_vals(s, "Urine", cutoff - 1440, cutoff)
-            w = desc.get("Weight")
-            if not w or w <= 20:
+            w = _valid_desc("Weight", desc.get("Weight"))
+            if w is None:
                 g = int(desc["Gender"]) if desc.get("Gender") in (0, 1) else 0
                 w = wmed.get(g, 78.0)
                 out["e_weight_imputed"] = 1.0
@@ -127,15 +162,15 @@ def build_features(records: dict[int, tuple[dict, dict]]) -> pd.DataFrame:
             out["e_pf_n"] = float(len(pf))
 
             # ---- rule SOFA blocks (computed from our data) ----
-            _sofa_block(s, *config.FULL_DAY1_MIN, "sofa0_24", out)
-            _sofa_block(s, *config.now_window_min(T), "sofa_now", out)
+            _sofa_block(s_raw, *config.FULL_DAY1_MIN, "sofa0_24", out)
+            _sofa_block(s_raw, *config.now_window_min(T), "sofa_now", out)
 
-            # ---- descriptors ----
-            out["d_age"] = desc.get("Age", np.nan)
+            # ---- descriptors (screened) ----
+            for name, param in (("d_age", "Age"), ("d_weight_adm", "Weight"), ("d_height", "Height")):
+                v = _valid_desc(param, desc.get(param))
+                out[name] = np.nan if v is None else v
             out["d_gender"] = desc.get("Gender", np.nan)
             out["d_icutype"] = desc.get("ICUType", np.nan)
-            out["d_weight_adm"] = desc.get("Weight", np.nan)
-            out["d_height"] = desc.get("Height", np.nan)
 
             rows.append(out)
 

@@ -1,15 +1,26 @@
-# Python 3.13 -- the versions the submitted notebook was executed with.
+# MD6117 group project -- every package the notebook and src/ import.
+#
+#   python -m venv .venv
+#   .venv\Scripts\activate            (Windows)   |   source .venv/bin/activate   (macOS/Linux)
+#   pip install -r requirements.txt
+#
+# Needs Python >= 3.11 (numpy 2.3 / scipy 1.16); verified with a fresh venv on Python 3.13.1.
+# Exact pins = the versions the submitted notebook was executed with. Keep scikit-learn at
+# 1.7.2: the saved pipelines in trained_models/ are pickled with it.
+# XGBoost's pip wheel already includes CUDA support; without a GPU the notebook uses the CPU.
+
 numpy==2.3.4
 pandas==2.3.3
 scipy==1.16.3
-scikit-learn==1.7.2      # task 1 .joblib models are pickled with this version
-joblib==1.5.2
+scikit-learn==1.7.2        # imported as sklearn
+imbalanced-learn==0.14.2   # imported as imblearn: SMOTE / under-sampling inside pipelines
+joblib==1.5.2              # saving / loading the fitted pipelines
 matplotlib==3.10.7
 xgboost==3.4.1
 catboost==1.2.10
 lightgbm==4.7.0
 shap==0.52.0
 
-# running the notebook
+# running the notebook (Jupyter, nbconvert for headless execution, the IPython kernel)
 jupyter
 ipykernel

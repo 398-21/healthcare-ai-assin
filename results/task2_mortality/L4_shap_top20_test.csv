@@ -1,21 +1,21 @@
-,mean |SHAP|,organ,statistic type,in L3 / L3-revised
-gcs__0_48h__last,0.6940317,CNS,point in time,L3r
-static_age_years,0.2575688,demographic / context,static,L3 L3r
-urine__0_48h__total,0.14098623,renal,cumulative,L3r
-wbc__0_48h__slope_per_hour,0.09867753,haematology,trend,
-gcs__24_48h__last,0.0970604,CNS,point in time,
-bun__0_48h__min,0.08789229,renal,extreme,
-mechvent__0_48h__time_span_hours,0.08540212,respiratory,measurement behaviour,
-urine__24_48h__total,0.08336417,renal,cumulative,
-gcs__24_48h__median,0.08249093,CNS,central,
-bun__24_48h__last,0.07897721,renal,point in time,
-static_icutype_2,0.078320906,demographic / context,static,
-gcs__24_48h__max,0.07782719,CNS,extreme,
-gcs__0_48h__slope_per_hour,0.072393134,CNS,trend,
-gcs__24_48h__mean,0.060642704,CNS,central,
-lactate__0_48h__last,0.05863921,cardiovascular,point in time,
-gcs__0_48h__std,0.055486716,CNS,variability,
-wbc__0_48h__std,0.054888137,haematology,variability,
-hct__24_48h__time_span_hours,0.053415798,haematology,measurement behaviour,
-mg__0_48h__std,0.052714832,other lab,variability,
-hr__0_24h__max,0.052686673,cardiovascular,extreme,
+,mean |SHAP|,organ,statistic type,derived (v2)
+gcs__0_48h__last,0.28238671105378427,CNS,point in time,
+static_age_years,0.23334143537854457,demographic / context,static / score,
+gcs__24_48h__max,0.09899146099513469,CNS,extreme,
+bun_cr_ratio__0_48h__last,0.08585240011256541,renal,point in time,yes
+organ_score__24_48h__total,0.08533874433718579,multi-organ (derived),cumulative,yes
+bun_cr_ratio__0_24h__last,0.07562618115835684,renal,point in time,yes
+bun__0_48h__min,0.07259545077773606,renal,extreme,
+urine__0_48h__mean,0.0691189328537391,renal,central,
+shock_index__0_48h__last,0.0661166377603978,cardiovascular,point in time,yes
+gcs__0_48h__std,0.06101627737317102,CNS,variability,
+urine__0_48h__total,0.05849564676072689,renal,cumulative,
+gcs__24_48h__mean,0.049161177393163946,CNS,central,
+urine__24_48h__total,0.04770170237297818,renal,cumulative,
+hct__24_48h__time_span_hours,0.03847837804953968,haematology,measurement behaviour,
+wbc__0_48h__slope_per_hour,0.03767968246567765,haematology,trend,
+temp__0_48h__mean,0.03638341975279528,other lab,central,
+hco3__24_48h__max,0.03537592790555556,other lab,extreme,
+gcs__0_48h__count,0.03471895174012702,CNS,measurement behaviour,
+urine__0_24h__total,0.033892683405161446,renal,cumulative,
+organ_score__24_48h__neuro,0.03291293125429349,multi-organ (derived),static / score,yes

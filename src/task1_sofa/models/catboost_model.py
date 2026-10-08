@@ -18,7 +18,7 @@ import pandas as pd
 from sklearn.metrics import average_precision_score, mean_absolute_error
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame, deterioration_frame
+from .common import AXES, feature_columns, axis_frame, deterioration_frame, with_filter
 
 try:
     from catboost import CatBoostClassifier, CatBoostRegressor
@@ -46,8 +46,9 @@ def _require_catboost():
             "*_catboost function.")
 
 
-def _cat_feature_indices(X: pd.DataFrame) -> list[int]:
-    return [X.columns.get_loc(c) for c in CAT_FEATURE_NAMES if c in X.columns]
+def _cat_feature_names(X: pd.DataFrame) -> list[str]:
+    # passed by NAME: the FeatureFilter in front of CatBoost changes column positions
+    return [c for c in CAT_FEATURE_NAMES if c in X.columns]
 
 
 def _prepare_categoricals(X: pd.DataFrame) -> pd.DataFrame:
@@ -70,11 +71,11 @@ def fit_grid_regressor(X_tr, y_tr, X_val, y_val, grid=REGRESSOR_GRID):
     _require_catboost()
     X_tr = _prepare_categoricals(X_tr)
     X_val = _prepare_categoricals(X_val)
-    cat_idx = _cat_feature_indices(X_tr)
+    cat_names = _cat_feature_names(X_tr)
     rows, best = [], None
     for params in grid:
-        m = CatBoostRegressor(**params)
-        m.fit(X_tr, y_tr, cat_features=cat_idx)
+        m = with_filter(CatBoostRegressor(**params))
+        m.fit(X_tr, y_tr, model__cat_features=cat_names)
         val_mae = mean_absolute_error(y_val, m.predict(X_val))
         rows.append({**params, "val_mae": val_mae})
         if best is None or val_mae < best[1]:
@@ -102,11 +103,11 @@ def fit_grid_classifier(X_tr, y_tr, X_val, y_val, grid=CLASSIFIER_GRID):
     _require_catboost()
     X_tr = _prepare_categoricals(X_tr)
     X_val = _prepare_categoricals(X_val)
-    cat_idx = _cat_feature_indices(X_tr)
+    cat_names = _cat_feature_names(X_tr)
     rows, best = [], None
     for params in grid:
-        m = CatBoostClassifier(**params)
-        m.fit(X_tr, y_tr, cat_features=cat_idx)
+        m = with_filter(CatBoostClassifier(**params))
+        m.fit(X_tr, y_tr, model__cat_features=cat_names)
         val_ap = average_precision_score(y_val, m.predict_proba(X_val)[:, 1])
         rows.append({**params, "val_auprc": val_ap})
         if best is None or val_ap > best[1]:

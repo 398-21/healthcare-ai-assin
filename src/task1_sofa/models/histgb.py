@@ -17,16 +17,19 @@ from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostin
 from sklearn.metrics import average_precision_score, mean_absolute_error
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame, deterioration_frame
+from .common import (AXES, feature_columns, axis_frame, deterioration_frame, with_filter,
+                     classifier_pipeline)
 
 # ----------------------------------------------------------------------- D13: fixed grids
+# early_stopping=False is explicit: sklearn's default ("auto") switches early stopping ON
+# above 10,000 rows and silently holds out 10 % of the TRAINING rows -- exactly what D13 rules out.
 REGRESSOR_GRID = [
-    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300,
+    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300, "early_stopping": False,
      "l2_regularization": 0.0, "random_state": config.SEED}
     for lr in (0.05, 0.1) for mln in (31, 63)
 ]
 CLASSIFIER_GRID = [
-    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300,
+    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300, "early_stopping": False,
      "l2_regularization": 0.0, "class_weight": "balanced", "random_state": config.SEED}
     for lr in (0.05, 0.1) for mln in (31, 63)
 ]
@@ -38,7 +41,7 @@ def fit_grid_regressor(X_tr, y_tr, X_val, y_val, grid=REGRESSOR_GRID):
     item 12c)."""
     rows, best = [], None
     for params in grid:
-        m = HistGradientBoostingRegressor(**params)
+        m = with_filter(HistGradientBoostingRegressor(**params))
         m.fit(X_tr, y_tr)
         val_mae = mean_absolute_error(y_val, m.predict(X_val))
         rows.append({**params, "val_mae": val_mae})
@@ -63,28 +66,29 @@ def train_axis_models(features: pd.DataFrame, targets: pd.DataFrame, splits: pd.
     return models, chosen, grids
 
 
-def fit_grid_classifier(X_tr, y_tr, X_val, y_val, grid=CLASSIFIER_GRID):
+def fit_grid_classifier(X_tr, y_tr, X_val, y_val, grid=CLASSIFIER_GRID, imbalance="class_weight"):
     """As `fit_grid_regressor`, but selects on validation AUPRC (item 13: the positive class
-    -- deterioration -- is ~4 % of rows, so AUROC alone would be misleading)."""
+    -- deterioration -- is ~4 % of rows, so AUROC alone would be misleading). `imbalance`
+    picks the class-imbalance strategy (see common.classifier_pipeline)."""
     rows, best = [], None
     for params in grid:
-        m = HistGradientBoostingClassifier(**params)
+        m = classifier_pipeline(HistGradientBoostingClassifier, params, imbalance)
         m.fit(X_tr, y_tr)
         val_ap = average_precision_score(y_val, m.predict_proba(X_val)[:, 1])
-        rows.append({**params, "val_auprc": val_ap})
+        rows.append({**params, "imbalance": imbalance, "val_auprc": val_ap})
         if best is None or val_ap > best[1]:
             best = (m, val_ap, params)
     return best[0], best[2], pd.DataFrame(rows)
 
 
 def train_deterioration_model(features: pd.DataFrame, targets: pd.DataFrame,
-                              splits: pd.DataFrame, grid=CLASSIFIER_GRID):
+                              splits: pd.DataFrame, grid=CLASSIFIER_GRID, imbalance="class_weight"):
     """D14: one pooled classifier for `deteriorate_24h` (SOFA rises >= 2 within 24 h)."""
     df, cols = deterioration_frame(features, targets, splits)
     tr, va = df[df.split == "train"], df[df.split == "val"]
     model, params, grid_df = fit_grid_classifier(
         tr[cols], tr.deteriorate_24h.astype(int),
-        va[cols], va.deteriorate_24h.astype(int), grid)
+        va[cols], va.deteriorate_24h.astype(int), grid, imbalance)
     return model, params, grid_df
 
 

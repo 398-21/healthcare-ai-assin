@@ -7,36 +7,37 @@ model? Uses the SAME delta target and SAME feature set as `histgb.py` (predict
 comparison isolates model family, holding the target framing constant -- change one variable
 at a time.
 
-Ridge / LogisticRegression cannot route missing values internally the way HistGB can, so this
-module adds a median-impute + standardize step that the tree-based families don't need. That is
-an honest, logged difference (D20): any performance gap partly reflects "native missingness
-handling" as well as "linear vs non-linear", and the two effects are not separated by this
-comparison alone.
+Ridge / LogisticRegression cannot route missing values internally the way HistGB can, nor
+treat a nominal code as a category, so each linear model is a pipeline:
+FeatureFilter -> [ICU type: most-frequent impute + one-hot | every other column: median impute
++ missing-indicator columns + standardisation] -> model, every step fitted on the training rows.
+That is an honest, logged difference (D20): any performance gap partly reflects "native
+missingness handling" as well as "linear vs non-linear", and the two effects are not separated
+by this comparison alone.
 """
 from __future__ import annotations
 import numpy as np
 import pandas as pd
-from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.metrics import average_precision_score, mean_absolute_error
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame, deterioration_frame
+from ...shared.preprocessing import linear_preprocessor
+from .common import AXES, feature_columns, axis_frame, deterioration_frame, with_filter
+
+NOMINAL = ("d_icutype",)   # ICU type 1-4 is a category, not a quantity
 
 RIDGE_GRID = [{"alpha": a} for a in (0.1, 1.0, 10.0)]
 LOGISTIC_GRID = [{"C": c, "class_weight": "balanced", "max_iter": 2000} for c in (0.1, 1.0, 10.0)]
 
 
 def _ridge_pipeline(**params):
-    return make_pipeline(SimpleImputer(strategy="median"), StandardScaler(),
-                        Ridge(random_state=config.SEED, **params))
+    return with_filter(Ridge(random_state=config.SEED, **params), ("prep", linear_preprocessor(NOMINAL)))
 
 
 def _logistic_pipeline(**params):
-    return make_pipeline(SimpleImputer(strategy="median"), StandardScaler(),
-                        LogisticRegression(random_state=config.SEED, **params))
+    return with_filter(LogisticRegression(random_state=config.SEED, **params),
+                       ("prep", linear_preprocessor(NOMINAL)))
 
 
 def fit_grid_ridge(X_tr, y_tr, X_val, y_val, grid=RIDGE_GRID):

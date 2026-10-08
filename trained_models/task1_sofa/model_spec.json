@@ -411,10 +411,10 @@
     "sofa_now_total",
     "sofa_now_n_present",
     "d_age",
-    "d_gender",
-    "d_icutype",
     "d_weight_adm",
-    "d_height"
+    "d_height",
+    "d_gender",
+    "d_icutype"
   ],
   "families": {
     "ordinal": {
@@ -424,13 +424,15 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "1": {
-            "learning_rate": 0.1,
+            "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -438,6 +440,7 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -445,6 +448,7 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
@@ -454,13 +458,15 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "1": {
-            "learning_rate": 0.1,
-            "max_leaf_nodes": 31,
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -468,6 +474,7 @@
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -475,36 +482,41 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
         },
         "liver": {
           "0": {
-            "learning_rate": 0.1,
-            "max_leaf_nodes": 31,
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "1": {
-            "learning_rate": 0.1,
-            "max_leaf_nodes": 31,
+            "learning_rate": 0.05,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "2": {
-            "learning_rate": 0.1,
+            "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "3": {
             "learning_rate": 0.1,
-            "max_leaf_nodes": 31,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
@@ -512,8 +524,9 @@
         "cardio": {
           "0": {
             "learning_rate": 0.05,
-            "max_leaf_nodes": 31,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -521,6 +534,7 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -528,6 +542,7 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -535,29 +550,33 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
         },
         "neuro": {
           "0": {
-            "learning_rate": 0.05,
+            "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "1": {
             "learning_rate": 0.05,
-            "max_leaf_nodes": 31,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "2": {
             "learning_rate": 0.05,
-            "max_leaf_nodes": 63,
+            "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
@@ -565,6 +584,7 @@
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
@@ -574,27 +594,31 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "1": {
-            "learning_rate": 0.1,
+            "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "2": {
-            "learning_rate": 0.1,
+            "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           },
           "3": {
-            "learning_rate": 0.05,
-            "max_leaf_nodes": 31,
+            "learning_rate": 0.1,
+            "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42
           }
@@ -607,33 +631,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9703572911336186
+              "val_auroc": 0.9722050574002375
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9706010852458699
+              "val_auroc": 0.9728495428256945
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9697864267024554
+              "val_auroc": 0.971751262419017
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9687913363779437
+              "val_auroc": 0.9721036776703904
             }
           ],
           "1": [
@@ -641,33 +669,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9772352894590955
+              "val_auroc": 0.9780905995089886
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9775426665082758
+              "val_auroc": 0.9778530133840184
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9776664092816979
+              "val_auroc": 0.9774733705551595
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.976396808426388
+              "val_auroc": 0.9772308347192524
             }
           ],
           "2": [
@@ -675,33 +707,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.964546985223677
+              "val_auroc": 0.9639774422266367
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.964801344232064
+              "val_auroc": 0.9654137411924736
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9644097834215987
+              "val_auroc": 0.9632973083563847
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9644616228934167
+              "val_auroc": 0.9643026485131747
             }
           ],
           "3": [
@@ -709,33 +745,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9603198681573872
+              "val_auroc": 0.9611335842837612
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9586540442346948
+              "val_auroc": 0.9574002284772553
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9582645092420923
+              "val_auroc": 0.9522070528306834
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9579377118564714
+              "val_auroc": 0.9570528306833718
             }
           ]
         },
@@ -745,33 +785,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9930865359030088
+              "val_auroc": 0.9932251040574386
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9931674126101367
+              "val_auroc": 0.9935624677013934
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9929358317141387
+              "val_auroc": 0.9931758353803081
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9927485382871056
+              "val_auroc": 0.9934352204746132
             }
           ],
           "1": [
@@ -779,33 +823,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9933304819812889
+              "val_auroc": 0.9937293617188291
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9934399045141656
+              "val_auroc": 0.9939340142703103
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9934910676520361
+              "val_auroc": 0.993732340394664
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9934384151762482
+              "val_auroc": 0.9933997799985071
             }
           ],
           "2": [
@@ -813,33 +861,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9960720148378706
+              "val_auroc": 0.9964068973358632
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.996240788510599
+              "val_auroc": 0.9969185480489764
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9965516873814142
+              "val_auroc": 0.9970668912244797
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9865278636450849
+              "val_auroc": 0.9966929242970132
             }
           ],
           "3": [
@@ -847,33 +899,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9976301589616451
+              "val_auroc": 0.9980555150454524
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9979218317048272
+              "val_auroc": 0.9982864226338048
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9870084098974283
+              "val_auroc": 0.5395702688250449
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9184288561567253
+              "val_auroc": 0.5808419619853192
             }
           ]
         },
@@ -883,33 +939,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9952647806822631
+              "val_auroc": 0.995763905083314
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9947266063280724
+              "val_auroc": 0.9958755549493341
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9955373053552337
+              "val_auroc": 0.9949180060983926
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9951638558033731
+              "val_auroc": 0.9953684555578532
             }
           ],
           "1": [
@@ -917,33 +977,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9938140720696229
+              "val_auroc": 0.994376279382025
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9936699163484943
+              "val_auroc": 0.9954364417425544
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9942514817148764
+              "val_auroc": 0.993821897665913
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9925726853739605
+              "val_auroc": 0.9939256897851256
             }
           ],
           "2": [
@@ -951,33 +1015,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9956253764965435
+              "val_auroc": 0.996133828420235
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9957648375956132
+              "val_auroc": 0.9966645553805835
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9955905112217761
+              "val_auroc": 0.9956089123390144
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9958665279803516
+              "val_auroc": 0.995574047064247
             }
           ],
           "3": [
@@ -985,33 +1053,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9920376365843789
+              "val_auroc": 0.9979562929987861
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.985871104815864
+              "val_auroc": 0.9974504249291785
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9921160461351679
+              "val_auroc": 0.9978652367462566
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9858609874544719
+              "val_auroc": 0.998032173209227
             }
           ]
         },
@@ -1021,33 +1093,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9638305209270248
+              "val_auroc": 0.9620724727994212
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.963237444450243
+              "val_auroc": 0.9636867541137263
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9625585171860178
+              "val_auroc": 0.9619027154020816
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9633957414325722
+              "val_auroc": 0.9622610580214206
             }
           ],
           "1": [
@@ -1055,6 +1131,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1063,6 +1140,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1071,6 +1149,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1079,6 +1158,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1089,6 +1169,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1097,6 +1178,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1105,6 +1187,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1113,6 +1196,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1123,6 +1207,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1131,6 +1216,7 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1139,6 +1225,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1147,6 +1234,7 @@
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
               "val_auroc": NaN
@@ -1159,33 +1247,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.985998143160372
+              "val_auroc": 0.9865677673065999
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9860568617284892
+              "val_auroc": 0.9866362122633008
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9859986835152932
+              "val_auroc": 0.985895385666167
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9856841969510834
+              "val_auroc": 0.9867878718778855
             }
           ],
           "1": [
@@ -1193,33 +1285,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9960374550390582
+              "val_auroc": 0.9960650769861404
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9960027670124896
+              "val_auroc": 0.9961233721419013
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9958934836695275
+              "val_auroc": 0.9956902535879424
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9959561148286094
+              "val_auroc": 0.9960621863172597
             }
           ],
           "2": [
@@ -1227,33 +1323,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9914571577335167
+              "val_auroc": 0.9914940950938395
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9915238478417425
+              "val_auroc": 0.99137051976022
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9913208191472456
+              "val_auroc": 0.9910653850445108
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9912785567212472
+              "val_auroc": 0.9911942854438062
             }
           ],
           "3": [
@@ -1261,33 +1361,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9853440147884996
+              "val_auroc": 0.9856131188771461
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9848725166544943
+              "val_auroc": 0.9860391877735282
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9847086091725706
+              "val_auroc": 0.9846002430841531
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9855018096985839
+              "val_auroc": 0.9861546474638335
             }
           ]
         },
@@ -1297,33 +1401,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9948904401133358
+              "val_auroc": 0.9947034913562224
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9951638515952071
+              "val_auroc": 0.9950131225466738
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9946922210906073
+              "val_auroc": 0.9948709967543355
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9950988970109362
+              "val_auroc": 0.9948754704475568
             }
           ],
           "1": [
@@ -1331,33 +1439,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9953807662678191
+              "val_auroc": 0.9956887717239965
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.995028022983794
+              "val_auroc": 0.9953252150313447
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9953982232085433
+              "val_auroc": 0.9948962124799458
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9952698051466171
+              "val_auroc": 0.9949054003434847
             }
           ],
           "2": [
@@ -1365,33 +1477,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9951539624824091
+              "val_auroc": 0.995577158992949
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9948792761727931
+              "val_auroc": 0.9952080708501875
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9952948744870065
+              "val_auroc": 0.995054034688299
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9947993799871798
+              "val_auroc": 0.9947897095554917
             }
           ],
           "3": [
@@ -1399,33 +1515,37 @@
               "learning_rate": 0.05,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9983397717295873
+              "val_auroc": 0.9982910447761193
             },
             {
               "learning_rate": 0.05,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.9983046532045654
+              "val_auroc": 0.9983375768217735
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 31,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.998163301141352
+              "val_auroc": 0.9983266022827041
             },
             {
               "learning_rate": 0.1,
               "max_leaf_nodes": 63,
               "max_iter": 300,
+              "early_stopping": false,
               "l2_regularization": 0.0,
               "random_state": 42,
-              "val_auroc": 0.998297629499561
+              "val_auroc": 0.998361720807726
             }
           ]
         }
@@ -1456,85 +1576,85 @@
         "resp": [
           {
             "alpha": 0.1,
-            "val_mae": 0.34327499984092635
+            "val_mae": 0.34283546230117673
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.3426023295237458
+            "val_mae": 0.342570989099927
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.34077246244276127
+            "val_mae": 0.3410181221567174
           }
         ],
         "coag": [
           {
             "alpha": 0.1,
-            "val_mae": 0.14296419305343153
+            "val_mae": 0.14434325562971953
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.14283381462188866
+            "val_mae": 0.14430338697152237
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.14221426256120467
+            "val_mae": 0.1439810412465266
           }
         ],
         "liver": [
           {
             "alpha": 0.1,
-            "val_mae": 0.07032026488305175
+            "val_mae": 0.06981411809814576
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.06949017916777886
+            "val_mae": 0.06973492464447532
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.06814222849176414
+            "val_mae": 0.06921439930358503
           }
         ],
         "cardio": [
           {
             "alpha": 0.1,
-            "val_mae": 0.1572277057691504
+            "val_mae": 0.15752114473051648
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.15709333735623096
+            "val_mae": 0.15750580906240752
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.1568611544747237
+            "val_mae": 0.15738171438343448
           }
         ],
         "neuro": [
           {
             "alpha": 0.1,
-            "val_mae": 0.3783946640369889
+            "val_mae": 0.37345669065553133
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.378197854116513
+            "val_mae": 0.3734178678202578
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.3778509263758565
+            "val_mae": 0.3730786794357691
           }
         ],
         "renal": [
           {
             "alpha": 0.1,
-            "val_mae": 0.14892579214928645
+            "val_mae": 0.14953724556754366
           },
           {
             "alpha": 1.0,
-            "val_mae": 0.1487557182320598
+            "val_mae": 0.1494952981923853
           },
           {
             "alpha": 10.0,
-            "val_mae": 0.1481676783339093
+            "val_mae": 0.14914786012823625
           }
         ]
       },
@@ -1548,19 +1668,19 @@
           "C": 0.1,
           "class_weight": "balanced",
           "max_iter": 2000,
-          "val_auprc": 0.19318259767616888
+          "val_auprc": 0.18094518372140245
         },
         {
           "C": 1.0,
           "class_weight": "balanced",
           "max_iter": 2000,
-          "val_auprc": 0.18644599368001163
+          "val_auprc": 0.17436144616022495
         },
         {
           "C": 10.0,
           "class_weight": "balanced",
           "max_iter": 2000,
-          "val_auprc": 0.18124541187724916
+          "val_auprc": 0.16941027420279567
         }
       ]
     },
@@ -1570,13 +1690,15 @@
           "learning_rate": 0.05,
           "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "coag": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
@@ -1584,27 +1706,31 @@
           "learning_rate": 0.05,
           "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "cardio": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "neuro": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "renal": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         }
@@ -1615,33 +1741,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.26538592893737106
+            "val_mae": 0.27528588171242857
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.27144807940972393
+            "val_mae": 0.28001332876010376
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.27048502354069254
+            "val_mae": 0.28820311907193835
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.2742801469809685
+            "val_mae": 0.2922003579317774
           }
         ],
         "coag": [
@@ -1649,33 +1779,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.08801773112156427
+            "val_mae": 0.09031630769900842
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.08704001239217644
+            "val_mae": 0.09240325193402467
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.0892940292107006
+            "val_mae": 0.0957987398630562
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.08873107712095425
+            "val_mae": 0.0994161191615515
           }
         ],
         "liver": [
@@ -1683,33 +1817,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.04741377133250908
+            "val_mae": 0.05719660279767904
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.05111559893422601
+            "val_mae": 0.06069900018350476
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.04957619176466858
+            "val_mae": 0.06325896733666897
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.05295399232581386
+            "val_mae": 0.06427366724042617
           }
         ],
         "cardio": [
@@ -1717,33 +1855,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.1237539637098315
+            "val_mae": 0.12675749588462903
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12310202805073442
+            "val_mae": 0.12790581923131253
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12438372141765283
+            "val_mae": 0.13209368067764976
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.1238078663779275
+            "val_mae": 0.13538929814326928
           }
         ],
         "neuro": [
@@ -1751,33 +1893,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.23591109435184765
+            "val_mae": 0.23747595795140328
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.23155558804612586
+            "val_mae": 0.23905692808643966
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.24044427935196197
+            "val_mae": 0.245680919282243
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.23543568665456427
+            "val_mae": 0.24756457831285272
           }
         ],
         "renal": [
@@ -1785,40 +1931,76 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09895889660603957
+            "val_mae": 0.10610005816680296
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09662506316726682
+            "val_mae": 0.10762621922752404
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.10086251498401237
+            "val_mae": 0.11347300345642004
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09777042260780482
+            "val_mae": 0.11586504250356142
           }
         ]
       },
+      "imbalance_experiment": {
+        "none": {
+          "validation AUROC": 0.8171607246160009,
+          "validation AUPRC": 0.28790549321405645,
+          "AUPRC bootstrap SD": 0.029036774539283706,
+          "validation Brier": 0.032979990297174626,
+          "chosen config": "learning_rate=0.05, max_leaf_nodes=63"
+        },
+        "class_weight": {
+          "validation AUROC": 0.8152651823831736,
+          "validation AUPRC": 0.265699460828581,
+          "AUPRC bootstrap SD": 0.027856752286189827,
+          "validation Brier": 0.05604887364461191,
+          "chosen config": "learning_rate=0.05, max_leaf_nodes=31"
+        },
+        "smote": {
+          "validation AUROC": 0.8311345950056857,
+          "validation AUPRC": 0.28486459597575914,
+          "AUPRC bootstrap SD": 0.029066349041360677,
+          "validation Brier": 0.03235437259427726,
+          "chosen config": "learning_rate=0.05, max_leaf_nodes=63"
+        },
+        "undersample": {
+          "validation AUROC": 0.8133466258406761,
+          "validation AUPRC": 0.24990633751702207,
+          "AUPRC bootstrap SD": 0.027029251849422162,
+          "validation Brier": 0.19210304051822075,
+          "chosen config": "learning_rate=0.05, max_leaf_nodes=63"
+        }
+      },
+      "imbalance_strategy": "none",
       "deterioration_params": {
         "learning_rate": 0.05,
-        "max_leaf_nodes": 31,
+        "max_leaf_nodes": 63,
         "max_iter": 300,
+        "early_stopping": false,
         "l2_regularization": 0.0,
         "class_weight": "balanced",
         "random_state": 42
@@ -1828,37 +2010,45 @@
           "learning_rate": 0.05,
           "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "class_weight": "balanced",
           "random_state": 42,
-          "val_auprc": 0.2780378820645012
+          "imbalance": "none",
+          "val_auprc": 0.26582866473223626
         },
         {
           "learning_rate": 0.05,
           "max_leaf_nodes": 63,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "class_weight": "balanced",
           "random_state": 42,
-          "val_auprc": 0.2695724478451483
+          "imbalance": "none",
+          "val_auprc": 0.28790549321405645
         },
         {
           "learning_rate": 0.1,
           "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "class_weight": "balanced",
           "random_state": 42,
-          "val_auprc": 0.27544159268897983
+          "imbalance": "none",
+          "val_auprc": 0.27384186846048547
         },
         {
           "learning_rate": 0.1,
           "max_leaf_nodes": 63,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "class_weight": "balanced",
           "random_state": 42,
-          "val_auprc": 0.25078473113783667
+          "imbalance": "none",
+          "val_auprc": 0.25502019252130825
         }
       ]
     },
@@ -1869,43 +2059,279 @@
           "depth": 6,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         },
         "coag": {
           "learning_rate": 0.05,
           "depth": 6,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         },
         "liver": {
           "learning_rate": 0.05,
           "depth": 4,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         },
         "cardio": {
           "learning_rate": 0.05,
           "depth": 6,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         },
         "neuro": {
           "learning_rate": 0.05,
           "depth": 6,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         },
         "renal": {
           "learning_rate": 0.05,
           "depth": 6,
           "iterations": 300,
           "random_seed": 42,
-          "verbose": false
+          "verbose": false,
+          "allow_writing_files": false
         }
+      },
+      "validation_grids": {
+        "resp": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.28104544925549474
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.2771196628315507
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.2816739871980875
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.2812787088860661
+          }
+        ],
+        "coag": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.09523758443948283
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.09269285504542425
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.09627159460470391
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.09524067805889479
+          }
+        ],
+        "liver": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.04576930571399118
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.046588944137101095
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.04953000757754091
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.050428077996635595
+          }
+        ],
+        "cardio": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.12928392643656914
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.12828610029462698
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.13082157083794535
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.13041343405421732
+          }
+        ],
+        "neuro": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.25590661013934973
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.24993963194817345
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.25412849356681544
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.24997696605435146
+          }
+        ],
+        "renal": [
+          {
+            "learning_rate": 0.05,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.10864983841281174
+          },
+          {
+            "learning_rate": 0.05,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.10804663513618928
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 4,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.11185798966605777
+          },
+          {
+            "learning_rate": 0.1,
+            "depth": 6,
+            "iterations": 300,
+            "random_seed": 42,
+            "verbose": false,
+            "allow_writing_files": false,
+            "val_mae": 0.11093170441972867
+          }
+        ]
       },
       "deterioration_params": {
         "learning_rate": 0.05,
@@ -1913,8 +2339,51 @@
         "iterations": 300,
         "random_seed": 42,
         "verbose": false,
+        "allow_writing_files": false,
         "auto_class_weights": "Balanced"
-      }
+      },
+      "deterioration_grid": [
+        {
+          "learning_rate": 0.05,
+          "depth": 4,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false,
+          "allow_writing_files": false,
+          "auto_class_weights": "Balanced",
+          "val_auprc": 0.25784490867746607
+        },
+        {
+          "learning_rate": 0.05,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false,
+          "allow_writing_files": false,
+          "auto_class_weights": "Balanced",
+          "val_auprc": 0.24880687918259584
+        },
+        {
+          "learning_rate": 0.1,
+          "depth": 4,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false,
+          "allow_writing_files": false,
+          "auto_class_weights": "Balanced",
+          "val_auprc": 0.2509592686908947
+        },
+        {
+          "learning_rate": 0.1,
+          "depth": 6,
+          "iterations": 300,
+          "random_seed": 42,
+          "verbose": false,
+          "allow_writing_files": false,
+          "auto_class_weights": "Balanced",
+          "val_auprc": 0.235446843738705
+        }
+      ]
     },
     "lightgbm": {
       "axis_params": {
@@ -1923,6 +2392,8 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         },
         "coag": {
@@ -1930,6 +2401,8 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         },
         "liver": {
@@ -1937,6 +2410,8 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         },
         "cardio": {
@@ -1944,6 +2419,8 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         },
         "neuro": {
@@ -1951,6 +2428,8 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         },
         "renal": {
@@ -1958,45 +2437,353 @@
           "num_leaves": 31,
           "n_estimators": 300,
           "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
           "verbosity": -1
         }
       },
+      "validation_grids": {
+        "resp": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.27649521815765593
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.28065244079826407
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.2855747029313085
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.29148346784794354
+          }
+        ],
+        "coag": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.09061910044623482
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.09224924409683807
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.09479945423337711
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.09931929177183829
+          }
+        ],
+        "liver": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.056463591215016436
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.06021231062449665
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.06324020704505028
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.06589931985440414
+          }
+        ],
+        "cardio": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.12565530709498016
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.1274296310298718
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.1319916143282688
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.13490455495214942
+          }
+        ],
+        "neuro": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.23655987782109375
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.23964261884755733
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.24605067955940121
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.24926457357291162
+          }
+        ],
+        "renal": [
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.10479200474749284
+          },
+          {
+            "learning_rate": 0.05,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.10718877496926846
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 31,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.11245371003066361
+          },
+          {
+            "learning_rate": 0.1,
+            "num_leaves": 63,
+            "n_estimators": 300,
+            "random_state": 42,
+            "deterministic": true,
+            "force_row_wise": true,
+            "verbosity": -1,
+            "val_mae": 0.1142118075239357
+          }
+        ]
+      },
       "deterioration_params": {
         "learning_rate": 0.05,
-        "num_leaves": 63,
+        "num_leaves": 31,
         "n_estimators": 300,
         "random_state": 42,
+        "deterministic": true,
+        "force_row_wise": true,
         "verbosity": -1,
         "class_weight": "balanced"
-      }
+      },
+      "deterioration_grid": [
+        {
+          "learning_rate": 0.05,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
+          "verbosity": -1,
+          "class_weight": "balanced",
+          "val_auprc": 0.2725529542667954
+        },
+        {
+          "learning_rate": 0.05,
+          "num_leaves": 63,
+          "n_estimators": 300,
+          "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
+          "verbosity": -1,
+          "class_weight": "balanced",
+          "val_auprc": 0.26641071533625676
+        },
+        {
+          "learning_rate": 0.1,
+          "num_leaves": 31,
+          "n_estimators": 300,
+          "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
+          "verbosity": -1,
+          "class_weight": "balanced",
+          "val_auprc": 0.24114653236082625
+        },
+        {
+          "learning_rate": 0.1,
+          "num_leaves": 63,
+          "n_estimators": 300,
+          "random_state": 42,
+          "deterministic": true,
+          "force_row_wise": true,
+          "verbosity": -1,
+          "class_weight": "balanced",
+          "val_auprc": 0.2559875166917765
+        }
+      ]
     },
     "histgb_absolute": {
       "axis_params": {
         "resp": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "coag": {
           "learning_rate": 0.05,
-          "max_leaf_nodes": 63,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "liver": {
-          "learning_rate": 0.1,
+          "learning_rate": 0.05,
           "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "cardio": {
-          "learning_rate": 0.1,
-          "max_leaf_nodes": 63,
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
@@ -2004,13 +2791,15 @@
           "learning_rate": 0.05,
           "max_leaf_nodes": 63,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         },
         "renal": {
-          "learning_rate": 0.1,
+          "learning_rate": 0.05,
           "max_leaf_nodes": 63,
           "max_iter": 300,
+          "early_stopping": false,
           "l2_regularization": 0.0,
           "random_state": 42
         }
@@ -2021,33 +2810,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.2961145216166181
+            "val_mae": 0.2986638436864177
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.29605668284783476
+            "val_mae": 0.30077393361130306
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.2969731151494231
+            "val_mae": 0.3118216701489258
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.2985730836550708
+            "val_mae": 0.31021239638274445
           }
         ],
         "coag": [
@@ -2055,33 +2848,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09770421962602788
+            "val_mae": 0.10036774216699504
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09676610560714365
+            "val_mae": 0.10064164357074956
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.09857873330184992
+            "val_mae": 0.10640157877917224
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.0969142772232583
+            "val_mae": 0.10622120555753756
           }
         ],
         "liver": [
@@ -2089,33 +2886,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.07239713207971768
+            "val_mae": 0.07721039437834423
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.0745973594551846
+            "val_mae": 0.0801572271908522
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.07205575201795424
+            "val_mae": 0.0838300527716292
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.07457384065623542
+            "val_mae": 0.08697100396558341
           }
         ],
         "cardio": [
@@ -2123,33 +2924,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12632247276111308
+            "val_mae": 0.12722027768452374
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12691012751203007
+            "val_mae": 0.12866364147712597
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12659082094600074
+            "val_mae": 0.13329373761017418
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.12485892757440639
+            "val_mae": 0.13507446602827444
           }
         ],
         "neuro": [
@@ -2157,33 +2962,37 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.24861883125158568
+            "val_mae": 0.2491176965070285
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.24540357305248287
+            "val_mae": 0.2463811116867583
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.25085172808037903
+            "val_mae": 0.25418629560692096
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.2464206097717496
+            "val_mae": 0.2557632727290638
           }
         ],
         "renal": [
@@ -2191,36 +3000,78 @@
             "learning_rate": 0.05,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.11299943179730321
+            "val_mae": 0.11383206845825314
           },
           {
             "learning_rate": 0.05,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.11021094059438007
+            "val_mae": 0.11184878145553633
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 31,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.1100880845860977
+            "val_mae": 0.11983462702761495
           },
           {
             "learning_rate": 0.1,
             "max_leaf_nodes": 63,
             "max_iter": 300,
+            "early_stopping": false,
             "l2_regularization": 0.0,
             "random_state": 42,
-            "val_mae": 0.10948829616671517
+            "val_mae": 0.12128341963572872
           }
         ]
       }
+    }
+  },
+  "filter_ablation": {
+    "Respiratory": {
+      "columns in": 408,
+      "columns kept by filter": 360,
+      "val MAE with filter": 0.27528588171242857,
+      "val MAE without filter": 0.2765336213203935
+    },
+    "Coagulation": {
+      "columns in": 408,
+      "columns kept by filter": 356,
+      "val MAE with filter": 0.09031630769900842,
+      "val MAE without filter": 0.09064504800306458
+    },
+    "Liver": {
+      "columns in": 408,
+      "columns kept by filter": 360,
+      "val MAE with filter": 0.05719660279767904,
+      "val MAE without filter": 0.05703411028338176
+    },
+    "Cardiovascular": {
+      "columns in": 408,
+      "columns kept by filter": 357,
+      "val MAE with filter": 0.12675749588462903,
+      "val MAE without filter": 0.12599532388339876
+    },
+    "Neurological": {
+      "columns in": 408,
+      "columns kept by filter": 357,
+      "val MAE with filter": 0.23747595795140328,
+      "val MAE without filter": 0.23793738887655247
+    },
+    "Renal": {
+      "columns in": 408,
+      "columns kept by filter": 357,
+      "val MAE with filter": 0.10610005816680296,
+      "val MAE without filter": 0.10537768938211386
     }
   }
 }

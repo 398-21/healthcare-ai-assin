@@ -62,101 +62,10 @@ UNITS = {
     "WBC": "cells/nL", "Weight": "kg",
 }
 
-# Physiological ranges for validation (Fix 2.1 - Phase 2)
-PHYSIOLOGICAL_RANGES = {
-    # Vital signs - zero is sensor failure
-    'HR': (20, 250),
-    'Temp': (30.0, 44.0),
-    'RespRate': (4, 60),
-
-    # Blood pressure - zero is sensor error
-    'SysABP': (40, 280),
-    'DiasABP': (20, 200),
-    'MAP': (30, 200),
-    'NISysABP': (40, 280),
-    'NIDiasABP': (20, 200),
-    'NIMAP': (30, 200),
-
-    # Blood gas
-    'pH': (6.5, 8.0),
-    'PaCO2': (10, 150),
-    'PaO2': (20, 600),
-    'SaO2': (50, 100),
-
-    # Electrolytes
-    'K': (1.5, 10.0),
-    'Na': (100, 180),
-    'Mg': (0.3, 6.0),
-    'Calcium': (0.5, 20),
-
-    # Renal
-    'BUN': (1, 300),
-    'Creatinine': (0.1, 25),
-    'Urine': (0, 2000),  # KEEP ZERO - true oliguria
-
-    # Hematology
-    'WBC': (0.1, 500),
-    'HCT': (5.0, 75.0),
-    'Platelets': (1, 2000),
-    'HGB': (2, 25),
-
-    # Metabolic
-    'Glucose': (10, 2000),
-    'Lactate': (0.1, 50),
-    'Albumin': (0.5, 6.0),
-    'Bilirubin': (0.1, 60),
-
-    # Liver function
-    'AST': (1, 50000),
-    'ALT': (1, 30000),
-    'ALP': (10, 5000),
-
-    # Cardiac
-    'TroponinI': (0, 500),
-    'TroponinT': (0, 50),
-
-    # Other
-    'Cholesterol': (20, 600),
-    'FiO2': (0.21, 1.0),
-    'Weight': (20, 300),
-    'Height': (100, 250),
-    'Age': (18, 120),
-}
-
-def validate_physiological_value(param: str, value: float) -> float:
-    """
-    Validate and fix physiological values (Fix 2.2 - Phase 2).
-
-    Args:
-        param: Parameter name
-        value: Raw value
-
-    Returns:
-        Validated value, or -1 (sentinel) if out of range
-    """
-    # Already sentinel
-    if value == -1:
-        return -1
-
-    # Special case: pH decimal error (735.0 → 7.35)
-    if param == 'pH' and value > 14:
-        value = value / 100
-
-    # Special case: Height unit error (50 cm → 150 cm after ×100)
-    if param == 'Height' and 0 < value < 100:
-        value = value * 100
-
-    # Check if parameter has defined range
-    if param not in PHYSIOLOGICAL_RANGES:
-        return value
-
-    lower, upper = PHYSIOLOGICAL_RANGES[param]
-
-    # Out of range → set to sentinel
-    if value < lower or value > upper:
-        return -1
-
-    return value
+# Physiological ranges (Phase 2): one shared definition for both tasks -- see
+# src/shared/physiology.py. Out-of-range values become missing; pH and height unit
+# errors are corrected first. Age now starts at 15, as the dataset documentation states.
+from src.shared.physiology import PHYSIOLOGICAL_RANGES, validate_physiological_value  # noqa: E402,F401
 
 QUALITY_COLUMNS = [
     "raw_rows", "invalid_time_rows", "empty_parameter_rows", "unknown_parameter_rows",

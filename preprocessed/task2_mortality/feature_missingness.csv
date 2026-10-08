@@ -1205,7 +1205,6 @@ creatinine__0_48h__median,35,0.0029578297980224796,0.8999999761581421,False
 creatinine__0_48h__min,35,0.0029578297980224796,0.800000011920929,False
 creatinine__0_48h__std,35,0.0029578297980224796,0.08291561901569366,False
 creatinine__0_48h__time_span_hours,35,0.0029578297980224796,32.42500305175781,False
-static_age_years,19,0.0016056790332122032,67.0,False
 albumin__0_24h__count,0,0.0,0.0,False
 albumin__0_24h__measured,0,0.0,0.0,False
 albumin__0_48h__count,0,0.0,0.0,False
@@ -1421,6 +1420,7 @@ sao2__24_48h__count,0,0.0,0.0,False
 sao2__24_48h__measured,0,0.0,0.0,False
 static_admission_weight_missing,0,0.0,0.0,False
 static_age_missing,0,0.0,0.0,False
+static_age_years,0,0.0,67.0,False
 static_bmi_missing,0,0.0,0.0,False
 static_gender_0,0,0.0,0.0,False
 static_gender_1,0,0.0,1.0,False

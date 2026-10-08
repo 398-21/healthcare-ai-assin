@@ -36,14 +36,14 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame
+from .common import AXES, feature_columns, axis_frame, with_filter
 
 THRESHOLDS = (0, 1, 2, 3)   # 0-4 ordinal target -> 4 cumulative thresholds
 
 # Same shape/values as histgb.REGRESSOR_GRID, so any performance difference in the
 # Results comparison reflects the framing (ordinal vs regression), not a different search.
 GRID = [
-    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300,
+    {"learning_rate": lr, "max_leaf_nodes": mln, "max_iter": 300, "early_stopping": False,
      "l2_regularization": 0.0, "random_state": config.SEED}
     for lr in (0.05, 0.1) for mln in (31, 63)
 ]
@@ -56,7 +56,7 @@ def fit_grid_threshold_classifier(X_tr, y_tr, X_val, y_val, grid=GRID):
     natural selection metric here; unlike histgb.fit_grid_classifier's D14 rationale."""
     rows, best = [], None
     for params in grid:
-        m = HistGradientBoostingClassifier(**params)
+        m = with_filter(HistGradientBoostingClassifier(**params))
         m.fit(X_tr, y_tr)
         if len(np.unique(y_val)) < 2:
             val_auc = np.nan

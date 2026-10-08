@@ -17,7 +17,7 @@ import pandas as pd
 from sklearn.metrics import average_precision_score, mean_absolute_error
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame, deterioration_frame
+from .common import AXES, feature_columns, axis_frame, deterioration_frame, with_filter
 
 try:
     import lightgbm as lgb
@@ -25,9 +25,10 @@ try:
 except ImportError:
     LIGHTGBM_AVAILABLE = False
 
+# deterministic=True + force_row_wise=True: bit-identical results regardless of thread count
 REGRESSOR_GRID = [
     {"learning_rate": lr, "num_leaves": nl, "n_estimators": 300,
-     "random_state": config.SEED, "verbosity": -1}
+     "random_state": config.SEED, "deterministic": True, "force_row_wise": True, "verbosity": -1}
     for lr in (0.05, 0.1) for nl in (31, 63)
 ]
 CLASSIFIER_GRID = [{**p, "class_weight": "balanced"} for p in REGRESSOR_GRID]
@@ -46,7 +47,7 @@ def fit_grid_regressor(X_tr, y_tr, X_val, y_val, grid=REGRESSOR_GRID):
     _require_lightgbm()
     rows, best = [], None
     for params in grid:
-        m = lgb.LGBMRegressor(**params)
+        m = with_filter(lgb.LGBMRegressor(**params))
         m.fit(X_tr, y_tr)
         val_mae = mean_absolute_error(y_val, m.predict(X_val))
         rows.append({**params, "val_mae": val_mae})
@@ -74,7 +75,7 @@ def fit_grid_classifier(X_tr, y_tr, X_val, y_val, grid=CLASSIFIER_GRID):
     _require_lightgbm()
     rows, best = [], None
     for params in grid:
-        m = lgb.LGBMClassifier(**params)
+        m = with_filter(lgb.LGBMClassifier(**params))
         m.fit(X_tr, y_tr)
         val_ap = average_precision_score(y_val, m.predict_proba(X_val)[:, 1])
         rows.append({**params, "val_auprc": val_ap})

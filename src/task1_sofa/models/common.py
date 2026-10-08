@@ -6,10 +6,56 @@ rules (D12, D17) stay in exactly one place.
 """
 from __future__ import annotations
 import pandas as pd
+from imblearn.over_sampling import SMOTE
+from imblearn.pipeline import Pipeline as ImbPipeline
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
 
+from .. import config
 from ..data_prep.scoring import SYSTEMS
+from ...shared.preprocessing import FeatureFilter
 
 AXES = tuple(SYSTEMS)   # ("resp", "coag", "liver", "cardio", "neuro", "renal")
+
+# Columns the filter must never drop: the decision time, the nominal descriptors (CatBoost
+# categoricals / one-hot in the linear family) and each organ's SOFA_now anchor.
+PROTECTED = ("origin_h", "d_icutype", "d_gender") + tuple(f"sofa_now_{a}" for a in AXES)
+IMBALANCE_STRATEGIES = ("none", "class_weight", "smote", "undersample")
+
+
+def feature_filter() -> FeatureFilter:
+    return FeatureFilter(max_missing=0.99, corr_threshold=0.98, protected=PROTECTED)
+
+
+def with_filter(estimator, *middle) -> Pipeline:
+    """Filter (fitted on the model's own training rows) -> optional steps -> estimator."""
+    return Pipeline([("filter", feature_filter()), *middle, ("model", estimator)])
+
+
+def classifier_pipeline(make_estimator, params: dict, imbalance: str = "class_weight",
+                        weight_key: str = "class_weight", weight_value="balanced") -> ImbPipeline:
+    """A classifier pipeline under one class-imbalance strategy:
+
+    * "class_weight" -- re-weight the loss (`weight_key=weight_value`), no resampling;
+    * "none"         -- plain fit;
+    * "smote"        -- median-impute, then SMOTE synthetic minority oversampling;
+    * "undersample"  -- randomly drop majority-class rows.
+    Resampling lives INSIDE the pipeline, so it only ever touches the rows the pipeline is
+    being fitted on; validation and test rows are never resampled.
+    """
+    if imbalance not in IMBALANCE_STRATEGIES:
+        raise ValueError(imbalance)
+    p = {k: v for k, v in params.items() if k != weight_key}
+    if imbalance == "class_weight":
+        p[weight_key] = weight_value
+    steps = [("filter", feature_filter())]
+    if imbalance == "smote":
+        steps += [("impute", SimpleImputer(strategy="median")), ("sampler", SMOTE(random_state=config.SEED))]
+    elif imbalance == "undersample":
+        steps += [("sampler", RandomUnderSampler(random_state=config.SEED))]
+    steps.append(("model", make_estimator(**p)))
+    return ImbPipeline(steps)
 
 
 def feature_columns(features: pd.DataFrame) -> list[str]:

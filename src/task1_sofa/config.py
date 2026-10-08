@@ -24,7 +24,7 @@ TARGETS_CSV = OUT_DIR / "targets.csv"
 FEATURES_CSV = OUT_DIR / "features.csv.gz"    # ~400 cols x 48k rows — gzip (pandas reads/writes transparently)
 QC_REPORT_MD = OUT_DIR / "qc_report.md"
 
-SEED = 42
+from ..shared.reproducibility import SEED   # 42 -- one seed for every estimator, split and bootstrap
 
 # ------------------------------------------------------------------- forecasting task
 # Decision times T (hours after ICU admission). At each T we forecast 6 h ahead.
