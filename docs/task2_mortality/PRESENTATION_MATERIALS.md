@@ -1,3 +1,7 @@
+> **Historical snapshot - superseded (2026-10-08).** This document records the earlier 11,833-stay analysis that excluded 167 stays with `Length_of_stay = -1`.
+
+---
+
 # Presentation Materials
 
 Every number below is copied from Table 1 or a named file in `results/`. Do not use numbers from any file in `trash_bin/`.

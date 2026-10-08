@@ -51,9 +51,7 @@ def main(output_dir: Path | str | None = None, write: bool = False) -> dict:
     }
 
     assert summary["status"] == "PASS"
-    # Cohort size is derived from the run summary rather than hardcoded, so that
-    # legitimate cohort changes (e.g. the Phase 1 negative-LOS exclusion) do not
-    # silently rot this verifier. Cross-checks still pin every artifact together.
+    # Cohort size is derived from the run summary; cross-checks pin every artifact together.
     expected_rows = int(summary["output"]["feature_rows"])
     assert len(labels) == len(features) == expected_rows
     assert int(summary["source"]["outcome_rows"]) == expected_rows

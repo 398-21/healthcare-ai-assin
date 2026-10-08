@@ -1,5 +1,5 @@
 {
-  "task": "Predict final In-hospital_death at the 48-hour landmark",
+  "task": "Predict in-hospital death from measurements in [0, 48 h) for all 12,000 released ICU stays",
   "time_rule_primary": "0 <= elapsed_minutes < 2880",
   "time_rule_sensitivity": "0 <= elapsed_minutes <= 2880 for affected stays only",
   "random_seed": 20260907,

@@ -1,8 +1,8 @@
 """Data loading utilities for In-hospital Death modelling experiments.
 
 This module provides clean access to the frozen 1,474-feature matrices and the
-three-way split in `preprocessed/task2_mortality/` (written by `preprocess.py`; frozen
-2026-09-21, SHA-256 manifest alongside).
+three-way split in `preprocessed/task2_mortality/` (written by `preprocess.py`; its
+SHA-256 manifest is regenerated with the outputs).
 
 Usage:
     from src.task2_mortality.data import load_data, get_split, get_feature_names

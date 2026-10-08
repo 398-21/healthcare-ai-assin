@@ -1,27 +1,27 @@
 {
   "status": "PASS",
-  "rows": 11833,
+  "rows": 12000,
   "model_features": 1474,
   "split_rows": {
-    "train": 8283,
-    "validation": 1775,
-    "test": 1775
+    "train": 8400,
+    "validation": 1800,
+    "test": 1800
   },
   "split_death_prevalence": {
-    "test": 0.14422535211267606,
-    "train": 0.14427139925147894,
-    "validation": 0.14422535211267606
+    "test": 0.14222222222222222,
+    "train": 0.14226190476190476,
+    "validation": 0.14222222222222222
   },
-  "stays_without_valid_dynamic_observations": 2,
-  "stays_without_valid_dynamic_observations_excluding_time0_weight": 2,
-  "boundary_affected_stays": 232,
-  "same_time_conflicting_keys": 11304,
-  "same_time_conflicting_extra_values": 11393,
-  "primary_same_time_conflicting_keys": 11303,
-  "primary_same_time_conflicting_extra_values": 11392,
+  "stays_without_valid_dynamic_observations": 10,
+  "stays_without_valid_dynamic_observations_excluding_time0_weight": 12,
+  "boundary_affected_stays": 234,
+  "same_time_conflicting_keys": 11337,
+  "same_time_conflicting_extra_values": 11426,
+  "primary_same_time_conflicting_keys": 11336,
+  "primary_same_time_conflicting_extra_values": 11425,
   "exact_duplicate_rows": 0,
   "verified_train_only_fill_values": 1474,
-  "verified_imputed_cells": 17441842,
+  "verified_imputed_cells": 17688000,
   "verified_output_hashes": 12,
   "imputed_outputs_all_finite": true,
   "feature_schema_sha256": "4f8f9bee69f1a74e94415e724b6d71438ee0d352ffdfb97175b780b7196be514"

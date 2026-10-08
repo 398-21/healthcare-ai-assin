@@ -1,66 +1,66 @@
 {
   "status": "PASS",
   "decision": "GO_TO_MODELING_AFTER_TEAM_ACCEPTS_TASK_DEFINITION",
-  "task_definition": "Predict final In-hospital_death at the 48-hour landmark",
+  "task_definition": "Predict in-hospital death from measurements in [0, 48 h) for all 12,000 released ICU stays",
   "primary_time_rule": "0 <= elapsed_minutes < 2880",
   "source": {
-    "record_files": 11833,
-    "outcome_rows": 11833,
-    "raw_record_rows": 5232974,
+    "record_files": 12000,
+    "outcome_rows": 12000,
+    "raw_record_rows": 5285818,
     "death_count": 1707,
-    "death_prevalence": 0.14425758472069636
+    "death_prevalence": 0.14225
   },
   "output": {
-    "feature_rows": 11833,
+    "feature_rows": 12000,
     "model_feature_columns": 1474,
-    "unimputed_missing_cells": 4436580,
+    "unimputed_missing_cells": 4562193,
     "imputed_missing_cells": 0,
     "all_missing_in_train_columns": 0,
-    "boundary_sensitivity_rows": 232,
+    "boundary_sensitivity_rows": 234,
     "feature_schema_sha256": "4f8f9bee69f1a74e94415e724b6d71438ee0d352ffdfb97175b780b7196be514"
   },
   "audits": {
     "after_48h_rows": 0,
-    "conflicting_time_parameter_extra_values": 11393,
-    "conflicting_time_parameter_keys": 11304,
-    "empty_parameter_rows": 2376,
-    "exact_48h_rows": 1399,
+    "conflicting_time_parameter_extra_values": 11426,
+    "conflicting_time_parameter_keys": 11337,
+    "empty_parameter_rows": 2403,
+    "exact_48h_rows": 1407,
     "exact_duplicate_rows": 0,
     "filename_recordid_mismatch": 0,
     "invalid_numeric_rows": 0,
     "invalid_time_rows": 0,
     "negative_time_rows": 0,
-    "primary_conflicting_time_parameter_extra_values": 11392,
-    "primary_conflicting_time_parameter_keys": 11303,
-    "raw_rows": 5232974,
-    "sentinel_rows": 14981,
+    "primary_conflicting_time_parameter_extra_values": 11425,
+    "primary_conflicting_time_parameter_keys": 11336,
+    "raw_rows": 5285818,
+    "sentinel_rows": 15235,
     "static_conflict_parameters": 2,
     "unknown_parameter_rows": 0,
-    "valid_dynamic_rows_excluding_time0_weight": 5151245,
-    "valid_dynamic_rows_including_time0_weight": 5162110
+    "valid_dynamic_rows_excluding_time0_weight": 5202946,
+    "valid_dynamic_rows_including_time0_weight": 5213945
   },
   "unknown_parameters": {},
   "split_summary": [
     {
       "split": "train",
-      "rows": 8283,
+      "rows": 8400,
       "deaths": 1195,
-      "survivors": 7088,
-      "death_prevalence": 0.14427139925147894
+      "survivors": 7205,
+      "death_prevalence": 0.14226190476190476
     },
     {
       "split": "validation",
-      "rows": 1775,
+      "rows": 1800,
       "deaths": 256,
-      "survivors": 1519,
-      "death_prevalence": 0.14422535211267606
+      "survivors": 1544,
+      "death_prevalence": 0.14222222222222222
     },
     {
       "split": "test",
-      "rows": 1775,
+      "rows": 1800,
       "deaths": 256,
-      "survivors": 1519,
-      "death_prevalence": 0.14422535211267606
+      "survivors": 1544,
+      "death_prevalence": 0.14222222222222222
     }
   ],
   "qa": {
@@ -83,60 +83,60 @@
     "leakage": "Only In-hospital_death is exported as y; all other outcome columns are excluded from X"
   },
   "runtime": {
-    "python": "3.13.1",
-    "platform": "Windows-11-10.0.22631-SP0",
-    "pandas": "2.3.3",
-    "numpy": "2.3.4",
-    "elapsed_seconds": 596.8798835999332
+    "python": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pandas": "2.2.3",
+    "numpy": "2.1.2",
+    "elapsed_seconds": 440.57437560000017
   },
   "outputs": {
     "preprocessed/task2_mortality/patient_features_unimputed.csv.gz": {
-      "bytes": 18685904,
-      "sha256": "7753553fc14554d87d9a97b36220fe0a3517efe17751859b40f548df83605816"
+      "bytes": 18841544,
+      "sha256": "776f8ff5330c4d552070965a82e74a3bcc85a74d90ad09eba0439213d269ebd5"
     },
     "preprocessed/task2_mortality/patient_features_48h_inclusive_affected_rows.csv.gz": {
-      "bytes": 388124,
-      "sha256": "fb0ae011e135273ed3cff38dacd9096fb0c5fb704f6c5b21e9c29e6dd92f5909"
+      "bytes": 390376,
+      "sha256": "aa490dab0c4fae1134f29b5bdbfc898cb63f71af97ca62baf93281fc5be9da1e"
     },
     "preprocessed/task2_mortality/labels_and_splits.csv": {
-      "bytes": 184628,
-      "sha256": "2e22faed417c52c0f15af6cbb5de772488ed5c5a878c112b2ee585fc67af3d70"
+      "bytes": 187233,
+      "sha256": "9fdaadaf8b76dee02d3dd3b9531ba93283f5ad6a6c3f72e0435845c66f3ed917"
     },
     "preprocessed/task2_mortality/X_train_imputed.csv.gz": {
-      "bytes": 14374646,
-      "sha256": "6fcc23adaa9f42908a66514c1d84e734a20c12bd2c0d038a24bf241174d90e81"
+      "bytes": 14538846,
+      "sha256": "f8e1a1ca70c222a883cfb3d272503f492a369c78c837b4e9cc85f9a236516aa1"
     },
     "preprocessed/task2_mortality/X_validation_imputed.csv.gz": {
-      "bytes": 3097451,
-      "sha256": "eeaea3f12bac4a428877a51eca6562fa76726ac686f1f6131567adedd6551803"
+      "bytes": 3139543,
+      "sha256": "4141e22cbc86948502a0080d5856c4bf40410cf18c9c6e35738301ea4e4d4bf4"
     },
     "preprocessed/task2_mortality/X_test_imputed.csv.gz": {
-      "bytes": 3089932,
-      "sha256": "a0ffc0360179b9129fe4d3d1d3732bcc37e8612eb3f7f5905bd1478b1a0ba9be"
+      "bytes": 3134846,
+      "sha256": "4388230c53d0d138fc3557d68d23dc7808383ae73376509bd7dbc2bba925deb4"
     },
     "preprocessed/task2_mortality/feature_dictionary.csv": {
       "bytes": 583703,
       "sha256": "e4c54255e0e71cdaecca7f6ffdcd78611ecff854f9e459f158210af1e8c3e239"
     },
     "preprocessed/task2_mortality/quality_flags_by_stay.csv": {
-      "bytes": 580885,
-      "sha256": "12d786af1b9be738907e9efd0eb6e5b96779f1cfc5e5eda0b43f2d837a3e6c7f"
+      "bytes": 588978,
+      "sha256": "d14873b7ced1d62ad1e5187c2dfc0d442b1cf83cecd82bb3e200686886941a92"
     },
     "preprocessed/task2_mortality/feature_missingness.csv": {
-      "bytes": 86053,
-      "sha256": "198b33f0e20e67cd7521613023903e90c0fbe6d7fc44c5ef37f2a53146aef236"
+      "bytes": 81333,
+      "sha256": "2822ebce646cce19a55925c3c6d18b2dd7286fae49df4c85acf28551f24afc50"
     },
     "preprocessed/task2_mortality/parameter_distributions.csv": {
-      "bytes": 2633,
-      "sha256": "2a9e871a6865a00f0ac1215761ed464b7e95d5af24adefbb31d1d76def07bd9b"
+      "bytes": 2387,
+      "sha256": "13eae122245e4a4629dc8fa0cc6fe8a73058f3c056e69899e41f8c8164cc02ff"
     },
     "preprocessed/task2_mortality/split_summary.csv": {
       "bytes": 170,
-      "sha256": "da57928cf7c9cc73a4c5d4a8ecfadb368f588f4d3408183feee4895d0c1c6847"
+      "sha256": "4f6b40de4ea1185801daaa2692d6c6a93cb2e07a4a1e654db97505b0b3f8e41d"
     },
     "preprocessed/task2_mortality/preprocessing_state.json": {
-      "bytes": 101416,
-      "sha256": "ddbcd7cad9650699cc666d4c02a371cf94106983fed59d238a6de3852d8aaaf5"
+      "bytes": 101317,
+      "sha256": "e45b953230b2e5bb3e308125077d49e4dae5f853c5cc933254b6b4609eeae3e0"
     }
   },
   "remaining_team_decisions": [

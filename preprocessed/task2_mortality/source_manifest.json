@@ -1,7 +1,7 @@
 {
   "release_readme": {
     "path": "data/README.md",
-    "sha256": "adf59d6ccd06b167e3f0488bc3319095d465c56855aecadee140656a74502b6c"
+    "sha256": "b78d147db644564f51a17b4be08d2ae481e40c22591c7bb99314182067a155f7"
   },
   "outcomes": {
     "path": "data/outcomes.csv",
@@ -9,12 +9,12 @@
   },
   "record_directory": {
     "path": "data/icu_records",
-    "csv_count": 11833,
-    "total_bytes": 82105121,
-    "filename_size_manifest_sha256": "4d683d51e9f795aae8e2b67e4892f9dee0bc6b4256069d3284b5cf227d6cd28e",
-    "ordered_filename_content_sha256": "82a1e14127cf6beeeb6a407c0eb4ed35a21be81f94259d539004ae8b605ca1eb"
+    "csv_count": 12000,
+    "total_bytes": 82944654,
+    "filename_size_manifest_sha256": "154459c6b6c6989ebf7f0362e7783ffabdae02feb9d1248a3314d2f1e5657ff0",
+    "ordered_filename_content_sha256": "012a9d70d704a7e6a7bb2bbbd0ccfc9b1381b5e66b5c16355405611cddda4f6a"
   },
   "release_zip": null,
-  "config_sha256": "5aefa323d534d42e2cb5ecf6334e95c7ffc9c9f28f2c95a3ffef4852ebb073c7",
-  "pipeline_sha256": "256d35149c997145b024d86b0428ef8f5e40bec3d0be8ee3e3b990f04d9895a0"
+  "config_sha256": "e5f484c958b9a4ab6b985ee927e572020d50c0c6d072fbc0ac1ffcdb356685c4",
+  "pipeline_sha256": "5db7b21f003e478172b6b0dee9ef1b84022ca9ead74e7c64b869df1c5887fb24"
 }

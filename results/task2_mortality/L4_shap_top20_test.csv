@@ -1,21 +1,21 @@
 ,mean |SHAP|,organ,statistic type,derived (v2)
-gcs__0_48h__last,0.28238671105378427,CNS,point in time,
-static_age_years,0.23334143537854457,demographic / context,static / score,
-gcs__24_48h__max,0.09899146099513469,CNS,extreme,
-bun_cr_ratio__0_48h__last,0.08585240011256541,renal,point in time,yes
-organ_score__24_48h__total,0.08533874433718579,multi-organ (derived),cumulative,yes
-bun_cr_ratio__0_24h__last,0.07562618115835684,renal,point in time,yes
-bun__0_48h__min,0.07259545077773606,renal,extreme,
-urine__0_48h__mean,0.0691189328537391,renal,central,
-shock_index__0_48h__last,0.0661166377603978,cardiovascular,point in time,yes
-gcs__0_48h__std,0.06101627737317102,CNS,variability,
-urine__0_48h__total,0.05849564676072689,renal,cumulative,
-gcs__24_48h__mean,0.049161177393163946,CNS,central,
-urine__24_48h__total,0.04770170237297818,renal,cumulative,
-hct__24_48h__time_span_hours,0.03847837804953968,haematology,measurement behaviour,
-wbc__0_48h__slope_per_hour,0.03767968246567765,haematology,trend,
-temp__0_48h__mean,0.03638341975279528,other lab,central,
-hco3__24_48h__max,0.03537592790555556,other lab,extreme,
-gcs__0_48h__count,0.03471895174012702,CNS,measurement behaviour,
-urine__0_24h__total,0.033892683405161446,renal,cumulative,
-organ_score__24_48h__neuro,0.03291293125429349,multi-organ (derived),static / score,yes
+gcs__0_48h__last,0.23251039633842108,CNS,point in time,
+static_age_years,0.21320287343692804,demographic / context,static / score,
+gcs__24_48h__max,0.13700090503856147,CNS,extreme,
+organ_score__24_48h__total,0.09890992028068142,multi-organ (derived),cumulative,yes
+urine__0_48h__total,0.0908246950895404,renal,cumulative,
+shock_index__0_48h__last,0.07448230965012224,cardiovascular,point in time,yes
+bun_cr_ratio__0_24h__last,0.06896356742726018,renal,point in time,yes
+bun_cr_ratio__0_48h__last,0.06227479193173977,renal,point in time,yes
+bun__0_48h__last,0.06036257957300056,renal,point in time,
+gcs__0_48h__std,0.0582412747835837,CNS,variability,
+urine__0_48h__mean,0.04522510833179853,renal,central,
+bun__0_48h__min,0.04049196436236799,renal,extreme,
+gcs__0_48h__slope_per_hour,0.03972513243328919,CNS,trend,
+temp__24_48h__min,0.03674669204009553,other lab,extreme,
+gcs__24_48h__mean,0.03667435962173313,CNS,central,
+bun__0_48h__delta,0.034785571810040584,renal,trend,
+lactate__24_48h__median,0.03452906986067248,cardiovascular,central,
+urine__0_48h__median,0.03450710846149106,renal,central,
+gcs__0_48h__delta,0.03296720522239211,CNS,trend,
+glucose__24_48h__last,0.032249185671537964,hepatic,point in time,

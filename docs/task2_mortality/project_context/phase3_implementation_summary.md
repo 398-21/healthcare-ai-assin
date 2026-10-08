@@ -1,3 +1,7 @@
+> **Historical snapshot - superseded (2026-10-08).** This document records the earlier 11,833-stay analysis that excluded 167 stays with `Length_of_stay = -1`.
+
+---
+
 # Phase 3 Implementation Summary
 ## In Hospital Death Prediction - Priority 2 Warnings Resolved
 

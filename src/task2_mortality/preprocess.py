@@ -1,6 +1,8 @@
 """Task 2 pre-processing: raw ICU records -> one 1,474-feature row per stay.
 
-Landmark task: use observations with 0 <= Time < 48:00 to predict final In-hospital_death.
+Prediction setup: use observations with 0 <= Time < 48:00 to predict the recorded
+In-hospital_death outcome (including deaths after ICU discharge). Keep all 12,000
+challenge stays; Length_of_stay is not a predictor or cohort filter.
 Rules live in `config.json`; the raw `data/` folder is never modified. Outputs go to
 `preprocessed/task2_mortality/` (or `output_dir` if given):
 
@@ -520,20 +522,11 @@ def main(output_dir: Path | str | None = None) -> dict[str, Any]:
     if outcomes["In-hospital_death"].isna().any() or not set(outcomes["In-hospital_death"].unique()).issubset({0, 1}):
         raise ValueError("In-hospital_death must be complete and binary")
 
-    # Validate IDs match before filtering (Fix 1.2)
-    outcome_ids_before_filter = set(outcomes["RecordID"].astype(int))
+    # Validate IDs match; keep the complete released cohort.
+    outcome_ids = set(outcomes["RecordID"].astype(int))
     file_ids = {int(path.stem) for path in record_paths}
-    if outcome_ids_before_filter != file_ids:
+    if outcome_ids != file_ids:
         raise ValueError("Record file IDs and outcome IDs differ")
-
-    # Filter out negative Length_of_stay values (Fix 1.2)
-    n_negative_los = (outcomes['Length_of_stay'] < 0).sum()
-    if n_negative_los > 0:
-        print(f"Excluding {n_negative_los} records with negative Length_of_stay")
-        outcomes = outcomes[outcomes['Length_of_stay'] >= 0].copy()
-        # Filter record_paths to only process valid RecordIDs
-        valid_record_ids = set(outcomes["RecordID"].astype(int))
-        record_paths = [path for path in record_paths if int(path.stem) in valid_record_ids]
 
     outcome_ids = set(outcomes["RecordID"].astype(int))
 

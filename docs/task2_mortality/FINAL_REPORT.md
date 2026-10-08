@@ -1,3 +1,7 @@
+> **Historical snapshot - superseded (2026-10-08).** This document records the earlier 11,833-stay analysis that excluded 167 stays with `Length_of_stay = -1`.
+
+---
+
 # In-Hospital Mortality Prediction from 48 Hours of ICU Data
 
 **Course**: MD6117 Machine Learning for Healthcare AI

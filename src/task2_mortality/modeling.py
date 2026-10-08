@@ -4,7 +4,7 @@ Every model is an (imbalanced-learn) `Pipeline`, so imputation, scaling and any 
 are fitted on the rows the pipeline is trained on -- inside each cross-validation fold during
 model development, never on validation or test rows.
 
-Class-imbalance strategies (deaths are 14.4 % of stays):
+Class-imbalance strategies (deaths are about 14.2 % of stays):
   "none"         plain fit
   "class_weight" re-weight the loss (LR: class_weight="balanced"; XGBoost: scale_pos_weight)
   "smote"        median-impute, then SMOTE synthetic minority oversampling

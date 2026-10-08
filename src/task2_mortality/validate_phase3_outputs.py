@@ -53,7 +53,7 @@ def main(out_dir: Path | str | None = None) -> int:
     print("=" * 78)
 
     check("run status is PASS", summary["status"] == "PASS", summary["status"])
-    check("cohort is 11,833 (167 negative-LOS excluded)", len(labels) == 11833, f"{len(labels)}")
+    check("cohort includes all 12,000 challenge stays", len(labels) == 12000, f"{len(labels)}")
     check("features rowcount matches labels", len(feats) == len(labels), f"{len(feats)}")
 
     prevalence = labels.groupby("split", observed=True)["In-hospital_death"].mean()
