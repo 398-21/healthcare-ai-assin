@@ -1,3 +1,7 @@
+> **Historical snapshot - superseded (2026-10-08).** This dated working report contains results from the earlier 11,833-stay Task 2 cohort. The current analysis retains all 12,000 stays. Use the repository README and current notebook/DATA_README for active results; the historical numbers below are not current.
+
+---
+
 # Stage 2 (v2): L3 Logistic Regression — Original Rung Plus a Pre-Declared Revised Rung
 
 **Date**: 2026-09-25

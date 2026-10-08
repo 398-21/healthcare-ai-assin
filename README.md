@@ -9,7 +9,7 @@ Everything we ran is in one notebook, **[`MD6117_group_project.ipynb`](MD6117_gr
 The data is the PhysioNet/Computing in Cardiology Challenge 2012 release: **12,000 adult ICU stays** of at least 48 h from coronary-care, cardiac-surgery, medical and surgical ICUs.
 
 * Each stay is one CSV of time-stamped observations (`Time, Parameter, Value`) covering the first 48 h after ICU admission.
-* There are 6 admission descriptors (age, gender, height, ICU type, weight) and 36 time-varying vitals and labs, sampled irregularly. `-1` means missing.
+* The records contain 5 admission descriptors (age, gender, height, ICU type, weight) and 36 irregularly sampled time-varying variables, plus `RecordID`. Task 2 also summarizes Weight as a time series when recorded at admission. A `-1` measurement value denotes missingness.
 * `outcomes.csv` holds one row per stay: SAPS-I, SOFA, length of stay, survival, and in-hospital death (14.2 %).
 
 The full variable list is in [`data/README.md`](data/README.md).
@@ -44,7 +44,7 @@ Every hyperparameter, threshold, feature-selection and class-imbalance choice wa
 ## Data pre-processing, feature engineering and selection (summary)
 
 * **Split first.** Each task splits by stay before any statistic is computed. Every imputation value, scaler, encoder, filter and resampler is fitted on training rows only, inside a scikit-learn / imbalanced-learn `Pipeline`, and the fitted pipeline is what is saved.
-* **Cleaning and outliers.** The `-1` sentinel and empty rows are removed. Physiologically implausible values become missing (never clipped), using one shared rule set (`src/shared/physiology.py`); pH and height unit errors are corrected first. Task 1's SOFA *target* keeps the published methodology cleaning unchanged.
+* **Cleaning and outliers.** Task 2 retains all 12,000 stays, including records with `Length_of_stay = -1`. At the observation level, invalid/blank/unknown rows are excluded from summaries; `-1` and out-of-range measurements become missing (never clipped), with pH and height unit errors corrected first using `src/shared/physiology.py`. Task 1's SOFA *target* keeps the published methodology cleaning unchanged.
 * **Feature engineering.**
   * *Task 1:* expanding-window summaries per variable (level, extremes, variability, 12-h trend, measurement count and recency), clinical signals (MAP < 70 / < 65 burden, urine mL/kg/h, P/F ratio, sedation flag) and rule-based SOFA sub-scores.
   * *Task 2:* 37 variables × 3 windows × 12 statistics, plus merged blood pressure and BMI, plus clinically derived ratios (P/F, shock index, BUN/creatinine, urine mL/kg/h) and our own organ sub-scores.

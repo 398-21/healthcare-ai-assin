@@ -1,3 +1,7 @@
+> **Historical snapshot - superseded (2026-10-08).** This dated working report contains results from the earlier 11,833-stay Task 2 cohort. The current analysis retains all 12,000 stays. Use the repository README and current notebook/DATA_README for active results; the historical numbers below are not current.
+
+---
+
 # L3 基线阶段过程文档
 
 **文档版本**: v1.0  
