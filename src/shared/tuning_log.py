@@ -139,8 +139,8 @@ def task2_section(*, imb_lr: pd.DataFrame, imb_lr_kept: str, l3_variants: pd.Dat
            md_table(filter_check), "",
            f"*Hyperparameter search.* `RandomizedSearchCV`, **{xgb_search_meta.get('n_candidates', 50)} random "
            f"candidates × {xgb_search_meta.get('cv_folds', 5)}-fold CV** on the training split, scored by AUPRC, "
-           f"`random_state=42`, on device `{xgb_search_meta.get('device')}` "
-           f"({xgb_search_meta.get('minutes', float('nan')):.1f} min). Search space:",
+           f"`random_state=42`, requested device `{xgb_search_meta.get('device')}` "
+           f"(XGBoost falls back to CPU if no GPU is visible; {xgb_search_meta.get('minutes', float('nan')):.1f} min). Search space:",
            md_table(pd.DataFrame({"values": {k: str(v) for k, v in xgb_space.items()}})), "",
            f"All candidates, ranked by mean CV AUPRC (★ = selected; per-fold scores shown):",
            md_table(xgb_candidates, index=False), "",

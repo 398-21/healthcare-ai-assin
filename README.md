@@ -92,7 +92,7 @@ docs/                        project plan, TRIPOD+AI checklist, reports, process
 
 ## How to run
 
-1. **Python 3.13** (other 3.11+ versions should work).
+1. **Python 3.11 or newer** (this run was checked with Python 3.12; Python 3.13 is also supported).
    ```bash
    python -m venv .venv
    .venv\Scripts\activate          # Windows;  source .venv/bin/activate on macOS/Linux
@@ -114,9 +114,9 @@ Three switches in the first code cell control what is recomputed:
 | ------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `REBUILD_PREPROCESSING` | `False`    | `True` rebuilds `preprocessed/` from the raw records (task 1 ~4 min, task 2 ~10 min).                                                                                                                                 |
 | `RETRAIN_TASK1`         | `False`    | `True` refits every task 1 pipeline (~1 h 40 min, CPU). `False` loads the saved pipelines.                                                                                                                            |
-| `RETRAIN_TASK2`         | `True`     | Reruns task 2's imbalance CV, the 50 × 5-fold XGBoost search, nested-CV feature selection and the final fits (~40 min, CUDA GPU used for XGBoost when available).`False` loads the logged results and saved pipelines. |
+| `RETRAIN_TASK2` | `False` | `True` reruns task 2's imbalance CV, the 50 x 5-fold XGBoost search, nested-CV feature selection and final fits (about 40-50 min). `False` loads the logged results and saved pipelines. |
 
-Every model was fitted by the notebook's own cells. The task 1 pipelines were fitted by a first execution with `RETRAIN_TASK1 = True`; the submitted execution loads them and runs all of task 2 live. Setting both retrain switches to `False` reproduces every reported number from the saved pipelines in about 20 minutes.
+The saved task 1 and task 2 pipelines were fitted by the notebook's own cells. With the submitted defaults, the notebook loads them and the logged Task 2 search results; it still recomputes evaluation tables, plots and SHAP explanations. Set a retrain switch to `True` only when you intend to refit that task.
 
 The task 2 preprocessing also has unit tests and a standalone verifier:
 
@@ -128,6 +128,6 @@ python -m src.task2_mortality.verify_outputs
 ## Reproducibility notes
 
 * **Seeds and splits.** Both splits are frozen and written to `preprocessed/`.
-* **GPU vs CPU.** Task 2's XGBoost search and final fit ran on a CUDA GPU. A CPU rerun gives very slightly different trees, so load the saved pipelines (`RETRAIN_TASK2 = False`) to reproduce the reported test numbers exactly.
+* **GPU vs CPU.** The XGBoost search was configured with `device=cuda`, but this run had no visible GPU and XGBoost fell back to CPU. Load the saved pipelines (`RETRAIN_TASK2 = False`) to reproduce the reported test numbers without another search or fit.
 * **Task 2 features.** The task 2 features were checked to rebuild byte-for-byte from the raw records. A SHA-256 manifest is in `preprocessed/task2_mortality/manifest.sha256`.
 * **Outcome columns.** `outcomes.csv` is never a model input. Task 1 uses its SOFA only as an external check on our rule engine; task 2 uses SAPS-I and SOFA only as the bedside-score baselines.
