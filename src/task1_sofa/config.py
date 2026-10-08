@@ -27,20 +27,20 @@ QC_REPORT_MD = OUT_DIR / "qc_report.md"
 from ..shared.reproducibility import SEED   # 42 -- one seed for every estimator, split and bootstrap
 
 # ------------------------------------------------------------------- forecasting task
-# Decision times T (hours after ICU admission). At each T we forecast 6 h ahead.
+# Decision times T (hours after ICU admission). At each T, forecast the rolling 24-h proxy-SOFA score ending at T+6.
 HORIZONS_H: tuple[int, ...] = (24, 30, 36, 42)
 FORECAST_AHEAD_H = 6            # predict SOFA as of  T + 6
-TARGET_WINDOW_H = 24           # target = trailing-24 h SOFA ending at T+6  ->  [T-18, T+6)
-NOW_WINDOW_H = 24             # SOFA_now = trailing-24 h SOFA ending at T   ->  [T-24, T)
-DETERIORATE_DELTA = 2         # "deterioration" = SOFA rises >= 2 within 24 h
+TARGET_WINDOW_H = 24           # proxy SOFA: trailing 24-h score ending at T+6 -> [T-18, T+6)
+NOW_WINDOW_H = 24             # baseline proxy SOFA: trailing 24-h score ending at T -> [T-24, T)
+SOFA_RISE_THRESHOLD = 2         # target proxy-SOFA minus SOFA_now is >=2 points
 
 def target_window_min(T: int) -> tuple[int, int]:
-    """[T-18h, T+6h) in minutes — the window the forecast target is scored over."""
+    """[T-18h, T+6h): target rolling 24-h proxy-SOFA window ending at T+6."""
     end = (T + FORECAST_AHEAD_H) * 60
     return (end - TARGET_WINDOW_H * 60, end)
 
 def now_window_min(T: int) -> tuple[int, int]:
-    """[T-24h, T) in minutes — the last fully-observed 24 h, used for SOFA_now."""
+    """[T-24h, T): baseline rolling 24-h proxy-SOFA window ending at T."""
     return ((T - NOW_WINDOW_H) * 60, T * 60)
 
 def feature_cutoff_min(T: int) -> int:

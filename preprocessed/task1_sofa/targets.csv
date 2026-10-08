@@ -1,4 +1,4 @@
-RecordID,origin_h,resp_score,resp_present,resp_delta,coag_score,coag_present,coag_delta,liver_score,liver_present,liver_delta,cardio_score,cardio_present,cardio_delta,neuro_score,neuro_present,neuro_delta,renal_score,renal_present,renal_delta,sofa_total,sofa_now,sofa_delta,deteriorate_24h,n_present_target,n_present_now,cardio_instability,target_window_empty
+RecordID,origin_h,resp_score,resp_present,resp_delta,coag_score,coag_present,coag_delta,liver_score,liver_present,liver_delta,cardio_score,cardio_present,cardio_delta,neuro_score,neuro_present,neuro_delta,renal_score,renal_present,renal_delta,sofa_24h_tplus6,sofa_now,sofa_delta_tplus6,sofa_rise_ge2_tplus6,n_present_target,n_present_now,cardio_instability,target_window_empty
 100001,24,,0,,0.0,1,0.0,,0,,1.0,1,0.0,0.0,1,0.0,0.0,1,0.0,1.0,1.0,0.0,0.0,4,4,0.0,0
 100001,30,,0,,0.0,1,0.0,,0,,1.0,1,0.0,0.0,1,0.0,0.0,1,0.0,1.0,1.0,0.0,0.0,4,4,0.0,0
 100001,36,,0,,0.0,1,0.0,,0,,1.0,1,0.0,1.0,1,1.0,0.0,1,0.0,2.0,1.0,1.0,0.0,4,4,0.0,0

@@ -39,7 +39,7 @@ MechVent distinct values: [1.0] (existence flag only — cardiovascular stays ca
 ## Target table
 
 ```
-          sofa_total  sofa_now  sofa_delta  deteriorate_24h  cardio_instability  target_window_empty
+          sofa_24h_tplus6  sofa_now  sofa_delta_tplus6  sofa_rise_ge2_tplus6  cardio_instability  target_window_empty
 origin_h                                                                                            
 24             5.275     5.747      -0.483            0.046               0.684                0.002
 30             4.982     5.264      -0.294            0.038               0.653                0.002
@@ -48,7 +48,7 @@ origin_h
 ```
 
 - rows: 48000  (12000 records x 4 horizons)
-- deterioration (SOFA rises >= 2 in 24 h) base rate: 0.041
+- proxy-SOFA delta >= 2 points between the target and SOFA_now rolling windows, base rate: 0.041
 
 ## Feature table
 

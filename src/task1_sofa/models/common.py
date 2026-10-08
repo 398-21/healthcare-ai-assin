@@ -81,12 +81,12 @@ def axis_frame(features: pd.DataFrame, targets: pd.DataFrame, splits: pd.DataFra
     return df, df[cols], df[target_col].to_numpy()
 
 
-def deterioration_frame(features: pd.DataFrame, targets: pd.DataFrame, splits: pd.DataFrame):
-    """Rows for the (non-ordinal) `deteriorate_24h` binary outcome, split into
-    train/val/test -- shared by every family that fits a deterioration classifier."""
-    df = (features.merge(targets[["RecordID", "origin_h", "deteriorate_24h"]],
+def sofa_rise_frame(features: pd.DataFrame, targets: pd.DataFrame, splits: pd.DataFrame):
+    """Rows for the (non-ordinal) `sofa_rise_ge2_tplus6` binary outcome, split into
+    train/val/test -- shared by every family that fits a rolling 24-hour proxy-SOFA ≥2-point rise classifier."""
+    df = (features.merge(targets[["RecordID", "origin_h", "sofa_rise_ge2_tplus6"]],
                          on=["RecordID", "origin_h"])
                   .merge(splits[["RecordID", "split"]], on="RecordID")
-                  .dropna(subset=["deteriorate_24h"]))
+                  .dropna(subset=["sofa_rise_ge2_tplus6"]))
     cols = feature_columns(features)
     return df, cols

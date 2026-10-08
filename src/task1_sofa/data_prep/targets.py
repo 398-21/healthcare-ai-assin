@@ -1,14 +1,20 @@
 """Forecast targets: the rolling trailing-24 h SOFA at each decision time.
 
+For compactness, saved target columns use `sofa_*`; in Task 1 these denote the rule-engine proxy-SOFA, not the clinical reference in outcomes.SOFA.
+
 For every (RecordID, T) with T in {24, 30, 36, 42}:
-  * target window  = [T-18h, T+6h)   -> 6 rule sub-scores + total  (`*_score`, `sofa_total`)
+  * target window  = [T-18h, T+6h)   -> 6 rule sub-scores + total  (`*_score`, `sofa_24h_tplus6`)
   * now window      = [T-24h, T)      -> SOFA_now
-  * delta            = target - now    (`*_delta`, `sofa_delta`)
-  * deteriorate_24h  = sofa_delta >= config.DETERIORATE_DELTA
+  * delta            = target - now    (`*_delta`, `sofa_delta_tplus6`)
+  * sofa_rise_ge2_tplus6 = 1 when the target score exceeds the now score by >=2 at T+6
   * cardio_instability = min MAP (invasive U non-invasive) < 65 in the target window
 
 Cardiovascular is 0/1 (no vasopressor data) — a known project limitation, present on
 both the feature and target side.
+
+The now and target windows overlap for 18 h. This label is their score difference, not an isolated
+standalone acute deterioration event. The target is a proxy because vasopressor data are unavailable
+and unmeasured organ scores use the documented lenient zero convention.
 
 Rows whose target window has no measurement at all (`target_window_empty == 1`) keep
 NaN score columns and are excluded at evaluation.
@@ -38,12 +44,12 @@ def build_targets(records: dict[int, tuple[dict, dict]]) -> pd.DataFrame:
                 nd = None if (tgt[a] is None or now[a] is None) else tgt[a] - now[a]
                 row[f"{a}_delta"] = np.nan if (empty or nd is None) else float(nd)
 
-            row["sofa_total"] = np.nan if empty else float(tgt["sofa_total"])
+            row["sofa_24h_tplus6"] = np.nan if empty else float(tgt["sofa_total"])
             row["sofa_now"] = float(now["sofa_total"])
-            row["sofa_delta"] = np.nan if empty else float(tgt["sofa_total"] - now["sofa_total"])
-            row["deteriorate_24h"] = (
+            row["sofa_delta_tplus6"] = np.nan if empty else float(tgt["sofa_total"] - now["sofa_total"])
+            row["sofa_rise_ge2_tplus6"] = (
                 np.nan if empty
-                else int((tgt["sofa_total"] - now["sofa_total"]) >= config.DETERIORATE_DELTA))
+                else int((tgt["sofa_total"] - now["sofa_total"]) >= config.SOFA_RISE_THRESHOLD))
             row["n_present_target"] = int(tgt["n_present"])
             row["n_present_now"] = int(now["n_present"])
             mm = tgt["min_map"]

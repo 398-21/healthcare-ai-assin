@@ -53,15 +53,18 @@ def _grid_rows(records: list[dict], metric: str, best: str):
 
 
 def task1_section(spec: dict, spaces: dict[str, list[dict]]) -> str:
-    out = ["## Task 1: SOFA trajectory forecasting",
-           "",
-           "**Protocol.** Each family has a fixed 4-point grid (Ridge and logistic regression have 3 points). "
-           "Every grid point is fitted on the **training** split and scored on the **validation** split. "
-           "Regressors are scored by validation MAE (lower is better). Ordinal threshold classifiers are scored by "
-           "validation AUROC, and deterioration classifiers by validation AUPRC (higher is better). The best point "
-           "is selected (★), separately for each organ. No library-internal early stopping is used, and the test "
-           "split plays no part.",
-           ""]
+    out = [
+        "## Task 1: 6-hour-ahead rolling proxy-SOFA forecast\n\n"
+        "*Forecast the rolling 24-hour rule-based proxy-SOFA score.*",
+        "",
+        "**Protocol.** Each family has a fixed 4-point grid (Ridge and logistic regression have 3 points). "
+        "Every grid point is fitted on the **training** split and scored on the **validation** split. "
+        "Regressors are scored by validation MAE (lower is better). Ordinal threshold classifiers are scored by "
+        "validation AUROC, and rolling 24-hour proxy-SOFA ≥2-point rise classifiers by validation AUPRC (higher is better). "
+        "The best point is selected separately for each organ. No library-internal early stopping is used, "
+        "and the test split plays no part.",
+        "",
+    ]
     out.append("### Search spaces")
     rows = []
     for name, grid in spaces.items():
@@ -90,9 +93,9 @@ def task1_section(spec: dict, spaces: dict[str, list[dict]]) -> str:
                 t.insert(0, "organ", AXIS_NAME.get(axis, axis))
                 parts.append(t)
             out += [md_table(pd.concat(parts), index=False), ""]
-        if "deterioration_grid" in entry:
-            out.append(f"Deterioration classifier (`{fam}`), validation AUPRC:")
-            out += [md_table(_grid_rows(entry["deterioration_grid"], "val_auprc", "max"), index=False), ""]
+        if "sofa_rise_grid" in entry:
+            out.append(f"rolling 24-hour proxy-SOFA ≥2-point rise classifier (`{fam}`), validation AUPRC:")
+            out += [md_table(_grid_rows(entry["sofa_rise_grid"], "val_auprc", "max"), index=False), ""]
         if "imbalance_experiment" in entry:
             out.append("**Class-imbalance strategy** (a pipeline hyperparameter), compared on validation. The "
                        "simplest strategy within one bootstrap SD of the best AUPRC is kept:")
@@ -112,7 +115,8 @@ def task2_section(*, imb_lr: pd.DataFrame, imb_lr_kept: str, l3_variants: pd.Dat
                   topk: pd.DataFrame, k_chosen: int, n_filtered: int,
                   cb_space: dict, cb_candidates: pd.DataFrame, cb_params: dict, cb_trees: int,
                   selected_model: str) -> str:
-    out = ["## Task 2: in-hospital mortality",
+    out = ["## Task 2: In-Hospital Mortality Prediction", "",
+           "*Using measurements from the first 48 hours after ICU admission.*",
            "",
            "**Protocol.** All tuning uses the **training** split, by stratified 5-fold cross-validation "
            "(`StratifiedKFold(shuffle=True, random_state=42)`) unless a step says validation. Resampling, when "

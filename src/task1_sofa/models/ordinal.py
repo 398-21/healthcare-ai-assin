@@ -51,7 +51,7 @@ GRID = [
 
 def fit_grid_threshold_classifier(X_tr, y_tr, X_val, y_val, grid=GRID):
     """Select by validation AUROC. Each threshold question ('is the score already above k')
-    is a much less imbalanced binary problem than `deteriorate_24h` (thresholds near the
+    is a much less imbalanced binary problem than `sofa_rise_ge2_tplus6` (thresholds near the
     middle of the 0-4 range are often close to balanced), so AUROC -- not AUPRC -- is the
     natural selection metric here; unlike histgb.fit_grid_classifier's D14 rationale."""
     rows, best = [], None
@@ -122,5 +122,5 @@ def predict_axis_scores_ordinal(models: dict, features: pd.DataFrame,
         now_axis = features[f"sofa_now_{axis}"].to_numpy()
         has_now = ~np.isnan(now_axis)
         out[f"{axis}_pred_ordinal"] = np.where(has_now, surv, 0.0)
-    out["sofa_total_pred_ordinal"] = sum(out[f"{a}_pred_ordinal"] for a in models)
+    out["sofa_24h_tplus6_pred_ordinal"] = sum(out[f"{a}_pred_ordinal"] for a in models)
     return out

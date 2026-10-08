@@ -53,5 +53,5 @@ def predict_axis_scores_absolute(models: dict, features: pd.DataFrame) -> pd.Dat
         now_axis = features[f"sofa_now_{axis}"].to_numpy()
         has_now = ~np.isnan(now_axis)
         out[f"{axis}_pred_abs"] = np.where(has_now, pred, 0.0)
-    out["sofa_total_pred_abs"] = sum(out[f"{a}_pred_abs"] for a in models)
+    out["sofa_24h_tplus6_pred_abs"] = sum(out[f"{a}_pred_abs"] for a in models)
     return out

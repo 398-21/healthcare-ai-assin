@@ -42,7 +42,7 @@ def bootstrap_ci(y_true, y_pred, metric_fn, n_boot: int = 1000, seed: int = conf
 def regression_report(df: pd.DataFrame, y_col: str, pred_cols: dict,
                       group_col: str = "origin_h", n_boot: int = 1000) -> pd.DataFrame:
     """MAE + RMSE with bootstrap CI, per group, for each column in `pred_cols`
-    ({label: column_name}) -- e.g. {"persistence": "sofa_now", "model": "sofa_total_pred"}.
+    ({label: column_name}) -- e.g. {"persistence": "sofa_now", "model": "sofa_24h_tplus6_pred"}.
     Used both for the Phase-2 baselines (before any model exists) and for the final
     model-vs-baseline comparison in Results (items 12e, 23a).
     """
@@ -71,8 +71,8 @@ def classification_comparison(df: pd.DataFrame, y_col: str, prob_cols: dict,
                               group_col: str | None = None, n_boot: int = 1000) -> pd.DataFrame:
     """Tidy multi-model classifier comparison, mirroring `regression_report`'s shape --
     one row per (group, series). `prob_cols`: {label: column_name}, e.g.
-    {"no-skill": "prevalence_col", "histgb": "deteriorate_proba",
-     "linear": "deteriorate_proba_linear"}. Used to compare every trained family (D19-D22)
+    {"no-skill": "prevalence_col", "histgb": "sofa_rise_ge2_proba",
+     "linear": "sofa_rise_ge2_proba_linear"}. Used to compare every trained family (D19-D22)
     against each other and the no-skill reference (D18) in one table."""
     rows = []
     groups = df.groupby(group_col) if group_col else [(None, df)]

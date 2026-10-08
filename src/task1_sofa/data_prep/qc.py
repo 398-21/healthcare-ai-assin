@@ -148,7 +148,7 @@ def write_qc_report(audit: dict, records: dict, targets: pd.DataFrame,
     lines.append("## Target table")
     lines.append("")
     g = targets.groupby("origin_h")
-    summ = g[["sofa_total", "sofa_now", "sofa_delta", "deteriorate_24h",
+    summ = g[["sofa_24h_tplus6", "sofa_now", "sofa_delta_tplus6", "sofa_rise_ge2_tplus6",
               "cardio_instability", "target_window_empty"]].mean().round(3)
     lines.append("```")
     lines.append(summ.to_string())
@@ -156,8 +156,8 @@ def write_qc_report(audit: dict, records: dict, targets: pd.DataFrame,
     lines.append("")
     lines.append(f"- rows: {len(targets)}  ({targets.RecordID.nunique()} records x "
                  f"{targets.origin_h.nunique()} horizons)")
-    lines.append(f"- deterioration (SOFA rises >= {config.DETERIORATE_DELTA} in 24 h) base rate: "
-                 f"{targets.deteriorate_24h.mean():.3f}")
+    lines.append(f"- target-minus-baseline rolling proxy-SOFA difference is >= {config.SOFA_RISE_THRESHOLD} points, base rate: "
+                 f"{targets.sofa_rise_ge2_tplus6.mean():.3f}")
     lines.append("")
 
     lines.append("## Feature table")

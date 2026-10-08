@@ -1658,12 +1658,12 @@
           }
         ]
       },
-      "deterioration_params": {
+      "sofa_rise_params": {
         "C": 0.1,
         "class_weight": "balanced",
         "max_iter": 2000
       },
-      "deterioration_grid": [
+      "sofa_rise_grid": [
         {
           "C": 0.1,
           "class_weight": "balanced",
@@ -1996,7 +1996,7 @@
         }
       },
       "imbalance_strategy": "none",
-      "deterioration_params": {
+      "sofa_rise_params": {
         "learning_rate": 0.05,
         "max_leaf_nodes": 63,
         "max_iter": 300,
@@ -2005,7 +2005,7 @@
         "class_weight": "balanced",
         "random_state": 42
       },
-      "deterioration_grid": [
+      "sofa_rise_grid": [
         {
           "learning_rate": 0.05,
           "max_leaf_nodes": 31,
@@ -2333,7 +2333,7 @@
           }
         ]
       },
-      "deterioration_params": {
+      "sofa_rise_params": {
         "learning_rate": 0.05,
         "depth": 4,
         "iterations": 300,
@@ -2342,7 +2342,7 @@
         "allow_writing_files": false,
         "auto_class_weights": "Balanced"
       },
-      "deterioration_grid": [
+      "sofa_rise_grid": [
         {
           "learning_rate": 0.05,
           "depth": 4,
@@ -2696,7 +2696,7 @@
           }
         ]
       },
-      "deterioration_params": {
+      "sofa_rise_params": {
         "learning_rate": 0.05,
         "num_leaves": 31,
         "n_estimators": 300,
@@ -2706,7 +2706,7 @@
         "verbosity": -1,
         "class_weight": "balanced"
       },
-      "deterioration_grid": [
+      "sofa_rise_grid": [
         {
           "learning_rate": 0.05,
           "num_leaves": 31,

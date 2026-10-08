@@ -18,7 +18,7 @@ import pandas as pd
 from sklearn.metrics import average_precision_score, mean_absolute_error
 
 from .. import config
-from .common import AXES, feature_columns, axis_frame, deterioration_frame, with_filter
+from .common import AXES, feature_columns, axis_frame, sofa_rise_frame, with_filter
 
 try:
     from catboost import CatBoostClassifier, CatBoostRegressor
@@ -115,13 +115,13 @@ def fit_grid_classifier(X_tr, y_tr, X_val, y_val, grid=CLASSIFIER_GRID):
     return best[0], best[2], pd.DataFrame(rows)
 
 
-def train_deterioration_model_catboost(features: pd.DataFrame, targets: pd.DataFrame,
+def train_sofa_rise_model_catboost(features: pd.DataFrame, targets: pd.DataFrame,
                                        splits: pd.DataFrame, grid=CLASSIFIER_GRID):
     _require_catboost()
-    df, cols = deterioration_frame(features, targets, splits)
+    df, cols = sofa_rise_frame(features, targets, splits)
     tr, va = df[df.split == "train"], df[df.split == "val"]
-    return fit_grid_classifier(tr[cols], tr.deteriorate_24h.astype(int),
-                               va[cols], va.deteriorate_24h.astype(int), grid)
+    return fit_grid_classifier(tr[cols], tr.sofa_rise_ge2_tplus6.astype(int),
+                               va[cols], va.sofa_rise_ge2_tplus6.astype(int), grid)
 
 
 def predict_axis_scores_catboost(models: dict, features: pd.DataFrame) -> pd.DataFrame:
@@ -136,14 +136,14 @@ def predict_axis_scores_catboost(models: dict, features: pd.DataFrame) -> pd.Dat
         has_now = ~np.isnan(now_axis)
         out[f"{axis}_pred_delta_catboost"] = pred_delta
         out[f"{axis}_pred_catboost"] = np.where(has_now, np.clip(now_axis + pred_delta, 0, 4), 0.0)
-    out["sofa_total_pred_catboost"] = sum(out[f"{a}_pred_catboost"] for a in models)
+    out["sofa_24h_tplus6_pred_catboost"] = sum(out[f"{a}_pred_catboost"] for a in models)
     return out
 
 
-def predict_deterioration_catboost(model, features: pd.DataFrame) -> pd.DataFrame:
+def predict_sofa_rise_catboost(model, features: pd.DataFrame) -> pd.DataFrame:
     cols = feature_columns(features)
     X = _prepare_categoricals(features[cols])
     proba = model.predict_proba(X)[:, 1]
     return pd.DataFrame({"RecordID": features.RecordID.values,
                          "origin_h": features.origin_h.values,
-                         "deteriorate_proba_catboost": proba})
+                         "sofa_rise_ge2_proba_catboost": proba})

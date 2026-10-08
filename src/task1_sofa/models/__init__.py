@@ -11,22 +11,22 @@ because "does complexity/framing help, and by how much" is itself a result worth
   1. models.linear         -- D20: Ridge / class-weighted LogisticRegression baselines, same
                                delta target as (2), to isolate "does non-linearity help".
   2. models.histgb         -- D12/D13/D14/D17: six pooled HistGB regressors (predict the
-                               DELTA) + one pooled HistGB deterioration classifier.
+                               DELTA) + one pooled HistGB rolling 24-hour proxy-SOFA ≥2-point rise classifier.
                                THE DEFAULT / PRIMARY family; un-suffixed prediction columns.
   3. models.catboost_model -- D21: CatBoost (optional dependency, guarded import).
   4. models.lightgbm_model -- D22: LightGBM (optional dependency, guarded import).
 
 Every family exposes analogous function names (train_axis_models_<suffix>,
-train_deterioration_model_<suffix>, predict_axis_scores_<suffix>) and writes its predicted
+train_sofa_rise_model_<suffix>, predict_axis_scores_<suffix>) and writes its predicted
 columns with that suffix (`_ordinal`, `_linear`, `_catboost`, `_lightgbm`), so the notebook can
 merge every family's predictions into one wide table without name collisions. Family 2
-(histgb) keeps its original UN-suffixed names (train_axis_models, train_deterioration_model,
-predict_axis_scores, predict_deterioration, REGRESSOR_GRID, CLASSIFIER_GRID).
+(histgb) keeps its original UN-suffixed names (train_axis_models, train_sofa_rise_model,
+predict_axis_scores, predict_sofa_rise, REGRESSOR_GRID, CLASSIFIER_GRID).
 
 `histgb_absolute` is not a sixth headline family but a controlled ablation (HistGB predicting
 the absolute score instead of the delta) used to separate ordinal's two differences from HistGB.
 """
-from .common import (AXES, IMBALANCE_STRATEGIES, PROTECTED, axis_frame, deterioration_frame,
+from .common import (AXES, IMBALANCE_STRATEGIES, PROTECTED, axis_frame, sofa_rise_frame,
                      feature_columns, feature_filter)
 from .histgb import (
     CLASSIFIER_GRID,
@@ -34,9 +34,9 @@ from .histgb import (
     fit_grid_classifier,
     fit_grid_regressor,
     predict_axis_scores,
-    predict_deterioration,
+    predict_sofa_rise,
     train_axis_models,
-    train_deterioration_model,
+    train_sofa_rise_model,
 )
 from . import catboost_model, histgb, histgb_absolute, lightgbm_model, linear, ordinal
 
