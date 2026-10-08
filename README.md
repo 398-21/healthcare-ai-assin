@@ -23,6 +23,7 @@ Two properties of the data shape both tasks:
 
 | | Task 1: SOFA trajectory forecasting | Task 2: in-hospital mortality |
 |---|---|---|
+| Objective | Does short-horizon ML forecasting of the rolling SOFA score add information beyond persistence ("assume no change")? Central question: is any gain uniform across the six organ systems, or concentrated in some? Also: does it detect deterioration (≥ 2-point rise), and does extra model complexity earn its keep? | Predict in-hospital death at the 48 h landmark, and measure what each step up in model complexity adds over the bedside severity scores (SAPS-I, SOFA). |
 | Question | At hour *T* ∈ {24, 30, 36, 42}, what will the patient's SOFA score be 6 h later? | At hour 48, will the patient die before hospital discharge? |
 | Unit | stay × decision time (48,000 rows) | stay (11,833; 167 stays with negative length of stay excluded) |
 | Target | six organ sub-scores (0–4) and their total, from our own rule engine; plus P(SOFA rises ≥ 2) | `In-hospital_death` |
